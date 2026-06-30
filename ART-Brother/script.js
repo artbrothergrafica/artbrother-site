@@ -1,0 +1,1 @@
+console.log("Site da Art Brother carregado!");
