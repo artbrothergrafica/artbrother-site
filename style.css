@@ -32,8 +32,8 @@ img {
 
 .topo {
   width: 100%;
-  background: rgba(255,255,255,.96);
-  backdrop-filter: blur(10px);
+  background: #000;
+  backdrop-filter: #b19423;
   display: flex;
   align-items: center;
   justify-content: space-between;
