@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://artbrother.com.br/sitemap.xml
