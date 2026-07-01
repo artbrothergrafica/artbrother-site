@@ -137,3 +137,46 @@ if(bannerProfundidade && !window.matchMedia('(prefers-reduced-motion: reduce)').
     bannerProfundidade.style.setProperty('--my', my);
   }, { passive:true });
 }
+
+
+// ===== Versão 3.0: compartilhar no WhatsApp e orientar favorito =====
+const botaoCompartilhar = document.querySelector('.botao-compartilhar');
+const botaoFavorito = document.querySelector('.botao-favorito');
+
+function mostrarAviso(mensagem){
+  let aviso = document.querySelector('.aviso-site');
+  if(!aviso){
+    aviso = document.createElement('div');
+    aviso.className = 'aviso-site';
+    aviso.setAttribute('role', 'status');
+    aviso.setAttribute('aria-live', 'polite');
+    document.body.appendChild(aviso);
+  }
+  aviso.textContent = mensagem;
+  aviso.classList.add('visivel');
+  clearTimeout(mostrarAviso.tempo);
+  mostrarAviso.tempo = setTimeout(() => aviso.classList.remove('visivel'), 5200);
+}
+
+function compartilharSite(){
+  const titulo = 'ART Brother Soluções Gráficas';
+  const texto = 'Conheça a ART Brother: impressões, cadernos personalizados, placas Pix, chaveiros, fotos e personalizados em Betim-MG.';
+  const url = window.location.href.split('#')[0];
+
+  if(navigator.share){
+    navigator.share({ title:titulo, text:texto, url }).catch(() => {});
+    return;
+  }
+
+  const mensagem = encodeURIComponent(`${texto}\n${url}`);
+  window.open(`https://wa.me/?text=${mensagem}`, '_blank', 'noopener');
+}
+
+function orientarFavorito(){
+  const isMac = navigator.platform.toUpperCase().includes('MAC');
+  const atalho = isMac ? 'Command + D' : 'Ctrl + D';
+  mostrarAviso(`Para adicionar este site aos favoritos, pressione ${atalho}. No celular, toque no menu do navegador e escolha “Adicionar à tela inicial” ou “Adicionar aos favoritos”.`);
+}
+
+botaoCompartilhar?.addEventListener('click', compartilharSite);
+botaoFavorito?.addEventListener('click', orientarFavorito);

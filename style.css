@@ -1154,3 +1154,134 @@ button:focus-visible{
     transform:none;
   }
 }
+
+
+/* ===== Versão 3.0: compartilhamento, favoritos e SEO local ===== */
+.contato-botoes button{
+  border:0;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:16px 28px;
+  border-radius:12px;
+  color:#fff;
+  font-weight:900;
+  font-size:16px;
+  transition:.3s ease;
+  box-shadow:0 6px 18px rgba(0,0,0,.22);
+}
+
+.contato-botoes button svg{
+  width:22px;
+  height:22px;
+  fill:currentColor;
+  flex:0 0 auto;
+}
+
+.botao-compartilhar{
+  background:linear-gradient(135deg,#111,#333);
+}
+
+.botao-compartilhar:hover,
+.botao-compartilhar:focus-visible{
+  transform:translateY(-3px);
+  background:#111;
+  box-shadow:0 10px 28px rgba(0,0,0,.36);
+}
+
+.botao-favorito{
+  background:linear-gradient(135deg,#ffd23f,#ffb703);
+  color:#111 !important;
+  box-shadow:0 6px 18px rgba(255,210,63,.35) !important;
+}
+
+.botao-favorito:hover,
+.botao-favorito:focus-visible{
+  transform:translateY(-3px);
+  filter:brightness(1.03);
+  box-shadow:0 10px 28px rgba(255,210,63,.48) !important;
+}
+
+.aviso-site{
+  position:fixed;
+  left:50%;
+  bottom:24px;
+  transform:translate(-50%,20px);
+  max-width:min(92vw,540px);
+  padding:15px 18px;
+  border-radius:16px;
+  background:#111;
+  color:#fff;
+  font-weight:800;
+  text-align:center;
+  box-shadow:0 18px 42px rgba(0,0,0,.35);
+  z-index:10001;
+  opacity:0;
+  pointer-events:none;
+  transition:.25s ease;
+}
+
+.aviso-site.visivel{
+  opacity:1;
+  transform:translate(-50%,0);
+}
+
+@media(max-width:900px){
+  .contato-botoes button{
+    width:100%;
+    max-width:330px;
+  }
+}
+
+
+/* Página 404 personalizada */
+.pagina-404{
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  background:radial-gradient(circle at top left,rgba(255,210,63,.16),transparent 32%),
+             radial-gradient(circle at top right,rgba(0,207,255,.14),transparent 34%),
+             linear-gradient(135deg,#050505,#161616);
+  color:#fff;
+  padding:24px;
+}
+
+.erro-404{
+  width:min(100%,760px);
+  text-align:center;
+  padding:48px 28px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:28px;
+  background:rgba(255,255,255,.06);
+  -webkit-backdrop-filter:blur(16px);
+  backdrop-filter:blur(16px);
+  box-shadow:0 22px 60px rgba(0,0,0,.35);
+}
+
+.erro-404 img{
+  width:150px;
+  height:150px;
+  object-fit:contain;
+  margin-bottom:16px;
+}
+
+.codigo-erro{
+  color:#ffd23f;
+  font-size:72px;
+  line-height:1;
+  font-weight:900;
+  margin:0 0 10px;
+}
+
+.erro-404 h1{
+  font-size:38px;
+  line-height:1.15;
+  margin-bottom:12px;
+}
+
+.erro-404 p{
+  color:#e7e7e7;
+  font-size:18px;
+}
