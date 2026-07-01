@@ -47,3 +47,93 @@ function controlarBotaoTopo(){
 
 window.addEventListener('scroll', controlarBotaoTopo, { passive:true });
 window.addEventListener('load', controlarBotaoTopo);
+
+// ===== Versão 2.0: carrossel, lightbox e profundidade do banner =====
+const slides = Array.from(document.querySelectorAll('.slide'));
+const pontosContainer = document.querySelector('.carrossel-pontos');
+const botaoAnterior = document.querySelector('.carrossel-controle.anterior');
+const botaoProximo = document.querySelector('.carrossel-controle.proximo');
+let slideAtual = 0;
+let intervaloCarrossel;
+
+function mostrarSlide(indice){
+  if(!slides.length) return;
+  slideAtual = (indice + slides.length) % slides.length;
+  slides.forEach((slide, i) => slide.classList.toggle('ativo', i === slideAtual));
+  document.querySelectorAll('.carrossel-pontos button').forEach((ponto, i) => {
+    ponto.classList.toggle('ativo', i === slideAtual);
+    ponto.setAttribute('aria-pressed', i === slideAtual ? 'true' : 'false');
+  });
+}
+
+function iniciarCarrossel(){
+  clearInterval(intervaloCarrossel);
+  intervaloCarrossel = setInterval(() => mostrarSlide(slideAtual + 1), 4500);
+}
+
+if(slides.length && pontosContainer){
+  slides.forEach((_, i) => {
+    const ponto = document.createElement('button');
+    ponto.type = 'button';
+    ponto.setAttribute('aria-label', `Mostrar produto ${i + 1}`);
+    ponto.addEventListener('click', () => {
+      mostrarSlide(i);
+      iniciarCarrossel();
+    });
+    pontosContainer.appendChild(ponto);
+  });
+  botaoAnterior?.addEventListener('click', () => { mostrarSlide(slideAtual - 1); iniciarCarrossel(); });
+  botaoProximo?.addEventListener('click', () => { mostrarSlide(slideAtual + 1); iniciarCarrossel(); });
+  mostrarSlide(0);
+  iniciarCarrossel();
+}
+
+const lightbox = document.querySelector('.lightbox');
+const lightboxImagem = lightbox?.querySelector('img');
+const lightboxLegenda = lightbox?.querySelector('p');
+const lightboxFechar = lightbox?.querySelector('.lightbox-fechar');
+let ultimoFoco = null;
+
+function abrirLightbox(botao){
+  if(!lightbox || !lightboxImagem || !lightboxLegenda) return;
+  const imagem = botao.querySelector('img');
+  const legenda = botao.querySelector('figcaption')?.textContent || imagem?.alt || 'Imagem ampliada';
+  if(!imagem) return;
+  ultimoFoco = document.activeElement;
+  lightboxImagem.src = imagem.src;
+  lightboxImagem.alt = imagem.alt;
+  lightboxLegenda.textContent = legenda;
+  lightbox.hidden = false;
+  document.body.style.overflow = 'hidden';
+  lightboxFechar?.focus();
+}
+
+function fecharLightbox(){
+  if(!lightbox) return;
+  lightbox.hidden = true;
+  document.body.style.overflow = '';
+  if(lightboxImagem) lightboxImagem.src = '';
+  ultimoFoco?.focus?.();
+}
+
+document.querySelectorAll('.abrir-lightbox').forEach(botao => {
+  botao.addEventListener('click', () => abrirLightbox(botao));
+});
+lightboxFechar?.addEventListener('click', fecharLightbox);
+lightbox?.addEventListener('click', evento => {
+  if(evento.target === lightbox) fecharLightbox();
+});
+window.addEventListener('keydown', evento => {
+  if(evento.key === 'Escape' && lightbox && !lightbox.hidden) fecharLightbox();
+});
+
+const bannerProfundidade = document.querySelector('.banner-profundidade');
+if(bannerProfundidade && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  bannerProfundidade.addEventListener('pointermove', evento => {
+    const rect = bannerProfundidade.getBoundingClientRect();
+    const mx = ((evento.clientX - rect.left) / rect.width - .5).toFixed(3);
+    const my = ((evento.clientY - rect.top) / rect.height - .5).toFixed(3);
+    bannerProfundidade.style.setProperty('--mx', mx);
+    bannerProfundidade.style.setProperty('--my', my);
+  }, { passive:true });
+}

@@ -10,7 +10,12 @@
   <meta name="keywords" content="gráfica em Betim, ART Brother, cadernos personalizados, impressão, encadernação, placas Pix, chaveiros personalizados, revelação de fotos, personalizados Betim">
   <meta name="author" content="ART Brother Soluções Gráficas">
 
-  <link rel="icon" href="logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" href="favicon/favicon.ico">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="preload" as="image" href="img/banner-desktop.png">
+  <link rel="preload" as="image" href="logo.png">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -40,10 +45,10 @@
 
 <main>
 
-  <section id="inicio" class="banner-area">
+  <section id="inicio" class="banner-area banner-profundidade">
     <picture>
       <source media="(max-width: 768px)" srcset="img/banner-mobile.png">
-      <img src="img/banner-desktop.png" alt="Banner ART Brother Soluções Gráficas" class="banner">
+      <img src="img/banner-desktop.png" alt="Banner ART Brother Soluções Gráficas" class="banner" fetchpriority="high">
     </picture>
   </section>
 
@@ -55,6 +60,51 @@
     </a>
   </section>
 
+  <section class="secao carrossel-produtos reveal" aria-labelledby="titulo-carrossel">
+    <h2 id="titulo-carrossel">Mais procurados</h2>
+    <p class="subtitulo">Produtos em destaque passando automaticamente para ajudar o cliente a escolher mais rápido.</p>
+
+    <div class="carrossel" aria-roledescription="carrossel">
+      <button class="carrossel-controle anterior" type="button" aria-label="Produto anterior">‹</button>
+      <div class="carrossel-trilha">
+        <article class="slide ativo">
+          <img loading="lazy" src="img/caderno.jpeg" alt="Cadernos personalizados ART Brother">
+          <div>
+            <span class="etiqueta">Personalizados</span>
+            <h3>Cadernos Personalizados</h3>
+            <p>Capas exclusivas com nome, foto, empresa ou tema especial.</p>
+          </div>
+        </article>
+        <article class="slide">
+          <img loading="lazy" src="img/pix.jpeg" alt="Placas Pix personalizadas">
+          <div>
+            <span class="etiqueta">Para negócios</span>
+            <h3>Placas Pix</h3>
+            <p>Mais praticidade e identidade visual para receber pagamentos.</p>
+          </div>
+        </article>
+        <article class="slide">
+          <img loading="lazy" src="img/chaveiro.jpeg" alt="Chaveiros personalizados em acrílico">
+          <div>
+            <span class="etiqueta">Lembranças</span>
+            <h3>Chaveiros</h3>
+            <p>Ótimos para presentes, lembrancinhas e divulgação da sua marca.</p>
+          </div>
+        </article>
+        <article class="slide">
+          <img loading="lazy" src="img/fotos.png" alt="Revelação de fotografias">
+          <div>
+            <span class="etiqueta">Memórias</span>
+            <h3>Revelação de Fotos</h3>
+            <p>Impressão de momentos especiais com ótimo acabamento.</p>
+          </div>
+        </article>
+      </div>
+      <button class="carrossel-controle proximo" type="button" aria-label="Próximo produto">›</button>
+    </div>
+    <div class="carrossel-pontos" aria-label="Selecionar produto do carrossel"></div>
+  </section>
+
   <section id="produtos" class="secao reveal">
     <h2>Produtos em Destaque</h2>
     <p class="subtitulo">Conheça alguns dos produtos mais procurados da ART Brother.</p>
@@ -62,7 +112,7 @@
     <div class="grade">
 
       <article class="card">
-        <img src="img/bobzinho.jpeg" alt="Livro de Colorir Bobzinho e sua Turma">
+        <img loading="lazy" src="img/bobzinho.jpeg" alt="Livro de Colorir Bobzinho e sua Turma">
         <h3>Livro de Colorir Bobzinho e sua Turma</h3>
         <p>Livro exclusivo com atividades e ilustrações criadas para estimular a criatividade das crianças.</p>
         <strong class="preco">Consulte os valores</strong>
@@ -70,7 +120,7 @@
       </article>
 
       <article class="card">
-        <img src="img/caderno.jpeg" alt="Cadernos Personalizados">
+        <img loading="lazy" src="img/caderno.jpeg" alt="Cadernos Personalizados">
         <h3>Cadernos Personalizados</h3>
         <p>Cadernos com capas exclusivas, personalizados com nome, foto, empresa ou tema de sua escolha.</p>
         <strong class="preco">Consulte os valores</strong>
@@ -78,7 +128,7 @@
       </article>
 
       <article class="card">
-        <img src="img/chaveiro.jpeg" alt="Chaveiros Personalizados">
+        <img loading="lazy" src="img/chaveiro.jpeg" alt="Chaveiros Personalizados">
         <h3>Chaveiros Personalizados</h3>
         <p>Chaveiros em acrílico quadrado personalizados com foto, nome, logotipo ou arte exclusiva.</p>
         <strong class="preco">Consulte os valores</strong>
@@ -86,7 +136,7 @@
       </article>
 
       <article class="card">
-        <img src="img/pix.jpeg" alt="Placas Pix Personalizadas">
+        <img loading="lazy" src="img/pix.jpeg" alt="Placas Pix Personalizadas">
         <h3>Placas Pix Personalizadas</h3>
         <p>Placas personalizadas com QR Code Pix para facilitar os pagamentos do seu negócio.</p>
         <strong class="preco">Consulte os valores</strong>
@@ -94,7 +144,7 @@
       </article>
 
       <article class="card">
-        <img src="img/fotos.png" alt="Revelação de Fotografias">
+        <img loading="lazy" src="img/fotos.png" alt="Revelação de Fotografias">
         <h3>Revelação de Fotografias</h3>
         <p>Revele seus melhores momentos com alta qualidade e excelente acabamento.</p>
         <strong class="preco">Consulte os valores</strong>
@@ -109,15 +159,15 @@
     <p class="subtitulo">Alguns produtos personalizados produzidos pela ART Brother.</p>
 
     <div class="galeria-grid">
-      <figure class="galeria-item"><img src="img/galeria/galeria01.jpeg" alt="Caderno Personalizado"><figcaption>Cadernos Personalizados</figcaption></figure>
-      <figure class="galeria-item"><img src="img/galeria/galeria02.jpeg" alt="Placa Pix Personalizada"><figcaption>Placas Pix</figcaption></figure>
-      <figure class="galeria-item"><img src="img/galeria/galeria03.jpeg" alt="Placa com Foto Personalizada"><figcaption>Placas com Foto</figcaption></figure>
-      <figure class="galeria-item"><img src="img/galeria/galeria04.jpeg" alt="Livro de Colorir Bobzinho e sua Turma"><figcaption>Livro de Colorir</figcaption></figure>
-      <figure class="galeria-item"><img src="img/galeria/galeria05.jpeg" alt="Capinha de Celular Personalizada"><figcaption>Capinhas Personalizadas</figcaption></figure>
-      <figure class="galeria-item"><img src="img/galeria/galeria06.jpeg" alt="Caderneta Pet Personalizada"><figcaption>Cadernetas Pets</figcaption></figure>
-      <figure class="galeria-item"><img src="img/galeria/galeria07.jpeg" alt="Topo de Bolo Personalizado"><figcaption>Topos de Bolo</figcaption></figure>
-      <figure class="galeria-item"><img src="img/galeria/galeria08.jpeg" alt="Encadernação"><figcaption>Encadernação</figcaption></figure>
-      <figure class="galeria-item"><img src="img/galeria/galeria09.jpeg" alt="Revelação de Fotografias"><figcaption>Revelação de Fotos</figcaption></figure>
+      <figure class="galeria-item"><button class="abrir-lightbox" type="button" aria-label="Ampliar imagem"><img loading="lazy" src="img/galeria/galeria01.jpeg" alt="Caderno Personalizado"><figcaption>Cadernos Personalizados</figcaption></button></figure>
+      <figure class="galeria-item"><button class="abrir-lightbox" type="button" aria-label="Ampliar imagem"><img loading="lazy" src="img/galeria/galeria02.jpeg" alt="Placa Pix Personalizada"><figcaption>Placas Pix</figcaption></button></figure>
+      <figure class="galeria-item"><button class="abrir-lightbox" type="button" aria-label="Ampliar imagem"><img loading="lazy" src="img/galeria/galeria03.jpeg" alt="Placa com Foto Personalizada"><figcaption>Placas com Foto</figcaption></button></figure>
+      <figure class="galeria-item"><button class="abrir-lightbox" type="button" aria-label="Ampliar imagem"><img loading="lazy" src="img/galeria/galeria04.jpeg" alt="Livro de Colorir Bobzinho e sua Turma"><figcaption>Livro de Colorir</figcaption></button></figure>
+      <figure class="galeria-item"><button class="abrir-lightbox" type="button" aria-label="Ampliar imagem"><img loading="lazy" src="img/galeria/galeria05.jpeg" alt="Capinha de Celular Personalizada"><figcaption>Capinhas Personalizadas</figcaption></button></figure>
+      <figure class="galeria-item"><button class="abrir-lightbox" type="button" aria-label="Ampliar imagem"><img loading="lazy" src="img/galeria/galeria06.jpeg" alt="Caderneta Pet Personalizada"><figcaption>Cadernetas Pets</figcaption></button></figure>
+      <figure class="galeria-item"><button class="abrir-lightbox" type="button" aria-label="Ampliar imagem"><img loading="lazy" src="img/galeria/galeria07.jpeg" alt="Topo de Bolo Personalizado"><figcaption>Topos de Bolo</figcaption></button></figure>
+      <figure class="galeria-item"><button class="abrir-lightbox" type="button" aria-label="Ampliar imagem"><img loading="lazy" src="img/galeria/galeria08.jpeg" alt="Encadernação"><figcaption>Encadernação</figcaption></button></figure>
+      <figure class="galeria-item"><button class="abrir-lightbox" type="button" aria-label="Ampliar imagem"><img loading="lazy" src="img/galeria/galeria09.jpeg" alt="Revelação de Fotografias"><figcaption>Revelação de Fotos</figcaption></button></figure>
     </div>
   </section>
 
@@ -257,7 +307,14 @@
 
 <button class="voltar-topo" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Voltar ao topo">↑</button>
 
-<script src="script.js"></script>
+
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Imagem ampliada" hidden>
+  <button class="lightbox-fechar" type="button" aria-label="Fechar imagem ampliada">×</button>
+  <img src="" alt="">
+  <p></p>
+</div>
+
+<script src="script.js" defer></script>
 
 </body>
 </html>
