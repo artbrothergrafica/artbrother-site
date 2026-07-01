@@ -180,3 +180,37 @@ function orientarFavorito(){
 
 botaoCompartilhar?.addEventListener('click', compartilharSite);
 botaoFavorito?.addEventListener('click', orientarFavorito);
+
+
+// ===== PWA: registro do service worker e botão instalar aplicativo =====
+const botaoInstalarApp = document.querySelector('.botao-instalar-app');
+let eventoInstalacaoPWA = null;
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./service-worker.js').catch(() => {});
+  });
+}
+
+window.addEventListener('beforeinstallprompt', evento => {
+  evento.preventDefault();
+  eventoInstalacaoPWA = evento;
+  if (botaoInstalarApp) botaoInstalarApp.hidden = false;
+});
+
+botaoInstalarApp?.addEventListener('click', async () => {
+  if (!eventoInstalacaoPWA) {
+    mostrarAviso('No celular, abra o menu do navegador e escolha “Adicionar à tela inicial” para instalar o app da ART Brother.');
+    return;
+  }
+  eventoInstalacaoPWA.prompt();
+  await eventoInstalacaoPWA.userChoice.catch(() => null);
+  eventoInstalacaoPWA = null;
+  botaoInstalarApp.hidden = true;
+});
+
+window.addEventListener('appinstalled', () => {
+  eventoInstalacaoPWA = null;
+  if (botaoInstalarApp) botaoInstalarApp.hidden = true;
+  mostrarAviso('App da ART Brother instalado com sucesso!');
+});

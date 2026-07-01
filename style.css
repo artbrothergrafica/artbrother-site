@@ -1383,3 +1383,22 @@ button:focus-visible{
     bottom:76px;
   }
 }
+
+
+/* ===== PWA: botão de instalação do aplicativo ===== */
+.botao-instalar-app{
+  background:linear-gradient(135deg,#0d6efd,#00b4d8);
+  color:#fff !important;
+  box-shadow:0 6px 18px rgba(13,110,253,.32) !important;
+}
+
+.botao-instalar-app:hover,
+.botao-instalar-app:focus-visible{
+  transform:translateY(-3px);
+  filter:brightness(1.05);
+  box-shadow:0 10px 28px rgba(13,110,253,.45) !important;
+}
+
+.botao-instalar-app[hidden]{
+  display:none !important;
+}
