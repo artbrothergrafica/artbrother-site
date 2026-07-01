@@ -647,12 +647,23 @@ body{
 }
 
 .botao-instagram{
-  background:linear-gradient(135deg,var(--instagram-1),var(--instagram-2),var(--instagram-3));
-  box-shadow:0 6px 18px rgba(253,29,29,.28);
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:16px 36px;
+    border-radius:12px;
+    color:#fff;
+    font-weight:900;
+    text-decoration:none;
+    background:linear-gradient(45deg,#405DE6,#5851DB,#833AB4,#C13584,#E1306C,#FD1D1D,#F56040,#FCAF45,#FFDC80);
+    transition:.3s;
+    box-shadow:0 6px 18px rgba(193,53,132,.35);
 }
 
 .botao-instagram:hover{
-  filter:brightness(1.05);
+    transform:translateY(-3px);
+    box-shadow:0 10px 28px rgba(193,53,132,.5);
 }
 
 .botoes-fixos{
