@@ -1,4 +1,4 @@
-const CACHE_NAME = 'art-brother-v1.0.0';
+const CACHE_NAME = 'art-brother-v5.1.0-oficial';
 const CORE_ASSETS = [
   './',
   './index.html',
@@ -11,7 +11,13 @@ const CORE_ASSETS = [
   './favicon/favicon-32x32.png',
   './favicon/apple-touch-icon.png',
   './favicon/favicon-192x192.png',
-  './favicon/favicon-512x512.png'
+  './favicon/favicon-512x512.png',
+  './favicon/favicon-48x48.png',
+  './favicon/favicon-64x64.png',
+  './favicon/favicon-180x180.png',
+  './favicon/android-chrome-192x192.png',
+  './favicon/android-chrome-512x512.png',
+  './favicon/favicon.ico'
 ];
 
 self.addEventListener('install', event => {
