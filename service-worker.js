@@ -1,4 +1,4 @@
-const CACHE_NAME = 'art-brother-v5.1.0-oficial';
+const CACHE_NAME = 'art-brother-v5.2.0-galeria';
 const CORE_ASSETS = [
   './',
   './index.html',
@@ -17,7 +17,31 @@ const CORE_ASSETS = [
   './favicon/favicon-180x180.png',
   './favicon/android-chrome-192x192.png',
   './favicon/android-chrome-512x512.png',
-  './favicon/favicon.ico'
+  './favicon/favicon.ico',
+  './img/bobzinho.jpeg',
+  './img/bobzinho-praia.jpeg',
+  './img/bobzinho-aniversario.jpeg',
+  './img/bobzinho-arte.jpeg',
+  './img/cadernetas-pet.jpeg',
+  './img/caderno-professora.jpeg',
+  './img/cadernos-personalizados.jpeg',
+  './img/chaveiros-personalizados.jpeg',
+  './img/encadernacao-seguranca.jpeg',
+  './img/placa-com-foto.jpeg',
+  './img/placa-pix.jpeg',
+  './img/topo-de-bolo.jpeg',
+  './img/galeria/bobzinho.jpeg',
+  './img/galeria/bobzinho-praia.jpeg',
+  './img/galeria/bobzinho-aniversario.jpeg',
+  './img/galeria/bobzinho-arte.jpeg',
+  './img/galeria/cadernetas-pet.jpeg',
+  './img/galeria/caderno-professora.jpeg',
+  './img/galeria/cadernos-personalizados.jpeg',
+  './img/galeria/chaveiros-personalizados.jpeg',
+  './img/galeria/encadernacao-seguranca.jpeg',
+  './img/galeria/placa-com-foto.jpeg',
+  './img/galeria/placa-pix.jpeg',
+  './img/galeria/topo-de-bolo.jpeg'
 ];
 
 self.addEventListener('install', event => {

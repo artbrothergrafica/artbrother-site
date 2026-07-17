@@ -1402,3 +1402,19 @@ button:focus-visible{
 .botao-instalar-app[hidden]{
   display:none !important;
 }
+
+
+/* Atualização da galeria de produtos — julho de 2026 */
+.galeria-item{
+  background:linear-gradient(145deg,#eef7ff,#ffffff);
+}
+.galeria-item img{
+  object-fit:contain;
+  padding:8px;
+}
+.galeria-item figcaption{
+  padding-top:42px;
+}
+@media(max-width:900px){
+  .galeria-item{height:320px;}
+}
