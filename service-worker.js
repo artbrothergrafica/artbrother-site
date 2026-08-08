@@ -1,4 +1,4 @@
-const CACHE_NAME = 'art-brother-v5.2.0-galeria';
+const CACHE_NAME = 'art-brother-v5.3.0-galeria-produto';
 const CORE_ASSETS = [
   './',
   './index.html',

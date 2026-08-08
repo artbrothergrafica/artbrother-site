@@ -176,10 +176,14 @@
 
     <div class="grade">
 
-      <article class="card">
-        <img loading="lazy" src="img/bobzinho.jpeg" alt="Livro de Colorir Bobzinho e sua Turma">
+      <article class="card card-com-galeria">
+        <button class="produto-galeria-capa abrir-galeria-produto" type="button" data-galeria="livro-colorir" aria-label="Ver galeria do Livro de Colorir Bobzinho">
+          <img loading="lazy" src="img/bobzinho.jpeg" alt="Livro de Colorir Bobzinho e sua Turma">
+          <span>Ver 4 fotos</span>
+        </button>
         <h3>Livro de Colorir Bobzinho</h3>
         <p>Livro exclusivo com atividades e ilustrações para estimular a criatividade das crianças.</p>
+        <button class="botao-ver-galeria abrir-galeria-produto" type="button" data-galeria="livro-colorir">Ver fotos do produto</button>
         <strong class="preco">Consulte os valores</strong>
         <a href="https://wa.me/5531987167190?text=Olá!%20Gostaria%20de%20fazer%20um%20orçamento%20do%20Livro%20de%20Colorir%20Bobzinho." target="_blank" rel="noopener">Chamar no WhatsApp</a>
       </article>
@@ -248,10 +252,7 @@
     <p class="subtitulo">Alguns produtos personalizados produzidos pela ART Brother.</p>
 
     <div class="galeria-grid">
-      <figure class="galeria-item"><button class="abrir-lightbox" type="button" aria-label="Ampliar Livro de Colorir"><img loading="lazy" src="img/galeria/bobzinho.jpeg" alt="Livro de Colorir Bobzinho"><figcaption>Livro de Colorir</figcaption></button></figure>
-      <figure class="galeria-item"><button class="abrir-lightbox" type="button" aria-label="Ampliar Bobzinho na Praia"><img loading="lazy" src="img/galeria/bobzinho-praia.jpeg" alt="Página de colorir com tema de praia"><figcaption>Bobzinho na Praia</figcaption></button></figure>
-      <figure class="galeria-item"><button class="abrir-lightbox" type="button" aria-label="Ampliar Festa do Bobzinho"><img loading="lazy" src="img/galeria/bobzinho-aniversario.jpeg" alt="Página de colorir com festa de aniversário"><figcaption>Festa do Bobzinho</figcaption></button></figure>
-      <figure class="galeria-item"><button class="abrir-lightbox" type="button" aria-label="Ampliar Bobzinho Criativo"><img loading="lazy" src="img/galeria/bobzinho-arte.jpeg" alt="Página de colorir com atividade artística"><figcaption>Bobzinho Criativo</figcaption></button></figure>
+      <figure class="galeria-item galeria-item-produto"><button class="abrir-galeria-produto" type="button" data-galeria="livro-colorir" aria-label="Ver as 4 fotos do Livro de Colorir"><img loading="lazy" src="img/galeria/bobzinho.jpeg" alt="Livro de Colorir Bobzinho"><figcaption>Livro de Colorir <small>4 fotos — clique para ver</small></figcaption></button></figure>
       <figure class="galeria-item"><button class="abrir-lightbox" type="button" aria-label="Ampliar Cadernetas Pet"><img loading="lazy" src="img/galeria/cadernetas-pet.jpeg" alt="Cadernetas de saúde e vacinação para pets"><figcaption>Cadernetas Pet</figcaption></button></figure>
       <figure class="galeria-item"><button class="abrir-lightbox" type="button" aria-label="Ampliar Caderno Personalizado"><img loading="lazy" src="img/galeria/caderno-professora.jpeg" alt="Caderno floral personalizado para professora"><figcaption>Caderno Personalizado</figcaption></button></figure>
       <figure class="galeria-item"><button class="abrir-lightbox" type="button" aria-label="Ampliar Modelos de Cadernos"><img loading="lazy" src="img/galeria/cadernos-personalizados.jpeg" alt="Coleção de cadernos personalizados"><figcaption>Modelos de Cadernos</figcaption></button></figure>
@@ -418,10 +419,16 @@
 <button class="voltar-topo" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Voltar ao topo">↑</button>
 
 
-<div class="lightbox" role="dialog" aria-modal="true" aria-label="Imagem ampliada" hidden>
-  <button class="lightbox-fechar" type="button" aria-label="Fechar imagem ampliada">×</button>
-  <img src="" alt="">
-  <p></p>
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Galeria de imagens" hidden>
+  <button class="lightbox-fechar" type="button" aria-label="Fechar galeria">×</button>
+  <button class="lightbox-navegacao lightbox-anterior" type="button" aria-label="Foto anterior">‹</button>
+  <div class="lightbox-conteudo">
+    <img src="" alt="">
+    <p></p>
+    <span class="lightbox-contador" aria-live="polite"></span>
+    <div class="lightbox-miniaturas" aria-label="Escolher foto"></div>
+  </div>
+  <button class="lightbox-navegacao lightbox-proximo" type="button" aria-label="Próxima foto">›</button>
 </div>
 
 <script src="script.js" defer></script>

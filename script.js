@@ -92,20 +92,77 @@ const lightbox = document.querySelector('.lightbox');
 const lightboxImagem = lightbox?.querySelector('img');
 const lightboxLegenda = lightbox?.querySelector('p');
 const lightboxFechar = lightbox?.querySelector('.lightbox-fechar');
+const lightboxAnterior = lightbox?.querySelector('.lightbox-anterior');
+const lightboxProximo = lightbox?.querySelector('.lightbox-proximo');
+const lightboxContador = lightbox?.querySelector('.lightbox-contador');
+const lightboxMiniaturas = lightbox?.querySelector('.lightbox-miniaturas');
 let ultimoFoco = null;
+let imagensAbertas = [];
+let imagemAtual = 0;
+let toqueInicialX = null;
 
-function abrirLightbox(botao){
-  if(!lightbox || !lightboxImagem || !lightboxLegenda) return;
-  const imagem = botao.querySelector('img');
-  const legenda = botao.querySelector('figcaption')?.textContent || imagem?.alt || 'Imagem ampliada';
-  if(!imagem) return;
-  ultimoFoco = document.activeElement;
+const galeriasProdutos = {
+  'livro-colorir': [
+    { src:'img/galeria/bobzinho.jpeg', alt:'Capa do Livro de Colorir Bobzinho', legenda:'Livro de Colorir Bobzinho' },
+    { src:'img/galeria/bobzinho-praia.jpeg', alt:'Página de colorir com Bobzinho na praia', legenda:'Bobzinho na Praia' },
+    { src:'img/galeria/bobzinho-aniversario.jpeg', alt:'Página de colorir com a festa do Bobzinho', legenda:'Festa do Bobzinho' },
+    { src:'img/galeria/bobzinho-arte.jpeg', alt:'Página de colorir com Bobzinho fazendo arte', legenda:'Bobzinho Criativo' }
+  ]
+};
+
+function mostrarImagemLightbox(indice){
+  if(!imagensAbertas.length || !lightboxImagem || !lightboxLegenda) return;
+  imagemAtual = (indice + imagensAbertas.length) % imagensAbertas.length;
+  const imagem = imagensAbertas[imagemAtual];
   lightboxImagem.src = imagem.src;
   lightboxImagem.alt = imagem.alt;
-  lightboxLegenda.textContent = legenda;
+  lightboxLegenda.textContent = imagem.legenda;
+  if(lightboxContador){
+    lightboxContador.textContent = imagensAbertas.length > 1 ? `${imagemAtual + 1} de ${imagensAbertas.length}` : '';
+  }
+  lightboxMiniaturas?.querySelectorAll('button').forEach((botao, i) => {
+    botao.classList.toggle('ativo', i === imagemAtual);
+    botao.setAttribute('aria-current', i === imagemAtual ? 'true' : 'false');
+  });
+}
+
+function montarMiniaturas(){
+  if(!lightboxMiniaturas) return;
+  lightboxMiniaturas.replaceChildren();
+  imagensAbertas.forEach((imagem, i) => {
+    const botao = document.createElement('button');
+    botao.type = 'button';
+    botao.setAttribute('aria-label', `Mostrar foto ${i + 1}: ${imagem.legenda}`);
+    const miniatura = document.createElement('img');
+    miniatura.src = imagem.src;
+    miniatura.alt = '';
+    botao.appendChild(miniatura);
+    botao.addEventListener('click', () => mostrarImagemLightbox(i));
+    lightboxMiniaturas.appendChild(botao);
+  });
+}
+
+function abrirGaleria(imagens, focoOrigem){
+  if(!lightbox || !imagens?.length) return;
+  ultimoFoco = focoOrigem || document.activeElement;
+  imagensAbertas = imagens;
+  imagemAtual = 0;
+  montarMiniaturas();
+  mostrarImagemLightbox(0);
+  const temVarias = imagens.length > 1;
+  lightboxAnterior?.toggleAttribute('hidden', !temVarias);
+  lightboxProximo?.toggleAttribute('hidden', !temVarias);
+  if(lightboxMiniaturas) lightboxMiniaturas.hidden = !temVarias;
   lightbox.hidden = false;
   document.body.style.overflow = 'hidden';
   lightboxFechar?.focus();
+}
+
+function abrirLightbox(botao){
+  const imagem = botao.querySelector('img');
+  const legenda = botao.querySelector('figcaption')?.textContent || imagem?.alt || 'Imagem ampliada';
+  if(!imagem) return;
+  abrirGaleria([{ src:imagem.src, alt:imagem.alt, legenda }], botao);
 }
 
 function fecharLightbox(){
@@ -113,19 +170,37 @@ function fecharLightbox(){
   lightbox.hidden = true;
   document.body.style.overflow = '';
   if(lightboxImagem) lightboxImagem.src = '';
+  imagensAbertas = [];
   ultimoFoco?.focus?.();
 }
 
 document.querySelectorAll('.abrir-lightbox').forEach(botao => {
   botao.addEventListener('click', () => abrirLightbox(botao));
 });
+document.querySelectorAll('.abrir-galeria-produto').forEach(botao => {
+  botao.addEventListener('click', () => abrirGaleria(galeriasProdutos[botao.dataset.galeria], botao));
+});
+lightboxAnterior?.addEventListener('click', () => mostrarImagemLightbox(imagemAtual - 1));
+lightboxProximo?.addEventListener('click', () => mostrarImagemLightbox(imagemAtual + 1));
 lightboxFechar?.addEventListener('click', fecharLightbox);
 lightbox?.addEventListener('click', evento => {
   if(evento.target === lightbox) fecharLightbox();
 });
 window.addEventListener('keydown', evento => {
-  if(evento.key === 'Escape' && lightbox && !lightbox.hidden) fecharLightbox();
+  if(!lightbox || lightbox.hidden) return;
+  if(evento.key === 'Escape') fecharLightbox();
+  if(evento.key === 'ArrowLeft' && imagensAbertas.length > 1) mostrarImagemLightbox(imagemAtual - 1);
+  if(evento.key === 'ArrowRight' && imagensAbertas.length > 1) mostrarImagemLightbox(imagemAtual + 1);
 });
+lightbox?.addEventListener('touchstart', evento => {
+  toqueInicialX = evento.changedTouches[0]?.clientX ?? null;
+}, { passive:true });
+lightbox?.addEventListener('touchend', evento => {
+  if(toqueInicialX === null || imagensAbertas.length < 2) return;
+  const deslocamento = (evento.changedTouches[0]?.clientX ?? toqueInicialX) - toqueInicialX;
+  if(Math.abs(deslocamento) > 45) mostrarImagemLightbox(imagemAtual + (deslocamento < 0 ? 1 : -1));
+  toqueInicialX = null;
+}, { passive:true });
 
 const bannerProfundidade = document.querySelector('.banner-profundidade');
 if(bannerProfundidade && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
