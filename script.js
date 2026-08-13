@@ -146,6 +146,25 @@ const galeriasProdutos = {
     { src:'img/galeria/bobzinho-aniversario.jpeg', alt:'Livrinho de colorir com a festa do Bobzinho', legenda:'Festa do Bobzinho' },
     { src:'img/galeria/bobzinho-arte.jpeg', alt:'Livrinho de colorir com Bobzinho fazendo arte', legenda:'Bobzinho Criativo' }
   ],
+  'festas-eventos': [
+    { src:'img/personalizados-festas-eventos.png', alt:'Arte de Personalizados para Festas e Eventos', legenda:'Personalizados para Festas e Eventos' },
+    { src:'img/galeria/festas-eventos-caixas-milk.jpeg', alt:'Caixas Milk e personalizados para festa neon', legenda:'Caixas Milk e Personalizados' },
+    { src:'img/galeria/festas-eventos-kits-adesivos.jpeg', alt:'Kit de caixas, adesivos e rótulos personalizados para festa neon', legenda:'Kit Completo com Adesivos e Rótulos' },
+    { src:'img/galeria/festas-eventos-kit-completo.jpeg', alt:'Kit completo de personalizados para festa neon', legenda:'Kit Completo para Festa' }
+  ],
+  'cadernetas-pet': [
+    { src:'img/cadernetas-pet.jpeg', alt:'Modelos de cadernetas de saúde e vacinação para pets', legenda:'Modelos de Cadernetas Pet' },
+    { src:'img/galeria/caderneta-pet-cachorro-macho.jpeg', alt:'Caderneta de vacinação para cachorro macho', legenda:'Caderneta para Cachorro — Macho' },
+    { src:'img/galeria/caderneta-pet-cachorro-femea.jpeg', alt:'Caderneta de vacinação para cachorro fêmea', legenda:'Caderneta para Cachorro — Fêmea' },
+    { src:'img/galeria/caderneta-pet-passaro.jpeg', alt:'Caderneta de saúde e cuidados para pássaro', legenda:'Caderneta para Pássaro' },
+    { src:'img/galeria/caderneta-pet-gato-macho.jpeg', alt:'Caderneta de saúde para gato macho', legenda:'Caderneta para Gato — Macho' },
+    { src:'img/galeria/caderneta-pet-gato-femea.jpeg', alt:'Caderneta de saúde para gato fêmea', legenda:'Caderneta para Gato — Fêmea' }
+  ],
+  'cadernos-personalizados': [
+    { src:'img/galeria/cadernos-personalizados-modelos.jpeg', alt:'Coleção com vários modelos de cadernos personalizados', legenda:'Modelos de Cadernos Personalizados' },
+    { src:'img/galeria/caderno-personalizado-professora.jpeg', alt:'Caderno floral roxo personalizado para professora', legenda:'Caderno Personalizado para Professora' },
+    { src:'img/galeria/cadernos-personalizados-anuncio.jpeg', alt:'Anúncio de cadernos personalizados ART Brother', legenda:'Cadernos Personalizados do Seu Jeito' }
+  ],
   'fotografias-polaroids': [
     { src:'img/galeria/impressao-fotografias.png', alt:'Impressão de fotografias em vários tamanhos e molduras até A3', legenda:'Impressão de Fotografias' },
     { src:'img/galeria/impressao-polaroids.png', alt:'Impressão de Polaroids em vários tamanhos', legenda:'Impressão de Polaroids' }

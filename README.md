@@ -1,5 +1,44 @@
 # ART Brother Site v5 PWA Final
 
+## Atualização v5.15 — nomenclatura de fotografias
+
+- Serviço de fotografias padronizado como “Impressão de Fotografias”
+- Nome atualizado em “Nossos Serviços”, apresentação e dados de busca do site
+- Cache renovado para computadores, tablets e celulares
+
+## Atualização v5.14 — galeria de Cadernos Personalizados
+
+- Cadernos Personalizados reunidos em um único produto com 3 fotos
+- Coleção de modelos, caderno da professora e arte promocional
+- Acesso à galeria pelo cartão do produto e por “Nossos Trabalhos”
+
+## Atualização v5.13 — revisão completa e Cadernetas Pet
+
+- Cadernetas Pet reunidas em um único produto com galeria de 6 fotos
+- Cinco novas capas para cães, gatos e pássaros
+- Pacote completado com os recursos antigos usados pelo site
+- Revisão estrutural para desktop, tablet e celular
+
+## Atualização v5.12 — trabalhos e serviços
+
+- “Nossos Trabalhos” atualizado com os novos serviços adicionados ao site
+- Cartões de Visita, Adesivos, Festas e Eventos e Fotografias em destaque
+- “Nossos Serviços” ampliado e alinhado com os serviços do novo banner
+- Galerias dos produtos com várias fotos preservadas
+
+## Atualização v5.11 — galeria de festas e eventos
+
+- Produto “Personalizados para Festas e Eventos” com galeria de 4 fotos
+- Arte principal e três fotos reais reunidas no mesmo produto
+- Navegação por setas, miniaturas, teclado e gesto de deslizar no celular
+- Item do produto também adicionado à galeria “Nossos Trabalhos”
+
+## Atualização v5.10 — correção definitiva de Produtos
+
+- A seção Produtos não depende mais de animação ou JavaScript para aparecer
+- Produtos permanecem visíveis mesmo com conexão lenta ou cache antigo
+- O PWA busca primeiro o HTML, CSS e JavaScript atualizados
+
 ## Atualização v5.9 — Produtos no celular
 
 - Corrigida a falha que podia deixar a seção Produtos invisível no mobile

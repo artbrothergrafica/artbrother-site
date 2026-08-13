@@ -669,6 +669,14 @@ footer{
   transform:translateY(0);
 }
 
+/* Produtos devem permanecer visíveis mesmo sem JavaScript ou com cache antigo. */
+#produtos,
+.produtos-secao{
+  opacity:1 !important;
+  visibility:visible !important;
+  transform:none !important;
+}
+
 @keyframes pulse{
   0%{transform:scale(1);}
   50%{transform:scale(1.06);}

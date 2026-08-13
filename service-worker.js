@@ -1,4 +1,4 @@
-const CACHE_NAME = 'art-brother-v5.9.0-produtos-mobile';
+const CACHE_NAME = 'art-brother-v5.15.0-revisao-completa';
 const CORE_ASSETS = [
   './',
   './index.html',
@@ -41,6 +41,17 @@ const CORE_ASSETS = [
   './img/galeria/bobzinho-praia.jpeg',
   './img/galeria/bobzinho-aniversario.jpeg',
   './img/galeria/bobzinho-arte.jpeg',
+  './img/galeria/festas-eventos-caixas-milk.jpeg',
+  './img/galeria/festas-eventos-kits-adesivos.jpeg',
+  './img/galeria/festas-eventos-kit-completo.jpeg',
+  './img/galeria/caderneta-pet-cachorro-macho.jpeg',
+  './img/galeria/caderneta-pet-cachorro-femea.jpeg',
+  './img/galeria/caderneta-pet-passaro.jpeg',
+  './img/galeria/caderneta-pet-gato-macho.jpeg',
+  './img/galeria/caderneta-pet-gato-femea.jpeg',
+  './img/galeria/cadernos-personalizados-modelos.jpeg',
+  './img/galeria/caderno-personalizado-professora.jpeg',
+  './img/galeria/cadernos-personalizados-anuncio.jpeg',
   './img/galeria/adesivos-cortados.jpeg',
   './img/galeria/impressao-fotografias.png',
   './img/galeria/impressao-polaroids.png',
@@ -79,13 +90,26 @@ self.addEventListener('fetch', event => {
 
   if (request.mode === 'navigate') {
     event.respondWith(
-      fetch(request)
+      fetch(request, { cache:'no-store' })
         .then(response => {
           const clone = response.clone();
           caches.open(CACHE_NAME).then(cache => cache.put('./index.html', clone));
           return response;
         })
         .catch(() => caches.match('./index.html').then(response => response || caches.match('./404.html')))
+    );
+    return;
+  }
+
+  if (request.destination === 'style' || request.destination === 'script') {
+    event.respondWith(
+      fetch(request, { cache:'no-store' })
+        .then(response => {
+          const clone = response.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(request, clone));
+          return response;
+        })
+        .catch(() => caches.match(request))
     );
     return;
   }

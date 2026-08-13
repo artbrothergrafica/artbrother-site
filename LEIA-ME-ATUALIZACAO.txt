@@ -4,7 +4,7 @@ Este pacote contém:
 - index.html atualizado;
 - style.css atualizado;
 - script.js atualizado;
-- service-worker.js com cache v5.9.0, correção de Produtos no mobile e novos banners;
+- service-worker.js com cache v5.15.0, revisão completa e novas galerias;
 - as 4 fotos do Livrinho de Colorir Bobzinho em img/ e img/galeria/;
 - o produto “Cartões de Visita” com a arte oficial enviada;
 - o produto “Adesivos Cortados” com arte promocional e foto na galeria de trabalhos;
@@ -12,6 +12,9 @@ Este pacote contém:
 - o produto “Impressão de Fotografias e Polaroids” com galeria de 2 fotos;
 - os demais arquivos enviados, com nomes normalizados.
 - novos banners desktop e mobile em img/banner-desktop.png e img/banner-mobile.png.
+- produto “Personalizados para Festas e Eventos” com 4 fotos reunidas em uma galeria.
+- produto “Cadernetas Pet” com 6 fotos reunidas em uma galeria.
+- produto “Cadernos Personalizados” com 3 fotos reunidas em uma galeria.
 
 COMO FUNCIONA A GALERIA:
 - O Livrinho de Colorir aparece como um único produto.
@@ -29,11 +32,42 @@ CORREÇÃO DE PRODUTOS v5.9.0:
 - os cartões agora aparecem em uma única coluna e ocupam somente a largura da tela;
 - textos, imagens e botões não transbordam para fora dos cartões.
 
+CORREÇÃO DEFINITIVA v5.10.0:
+- a seção Produtos foi retirada da animação de entrada e fica sempre visível;
+- a correção funciona mesmo se o JavaScript demorar ou estiver desativado;
+- o PWA prioriza os arquivos atualizados para evitar a tela branca mostrada no celular.
+
+GALERIA DE FESTAS E EVENTOS v5.11.0:
+- o produto abre a arte principal e três fotos reais;
+- é possível navegar pelas setas, miniaturas, teclado ou deslizando no celular;
+- as imagens permanecem agrupadas em um único produto.
+
+ATUALIZAÇÃO v5.12.0:
+- “Nossos Trabalhos” mostra os novos produtos adicionados ao site;
+- “Nossos Serviços” inclui cartões, adesivos, festas, livrinhos, fotos, Polaroids, placas com foto e linha pet;
+- produtos com várias fotos continuam abrindo suas galerias.
+
+REVISÃO COMPLETA v5.13.0:
+- Cadernetas Pet abre a imagem principal e cinco novas capas;
+- modelos para cachorro macho, cachorro fêmea, pássaro, gato macho e gato fêmea;
+- arquivos antigos necessários ao site foram incorporados ao pacote completo;
+- estrutura revisada para computador, tablet e celular.
+
+GALERIA DE CADERNOS v5.14.0:
+- o produto Cadernos Personalizados abre três fotos;
+- coleção de modelos, caderno personalizado para professora e anúncio promocional;
+- imagens agrupadas em um único produto, como no Livrinho de Colorir.
+
+CORREÇÃO DE FOTOGRAFIAS v5.15.0:
+- serviço de fotografias padronizado como “Impressão de Fotografias”;
+- o nome correto aparece em “Nossos Serviços” e nos dados de busca do site;
+- cache atualizado para aplicar a correção no computador e no celular.
+
 IMPORTANTE:
-Este é um pacote de atualização baseado nos arquivos enviados. Os novos banners desktop e mobile já estão incluídos. Mantenha os demais recursos originais do site e a pasta favicon/ no servidor ao substituir o conteúdo.
+Este pacote está completo: inclui páginas, estilos, scripts, imagens, banners, galerias e favicons usados pelo site.
 
 Para publicar:
 1. Faça backup do site atual.
-2. Envie index.html, style.css, script.js e service-worker.js para a raiz.
-3. Envie a pasta img mantendo a estrutura.
+2. Substitua todo o conteúdo publicado pelos arquivos deste pacote, mantendo a estrutura de pastas.
+3. Confirme que as pastas img e favicon foram enviadas integralmente.
 4. Limpe o cache do navegador ou desinstale/reinstale o PWA antigo.

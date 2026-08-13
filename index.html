@@ -23,7 +23,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png?v=5.1.0">
   <link rel="icon" href="favicon/favicon.ico?v=5.1.0">
   <link rel="manifest" href="site.webmanifest?v=5.1.0">
-  <link rel="preload" as="image" href="img/banner-desktop.png?v=5.8.0">
+  <link rel="preload" as="image" href="img/banner-desktop.png?v=5.15.0">
   <link rel="preload" as="image" href="logo.png">
 
   <link rel="canonical" href="https://artbrother.com.br/">
@@ -33,7 +33,7 @@
     "@type": "LocalBusiness",
     "@id": "https://artbrother.com.br/#empresa",
     "name": "ART Brother Soluções Gráficas",
-    "description": "Gráfica em Betim-MG especializada em impressões, encadernação, cadernos personalizados, chaveiros, placas Pix, revelação de fotos e personalizados em geral.",
+    "description": "Gráfica em Betim-MG especializada em impressões, encadernação, cadernos personalizados, chaveiros, placas Pix, impressão de fotografias e personalizados em geral.",
     "url": "https://artbrother.com.br/",
     "logo": "https://artbrother.com.br/logo.png",
     "image": "https://artbrother.com.br/logo.png",
@@ -82,11 +82,11 @@
       {"@type":"Offer","itemOffered":{"@type":"Service","name":"Personalizados para festas e eventos"}},
       {"@type":"Offer","itemOffered":{"@type":"Service","name":"Impressão de fotografias e Polaroids"}},
       {"@type":"Offer","itemOffered":{"@type":"Service","name":"Livrinhos de colorir personalizados"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Revelação de fotos"}}
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Impressão de fotografias"}}
     ]
   }
   </script>
-  <link rel="stylesheet" href="style.css?v=5.9.0">
+  <link rel="stylesheet" href="style.css?v=5.15.0">
 </head>
 
 <body>
@@ -124,7 +124,7 @@
 
   <section class="chamada reveal">
     <h1>Transformando ideias em produtos personalizados</h1>
-    <p>Impressões, cadernos, livros de colorir, chaveiros, placas Pix e revelação de fotos com qualidade, carinho e atendimento direto pelo WhatsApp.</p>
+    <p>Impressões, cadernos, livros de colorir, chaveiros, placas Pix e impressão de fotografias com qualidade, carinho e atendimento direto pelo WhatsApp.</p>
     <a class="botao-principal" href="https://wa.me/5531987167190?text=Olá!%20Vim%20pelo%20site%20da%20ART%20Brother%20e%20gostaria%20de%20fazer%20um%20orçamento." target="_blank" rel="noopener">
       Solicitar orçamento
     </a>
@@ -175,7 +175,7 @@
     <div class="carrossel-pontos" aria-label="Selecionar produto do carrossel"></div>
   </section>
 
-  <section id="produtos" class="secao reveal">
+  <section id="produtos" class="secao produtos-secao">
     <h2>Produtos em Destaque</h2>
     <p class="subtitulo">Conheça alguns dos produtos mais procurados da ART Brother.</p>
 
@@ -209,10 +209,14 @@
         <a href="https://wa.me/5531987167190?text=Olá!%20Gostaria%20de%20fazer%20um%20orçamento%20de%20adesivos%20cortados." target="_blank" rel="noopener">Chamar no WhatsApp</a>
       </article>
 
-      <article class="card">
-        <img loading="lazy" src="img/personalizados-festas-eventos.png?v=5.5.1" alt="Personalizados para festas e eventos: Caixa Milk, Pirâmide, Tubolata, Caixa Bala e Sacolas">
+      <article class="card card-com-galeria">
+        <button class="produto-galeria-capa abrir-galeria-produto" type="button" data-galeria="festas-eventos" aria-label="Ver galeria de Personalizados para Festas e Eventos">
+          <img loading="lazy" src="img/personalizados-festas-eventos.png?v=5.11.0" alt="Personalizados para festas e eventos: Caixa Milk, Pirâmide, Tubolata, Caixa Bala e Sacolas">
+          <span>Ver 4 fotos</span>
+        </button>
         <h3>Personalizados para Festas e Eventos</h3>
         <p>Produzimos caixas Milk, Pirâmide, Tubolata/Tubo, Caixa Bala, sacolas personalizadas e outros itens para deixar sua festa ainda mais especial.</p>
+        <button class="botao-ver-galeria abrir-galeria-produto" type="button" data-galeria="festas-eventos">Ver fotos do produto</button>
         <strong class="preco">Consulte os valores</strong>
         <a href="https://wa.me/5531987167190?text=Olá!%20Gostaria%20de%20fazer%20um%20orçamento%20de%20personalizados%20para%20festas%20e%20eventos." target="_blank" rel="noopener">Chamar no WhatsApp</a>
       </article>
@@ -229,18 +233,26 @@
         <a href="https://wa.me/5531987167190?text=Olá!%20Gostaria%20de%20fazer%20um%20orçamento%20de%20impressão%20de%20fotografias%20e%20Polaroids." target="_blank" rel="noopener">Chamar no WhatsApp</a>
       </article>
 
-      <article class="card">
-        <img loading="lazy" src="img/cadernos-personalizados.jpeg" alt="Modelos de cadernos personalizados">
+      <article class="card card-com-galeria">
+        <button class="produto-galeria-capa abrir-galeria-produto" type="button" data-galeria="cadernos-personalizados" aria-label="Ver galeria de Cadernos Personalizados">
+          <img loading="lazy" src="img/cadernos-personalizados.jpeg?v=5.14.0" alt="Modelos de cadernos personalizados">
+          <span>Ver 3 fotos</span>
+        </button>
         <h3>Cadernos Personalizados</h3>
         <p>Capas exclusivas com nome, profissão, empresa, fotografia ou tema especial.</p>
+        <button class="botao-ver-galeria abrir-galeria-produto" type="button" data-galeria="cadernos-personalizados">Ver fotos do produto</button>
         <strong class="preco">Consulte os valores</strong>
         <a href="https://wa.me/5531987167190?text=Olá!%20Gostaria%20de%20fazer%20um%20orçamento%20de%20cadernos%20personalizados." target="_blank" rel="noopener">Chamar no WhatsApp</a>
       </article>
 
-      <article class="card">
-        <img loading="lazy" src="img/cadernetas-pet.jpeg" alt="Cadernetas de saúde e vacinação para animais">
+      <article class="card card-com-galeria">
+        <button class="produto-galeria-capa abrir-galeria-produto" type="button" data-galeria="cadernetas-pet" aria-label="Ver galeria de Cadernetas Pet">
+          <img loading="lazy" src="img/cadernetas-pet.jpeg?v=5.13.0" alt="Cadernetas de saúde e vacinação para animais">
+          <span>Ver 6 fotos</span>
+        </button>
         <h3>Cadernetas Pet</h3>
         <p>Cadernetas de saúde e vacinação personalizadas para cães, gatos e outros pets.</p>
+        <button class="botao-ver-galeria abrir-galeria-produto" type="button" data-galeria="cadernetas-pet">Ver fotos do produto</button>
         <strong class="preco">Consulte os valores</strong>
         <a href="https://wa.me/5531987167190?text=Olá!%20Gostaria%20de%20um%20orçamento%20de%20caderneta%20pet." target="_blank" rel="noopener">Chamar no WhatsApp</a>
       </article>
@@ -294,11 +306,12 @@
 
     <div class="galeria-grid">
       <figure class="galeria-item galeria-item-produto"><button class="abrir-galeria-produto" type="button" data-galeria="livro-colorir" aria-label="Ver as 4 fotos do Livrinho de Colorir"><img loading="lazy" src="img/galeria/bobzinho.jpeg" alt="Livrinho de Colorir Bobzinho"><figcaption>Livrinho de Colorir <small>4 fotos — clique para ver</small></figcaption></button></figure>
-      <figure class="galeria-item galeria-item-produto"><button class="abrir-galeria-produto" type="button" data-galeria="fotografias-polaroids" aria-label="Ver as 2 fotos de Impressão de Fotografias e Polaroids"><img loading="lazy" src="img/galeria/impressao-fotografias.png" alt="Impressão de Fotografias e Polaroids"><figcaption>Fotografias e Polaroids <small>2 fotos — clique para ver</small></figcaption></button></figure>
+      <figure class="galeria-item"><button class="abrir-lightbox" type="button" aria-label="Ampliar Cartões de Visita"><img loading="lazy" src="img/cartoes-de-visita.png" alt="Cartões de visita personalizados produzidos pela ART Brother"><figcaption>Cartões de Visita</figcaption></button></figure>
       <figure class="galeria-item"><button class="abrir-lightbox" type="button" aria-label="Ampliar Adesivos Cortados"><img loading="lazy" src="img/galeria/adesivos-cortados.jpeg" alt="Adesivos cortados personalizados produzidos pela ART Brother"><figcaption>Adesivos Cortados</figcaption></button></figure>
-      <figure class="galeria-item"><button class="abrir-lightbox" type="button" aria-label="Ampliar Cadernetas Pet"><img loading="lazy" src="img/galeria/cadernetas-pet.jpeg" alt="Cadernetas de saúde e vacinação para pets"><figcaption>Cadernetas Pet</figcaption></button></figure>
-      <figure class="galeria-item"><button class="abrir-lightbox" type="button" aria-label="Ampliar Caderno Personalizado"><img loading="lazy" src="img/galeria/caderno-professora.jpeg" alt="Caderno floral personalizado para professora"><figcaption>Caderno Personalizado</figcaption></button></figure>
-      <figure class="galeria-item"><button class="abrir-lightbox" type="button" aria-label="Ampliar Modelos de Cadernos"><img loading="lazy" src="img/galeria/cadernos-personalizados.jpeg" alt="Coleção de cadernos personalizados"><figcaption>Modelos de Cadernos</figcaption></button></figure>
+      <figure class="galeria-item galeria-item-produto"><button class="abrir-galeria-produto" type="button" data-galeria="festas-eventos" aria-label="Ver as 4 fotos de Personalizados para Festas e Eventos"><img loading="lazy" src="img/galeria/festas-eventos-caixas-milk.jpeg" alt="Personalizados para Festas e Eventos"><figcaption>Personalizados para Festas <small>4 fotos — clique para ver</small></figcaption></button></figure>
+      <figure class="galeria-item galeria-item-produto"><button class="abrir-galeria-produto" type="button" data-galeria="fotografias-polaroids" aria-label="Ver as 2 fotos de Impressão de Fotografias e Polaroids"><img loading="lazy" src="img/galeria/impressao-fotografias.png" alt="Impressão de Fotografias e Polaroids"><figcaption>Fotografias e Polaroids <small>2 fotos — clique para ver</small></figcaption></button></figure>
+      <figure class="galeria-item galeria-item-produto"><button class="abrir-galeria-produto" type="button" data-galeria="cadernetas-pet" aria-label="Ver as 6 fotos de Cadernetas Pet"><img loading="lazy" src="img/galeria/caderneta-pet-cachorro-macho.jpeg" alt="Cadernetas de saúde e vacinação para pets"><figcaption>Cadernetas Pet <small>6 fotos — clique para ver</small></figcaption></button></figure>
+      <figure class="galeria-item galeria-item-produto"><button class="abrir-galeria-produto" type="button" data-galeria="cadernos-personalizados" aria-label="Ver as 3 fotos de Cadernos Personalizados"><img loading="lazy" src="img/galeria/cadernos-personalizados-modelos.jpeg" alt="Coleção de cadernos personalizados"><figcaption>Cadernos Personalizados <small>3 fotos — clique para ver</small></figcaption></button></figure>
       <figure class="galeria-item"><button class="abrir-lightbox" type="button" aria-label="Ampliar Chaveiros com Foto"><img loading="lazy" src="img/galeria/chaveiros-personalizados.jpeg" alt="Chaveiros personalizados com fotos"><figcaption>Chaveiros com Foto</figcaption></button></figure>
       <figure class="galeria-item"><button class="abrir-lightbox" type="button" aria-label="Ampliar Encadernação"><img loading="lazy" src="img/galeria/encadernacao-seguranca.jpeg" alt="Guia profissional encadernado"><figcaption>Encadernação</figcaption></button></figure>
       <figure class="galeria-item"><button class="abrir-lightbox" type="button" aria-label="Ampliar Placa com Foto"><img loading="lazy" src="img/galeria/placa-com-foto.jpeg" alt="Placa de acrílico personalizada com fotografia"><figcaption>Placa com Foto</figcaption></button></figure>
@@ -309,17 +322,22 @@
 
   <section id="servicos" class="secao clara reveal">
     <h2>Nossos Serviços</h2>
-    <p class="subtitulo">Serviços gráficos e personalizados para o seu dia a dia.</p>
+    <p class="subtitulo">Soluções gráficas, lembranças e personalizados para o seu dia a dia, negócio ou evento.</p>
 
     <div class="servicos">
-      <div>🖨️ <strong>Impressões</strong><span>Coloridas e preto e branco</span></div>
-      <div>📚 <strong>Cadernos</strong><span>Personalizados em espiral</span></div>
-      <div>📑 <strong>Encadernação</strong><span>Apostilas em espiral</span></div>
-      <div>📸 <strong>Fotos</strong><span>Revelação e Polaroids</span></div>
+      <div>🖨️ <strong>Impressões e Cópias</strong><span>Coloridas e preto e branco</span></div>
+      <div>💳 <strong>Cartões de Visita</strong><span>Personalizados com acabamento profissional</span></div>
+      <div>🏷️ <strong>Adesivos e Tags</strong><span>Fotográfico, vinil, holográfico e à prova d’água</span></div>
+      <div>🎉 <strong>Personalizados para Festas</strong><span>Caixas Milk, Pirâmide, Tubolata, Caixa Bala e sacolas</span></div>
+      <div>📖 <strong>Livrinhos de Colorir</strong><span>Temas infantis e personalizados</span></div>
+      <div>📸 <strong>Impressão de Fotografias e Polaroids</strong><span>Vários tamanhos e molduras até A3</span></div>
+      <div>📚 <strong>Cadernos Personalizados</strong><span>Capas exclusivas em espiral</span></div>
+      <div>📑 <strong>Encadernação</strong><span>Apostilas, manuais e trabalhos</span></div>
       <div>🎂 <strong>Topos de Bolo</strong><span>Temas personalizados</span></div>
-      <div>🔑 <strong>Chaveiros</strong><span>Acrílico quadrado 3x3</span></div>
+      <div>🔑 <strong>Chaveiros</strong><span>Com fotos, nomes, logotipos ou artes</span></div>
       <div>💳 <strong>Placas Pix</strong><span>Personalizadas com QR Code</span></div>
-      <div>🏷️ <strong>Tags e Adesivos</strong><span>Para lembrancinhas e produtos</span></div>
+      <div>🖼️ <strong>Placas com Foto</strong><span>Presentes e lembranças especiais</span></div>
+      <div>🐾 <strong>Linha Pet</strong><span>Cadernetas de saúde e vacinação</span></div>
     </div>
   </section>
 
@@ -474,7 +492,7 @@
   <button class="lightbox-navegacao lightbox-proximo" type="button" aria-label="Próxima foto">›</button>
 </div>
 
-<script src="script.js?v=5.9.0" defer></script>
+<script src="script.js?v=5.15.0" defer></script>
 
 </body>
 </html>
