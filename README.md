@@ -5,6 +5,7 @@
 - Produto “Livrinho de Colorir Bobzinho” com galeria de 4 fotos no mesmo card
 - Navegação da galeria por setas, miniaturas, teclado e gesto de deslizar
 - Novo produto “Cartões de Visita”
+- Arte oficial aplicada ao card do produto “Cartões de Visita”
 - Novo produto “Adesivos Personalizados”
 - Links de orçamento pelo WhatsApp específicos para os novos produtos
 
