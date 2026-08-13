@@ -15,7 +15,7 @@ if('IntersectionObserver' in window){
         observador.unobserve(entrada.target);
       }
     });
-  }, { threshold:0.12, rootMargin:'0px 0px -80px 0px' });
+  }, { threshold:0, rootMargin:'0px 0px -40px 0px' });
 
   itens.forEach(item => observador.observe(item));
 }else{

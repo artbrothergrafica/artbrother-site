@@ -1749,6 +1749,13 @@ button:focus-visible{
     padding-bottom:84px;
   }
 
+  /* No celular, seções longas não podem depender da porcentagem visível. */
+  .reveal,
+  .reveal.ativo{
+    opacity:1;
+    transform:none;
+  }
+
   .topo{
     width:100%;
     min-height:70px !important;
@@ -1825,17 +1832,20 @@ button:focus-visible{
   .grade{
     width:100%;
     max-width:520px;
-    grid-template-columns:minmax(0,1fr);
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) !important;
     gap:20px;
     margin-inline:auto;
   }
 
   .card{
     width:100%;
+    max-width:100%;
     min-width:0;
     border-radius:18px;
-    display:flex;
+    display:flex !important;
     flex-direction:column;
+    overflow:hidden;
   }
 
   .card img,
@@ -1871,6 +1881,7 @@ button:focus-visible{
     margin:0;
     padding:0 17px;
     font-size:15px;
+    overflow-wrap:anywhere;
   }
 
   .botao-ver-galeria{

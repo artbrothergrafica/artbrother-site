@@ -4,7 +4,7 @@ Este pacote contém:
 - index.html atualizado;
 - style.css atualizado;
 - script.js atualizado;
-- service-worker.js com cache v5.8.0, correção mobile e novos banners;
+- service-worker.js com cache v5.9.0, correção de Produtos no mobile e novos banners;
 - as 4 fotos do Livrinho de Colorir Bobzinho em img/ e img/galeria/;
 - o produto “Cartões de Visita” com a arte oficial enviada;
 - o produto “Adesivos Cortados” com arte promocional e foto na galeria de trabalhos;
@@ -23,6 +23,11 @@ CORREÇÃO MOBILE v5.7.0:
 - não há rolagem horizontal nas larguras de 320 px a 900 px;
 - o carrossel também pode ser controlado deslizando para os lados;
 - a galeria funciona em telas verticais e horizontais.
+
+CORREÇÃO DE PRODUTOS v5.9.0:
+- corrigida a animação que podia manter a seção Produtos invisível no celular;
+- os cartões agora aparecem em uma única coluna e ocupam somente a largura da tela;
+- textos, imagens e botões não transbordam para fora dos cartões.
 
 IMPORTANTE:
 Este é um pacote de atualização baseado nos arquivos enviados. Os novos banners desktop e mobile já estão incluídos. Mantenha os demais recursos originais do site e a pasta favicon/ no servidor ao substituir o conteúdo.

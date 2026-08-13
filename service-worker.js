@@ -1,4 +1,4 @@
-const CACHE_NAME = 'art-brother-v5.8.0-banners';
+const CACHE_NAME = 'art-brother-v5.9.0-produtos-mobile';
 const CORE_ASSETS = [
   './',
   './index.html',

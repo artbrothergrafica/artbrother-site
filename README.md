@@ -1,5 +1,12 @@
 # ART Brother Site v5 PWA Final
 
+## Atualização v5.9 — Produtos no celular
+
+- Corrigida a falha que podia deixar a seção Produtos invisível no mobile
+- Cartões forçados em uma coluna, sem corte ou transbordamento lateral
+- Textos longos e botões ajustados para telas pequenas
+- Cache renovado para aplicar a correção imediatamente
+
 ## Atualização v5.8 — novos banners
 
 - Novo banner horizontal aplicado à versão desktop
