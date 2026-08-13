@@ -1,5 +1,12 @@
 # ART Brother Site v5 PWA Final
 
+## Atualização v5.16 — galeria mobile sem cortes
+
+- Capas verticais das Cadernetas Pet agora aparecem inteiras no celular
+- Visualizador usa a altura dinâmica disponível da tela
+- Legenda, contador, miniaturas e navegação não cortam mais a fotografia
+- Ajustes compatíveis com telas em posição vertical e horizontal
+
 ## Atualização v5.15 — nomenclatura de fotografias
 
 - Serviço de fotografias padronizado como “Impressão de Fotografias”

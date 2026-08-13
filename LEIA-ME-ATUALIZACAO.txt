@@ -4,7 +4,7 @@ Este pacote contém:
 - index.html atualizado;
 - style.css atualizado;
 - script.js atualizado;
-- service-worker.js com cache v5.15.0, revisão completa e novas galerias;
+- service-worker.js com cache v5.16.0, revisão completa e novas galerias;
 - as 4 fotos do Livrinho de Colorir Bobzinho em img/ e img/galeria/;
 - o produto “Cartões de Visita” com a arte oficial enviada;
 - o produto “Adesivos Cortados” com arte promocional e foto na galeria de trabalhos;
@@ -62,6 +62,12 @@ CORREÇÃO DE FOTOGRAFIAS v5.15.0:
 - serviço de fotografias padronizado como “Impressão de Fotografias”;
 - o nome correto aparece em “Nossos Serviços” e nos dados de busca do site;
 - cache atualizado para aplicar a correção no computador e no celular.
+
+GALERIA MOBILE v5.16.0:
+- corrigido o corte das capas verticais de Cadernetas Pet no celular;
+- a fotografia agora ocupa somente o espaço disponível e aparece inteira;
+- legenda, contador, miniaturas e botões permanecem acessíveis;
+- funcionamento ajustado para celular em posição vertical e horizontal.
 
 IMPORTANTE:
 Este pacote está completo: inclui páginas, estilos, scripts, imagens, banners, galerias e favicons usados pelo site.
