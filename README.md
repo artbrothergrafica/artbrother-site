@@ -1,5 +1,15 @@
 # ART Brother Site v5 PWA Final
 
+## Atualização v5.7 — correção mobile completa
+
+- Menu compacto, rolável e compatível com telas pequenas
+- Produtos organizados em uma coluna, sem cortes ou rolagem horizontal
+- Imagens, botões e textos fluidos entre 320 px e 900 px
+- Carrossel responsivo com gesto de deslizar no celular
+- Galeria e lightbox ajustados para retrato e paisagem
+- Botões flutuantes reposicionados para não cobrir o conteúdo
+- Cache do PWA renovado para carregar o novo layout
+
 ## Atualização v5.4
 
 - Produto “Livrinho de Colorir Bobzinho” com galeria de 4 fotos no mesmo card
@@ -10,6 +20,7 @@
 - Foto real de adesivos cortados adicionada à galeria de trabalhos
 - Novo produto “Personalizados para Festas e Eventos”
 - Arte oficial aplicada ao produto “Personalizados para Festas e Eventos”
+- Novo produto “Impressão de Fotografias e Polaroids” com galeria de 2 fotos
 - Links de orçamento pelo WhatsApp específicos para os novos produtos
 
 Versão final do site da ART Brother com recursos de aplicativo instalável (PWA).

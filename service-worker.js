@@ -1,4 +1,4 @@
-const CACHE_NAME = 'art-brother-v5.5.1-foto-festas';
+const CACHE_NAME = 'art-brother-v5.7.0-mobile';
 const CORE_ASSETS = [
   './',
   './index.html',
@@ -25,6 +25,8 @@ const CORE_ASSETS = [
   './img/cartoes-de-visita.png',
   './img/adesivos-cortados.png',
   './img/personalizados-festas-eventos.png',
+  './img/impressao-fotografias.png',
+  './img/impressao-polaroids.png',
   './img/cadernetas-pet.jpeg',
   './img/caderno-professora.jpeg',
   './img/cadernos-personalizados.jpeg',
@@ -38,6 +40,8 @@ const CORE_ASSETS = [
   './img/galeria/bobzinho-aniversario.jpeg',
   './img/galeria/bobzinho-arte.jpeg',
   './img/galeria/adesivos-cortados.jpeg',
+  './img/galeria/impressao-fotografias.png',
+  './img/galeria/impressao-polaroids.png',
   './img/galeria/cadernetas-pet.jpeg',
   './img/galeria/caderno-professora.jpeg',
   './img/galeria/cadernos-personalizados.jpeg',

@@ -22,10 +22,17 @@ if('IntersectionObserver' in window){
   itens.forEach(revelarElemento);
 }
 
-function alternarMenu(){
-  const aberto = menu.classList.toggle('aberto');
+function definirEstadoMenu(aberto){
+  if(!menu || !botaoMenu) return;
+  menu.classList.toggle('aberto', aberto);
   botaoMenu.classList.toggle('ativo', aberto);
   botaoMenu.setAttribute('aria-expanded', aberto ? 'true' : 'false');
+  botaoMenu.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
+}
+
+function alternarMenu(){
+  const aberto = menu.classList.toggle('aberto');
+  definirEstadoMenu(aberto);
 }
 
 if(botaoMenu && menu){
@@ -33,11 +40,26 @@ if(botaoMenu && menu){
 
   menu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      menu.classList.remove('aberto');
-      botaoMenu.classList.remove('ativo');
-      botaoMenu.setAttribute('aria-expanded', 'false');
+      definirEstadoMenu(false);
     });
   });
+
+  document.addEventListener('click', evento => {
+    if(menu.classList.contains('aberto') && !evento.target.closest('.topo')){
+      definirEstadoMenu(false);
+    }
+  });
+
+  window.addEventListener('keydown', evento => {
+    if(evento.key === 'Escape' && menu.classList.contains('aberto')){
+      definirEstadoMenu(false);
+      botaoMenu.focus();
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if(window.innerWidth > 900) definirEstadoMenu(false);
+  }, { passive:true });
 }
 
 function controlarBotaoTopo(){
@@ -53,8 +75,10 @@ const slides = Array.from(document.querySelectorAll('.slide'));
 const pontosContainer = document.querySelector('.carrossel-pontos');
 const botaoAnterior = document.querySelector('.carrossel-controle.anterior');
 const botaoProximo = document.querySelector('.carrossel-controle.proximo');
+const trilhaCarrossel = document.querySelector('.carrossel-trilha');
 let slideAtual = 0;
 let intervaloCarrossel;
+let toqueCarrosselX = null;
 
 function mostrarSlide(indice){
   if(!slides.length) return;
@@ -86,6 +110,20 @@ if(slides.length && pontosContainer){
   botaoProximo?.addEventListener('click', () => { mostrarSlide(slideAtual + 1); iniciarCarrossel(); });
   mostrarSlide(0);
   iniciarCarrossel();
+
+  trilhaCarrossel?.addEventListener('touchstart', evento => {
+    toqueCarrosselX = evento.changedTouches[0]?.clientX ?? null;
+  }, { passive:true });
+
+  trilhaCarrossel?.addEventListener('touchend', evento => {
+    if(toqueCarrosselX === null) return;
+    const deslocamento = (evento.changedTouches[0]?.clientX ?? toqueCarrosselX) - toqueCarrosselX;
+    if(Math.abs(deslocamento) > 45){
+      mostrarSlide(slideAtual + (deslocamento < 0 ? 1 : -1));
+      iniciarCarrossel();
+    }
+    toqueCarrosselX = null;
+  }, { passive:true });
 }
 
 const lightbox = document.querySelector('.lightbox');
@@ -107,6 +145,10 @@ const galeriasProdutos = {
     { src:'img/galeria/bobzinho-praia.jpeg', alt:'Livrinho de colorir com Bobzinho na praia', legenda:'Bobzinho na Praia' },
     { src:'img/galeria/bobzinho-aniversario.jpeg', alt:'Livrinho de colorir com a festa do Bobzinho', legenda:'Festa do Bobzinho' },
     { src:'img/galeria/bobzinho-arte.jpeg', alt:'Livrinho de colorir com Bobzinho fazendo arte', legenda:'Bobzinho Criativo' }
+  ],
+  'fotografias-polaroids': [
+    { src:'img/galeria/impressao-fotografias.png', alt:'Impressão de fotografias em vários tamanhos e molduras até A3', legenda:'Impressão de Fotografias' },
+    { src:'img/galeria/impressao-polaroids.png', alt:'Impressão de Polaroids em vários tamanhos', legenda:'Impressão de Polaroids' }
   ]
 };
 

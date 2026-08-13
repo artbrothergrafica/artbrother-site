@@ -4,17 +4,24 @@ Este pacote contém:
 - index.html atualizado;
 - style.css atualizado;
 - script.js atualizado;
-- service-worker.js com cache v5.5.1;
+- service-worker.js com cache v5.7.0 e correção mobile;
 - as 4 fotos do Livrinho de Colorir Bobzinho em img/ e img/galeria/;
 - o produto “Cartões de Visita” com a arte oficial enviada;
 - o produto “Adesivos Cortados” com arte promocional e foto na galeria de trabalhos;
 - o produto “Personalizados para Festas e Eventos” com a arte oficial enviada;
+- o produto “Impressão de Fotografias e Polaroids” com galeria de 2 fotos;
 - os demais arquivos enviados, com nomes normalizados.
 
 COMO FUNCIONA A GALERIA:
 - O Livrinho de Colorir aparece como um único produto.
 - Ao clicar na foto ou em “Ver fotos do produto”, abre uma galeria com 4 imagens.
 - É possível trocar a foto pelas setas, miniaturas, teclado ou deslizando no celular.
+
+CORREÇÃO MOBILE v5.7.0:
+- menu, cartões, carrossel, galeria, contato e botões flutuantes foram adaptados;
+- não há rolagem horizontal nas larguras de 320 px a 900 px;
+- o carrossel também pode ser controlado deslizando para os lados;
+- a galeria funciona em telas verticais e horizontais.
 
 IMPORTANTE:
 Este é um pacote de atualização baseado nos arquivos enviados. O index.html ainda usa recursos do site original, como img/banner-desktop.png, img/banner-mobile.png e a pasta favicon/. Mantenha esses arquivos no servidor ao substituir o conteúdo.
