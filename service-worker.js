@@ -1,4 +1,4 @@
-const CACHE_NAME = 'art-brother-v5.7.0-mobile';
+const CACHE_NAME = 'art-brother-v5.8.0-banners';
 const CORE_ASSETS = [
   './',
   './index.html',
@@ -19,6 +19,8 @@ const CORE_ASSETS = [
   './favicon/android-chrome-512x512.png',
   './favicon/favicon.ico',
   './img/bobzinho.jpeg',
+  './img/banner-desktop.png',
+  './img/banner-mobile.png',
   './img/bobzinho-praia.jpeg',
   './img/bobzinho-aniversario.jpeg',
   './img/bobzinho-arte.jpeg',

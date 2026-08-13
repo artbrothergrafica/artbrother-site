@@ -63,6 +63,7 @@ body{
 
 .banner-area picture{
   display:block;
+  line-height:0;
 }
 
 .banner{
@@ -1785,7 +1786,7 @@ button:focus-visible{
 
   .banner{
     height:auto;
-    object-fit:cover;
+    object-fit:contain;
   }
 
   .chamada{

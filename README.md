@@ -1,5 +1,12 @@
 # ART Brother Site v5 PWA Final
 
+## Atualização v5.8 — novos banners
+
+- Novo banner horizontal aplicado à versão desktop
+- Novo banner vertical aplicado automaticamente em celulares
+- Lista completa de serviços e fundo em tom gelo
+- Cache renovado para exibir as novas imagens imediatamente
+
 ## Atualização v5.7 — correção mobile completa
 
 - Menu compacto, rolável e compatível com telas pequenas
