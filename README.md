@@ -8,6 +8,8 @@
 - Arte oficial aplicada ao card do produto “Cartões de Visita”
 - Novo produto “Adesivos Cortados”, com opções fotográfica, vinil, holográfica e à prova d’água
 - Foto real de adesivos cortados adicionada à galeria de trabalhos
+- Novo produto “Personalizados para Festas e Eventos”
+- Arte oficial aplicada ao produto “Personalizados para Festas e Eventos”
 - Links de orçamento pelo WhatsApp específicos para os novos produtos
 
 Versão final do site da ART Brother com recursos de aplicativo instalável (PWA).

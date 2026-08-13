@@ -4,10 +4,11 @@ Este pacote contém:
 - index.html atualizado;
 - style.css atualizado;
 - script.js atualizado;
-- service-worker.js com cache v5.4.2;
+- service-worker.js com cache v5.5.1;
 - as 4 fotos do Livrinho de Colorir Bobzinho em img/ e img/galeria/;
 - o produto “Cartões de Visita” com a arte oficial enviada;
 - o produto “Adesivos Cortados” com arte promocional e foto na galeria de trabalhos;
+- o produto “Personalizados para Festas e Eventos” com a arte oficial enviada;
 - os demais arquivos enviados, com nomes normalizados.
 
 COMO FUNCIONA A GALERIA:

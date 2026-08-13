@@ -270,6 +270,86 @@ body{
   background:linear-gradient(135deg,#00bfe8,#2275df);
 }
 
+.produto-ilustracao-festa{
+  background:linear-gradient(145deg,#fff7fb,#eef9ff);
+}
+
+.produto-ilustracao-festa::before{
+  width:255px;
+  height:255px;
+  background:linear-gradient(135deg,rgba(255,21,132,.21),rgba(0,191,232,.20),rgba(255,202,18,.25));
+}
+
+.festa-item{
+  position:absolute;
+  z-index:1;
+  display:grid;
+  place-items:center;
+  border:5px solid #fff;
+  color:#fff;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.05em;
+  box-shadow:0 14px 28px rgba(40,26,54,.20);
+}
+
+.festa-caixa{
+  width:92px;
+  height:130px;
+  transform:translate(-78px,27px) rotate(-7deg);
+  border-radius:12px 12px 18px 18px;
+  background:linear-gradient(155deg,#ff1784,#bd24bc);
+}
+
+.festa-piramide{
+  width:105px;
+  height:112px;
+  transform:translate(6px,40px) rotate(4deg);
+  clip-path:polygon(50% 0,100% 100%,0 100%);
+  padding-top:54px;
+  background:linear-gradient(155deg,#ffbe00,#ff7b00);
+  font-size:23px;
+}
+
+.festa-tubo{
+  width:68px;
+  height:145px;
+  transform:translate(83px,13px) rotate(7deg);
+  border-radius:34px;
+  background:linear-gradient(155deg,#00c0e6,#2674de);
+  writing-mode:vertical-rl;
+}
+
+.festa-sacola{
+  width:118px;
+  height:88px;
+  transform:translate(11px,-70px) rotate(-2deg);
+  border-radius:10px;
+  background:linear-gradient(135deg,#5131b9,#e9007c);
+}
+
+.festa-sacola::before{
+  content:"";
+  position:absolute;
+  top:-25px;
+  width:50px;
+  height:35px;
+  border:6px solid #5131b9;
+  border-bottom:0;
+  border-radius:26px 26px 0 0;
+}
+
+.festa-confete{
+  position:absolute;
+  z-index:2;
+  font-size:26px;
+  font-weight:900;
+}
+
+.festa-confete-1{transform:translate(-117px,-102px) rotate(-15deg);color:#ffb400;}
+.festa-confete-2{transform:translate(119px,-91px);color:#ed167d;}
+.festa-confete-3{transform:translate(119px,104px) rotate(20deg);color:#00aada;}
+
 .card h3{
   font-size:23px;
   font-weight:900;

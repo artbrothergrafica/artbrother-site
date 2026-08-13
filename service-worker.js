@@ -1,4 +1,4 @@
-const CACHE_NAME = 'art-brother-v5.4.2-adesivos-cortados';
+const CACHE_NAME = 'art-brother-v5.5.1-foto-festas';
 const CORE_ASSETS = [
   './',
   './index.html',
@@ -24,6 +24,7 @@ const CORE_ASSETS = [
   './img/bobzinho-arte.jpeg',
   './img/cartoes-de-visita.png',
   './img/adesivos-cortados.png',
+  './img/personalizados-festas-eventos.png',
   './img/cadernetas-pet.jpeg',
   './img/caderno-professora.jpeg',
   './img/cadernos-personalizados.jpeg',
