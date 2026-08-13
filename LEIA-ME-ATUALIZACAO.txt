@@ -1,17 +1,24 @@
-ATUALIZAÇÃO DA GALERIA — ART BROTHER
+ATUALIZAÇÃO DE PRODUTOS E GALERIA — ART BROTHER
 
 Este pacote contém:
 - index.html atualizado;
 - style.css atualizado;
-- service-worker.js com cache v5.2.0;
-- as 12 novas imagens em img/ e img/galeria/;
+- script.js atualizado;
+- service-worker.js com cache v5.4.0;
+- as 4 fotos do Livrinho de Colorir Bobzinho em img/ e img/galeria/;
+- os novos produtos “Cartões de Visita” e “Adesivos Personalizados”;
 - os demais arquivos enviados, com nomes normalizados.
+
+COMO FUNCIONA A GALERIA:
+- O Livrinho de Colorir aparece como um único produto.
+- Ao clicar na foto ou em “Ver fotos do produto”, abre uma galeria com 4 imagens.
+- É possível trocar a foto pelas setas, miniaturas, teclado ou deslizando no celular.
 
 IMPORTANTE:
 Este é um pacote de atualização baseado nos arquivos enviados. O index.html ainda usa recursos do site original, como img/banner-desktop.png, img/banner-mobile.png e a pasta favicon/. Mantenha esses arquivos no servidor ao substituir o conteúdo.
 
 Para publicar:
 1. Faça backup do site atual.
-2. Envie index.html, style.css e service-worker.js para a raiz.
+2. Envie index.html, style.css, script.js e service-worker.js para a raiz.
 3. Envie a pasta img mantendo a estrutura.
 4. Limpe o cache do navegador ou desinstale/reinstale o PWA antigo.

@@ -103,10 +103,10 @@ let toqueInicialX = null;
 
 const galeriasProdutos = {
   'livro-colorir': [
-    { src:'img/galeria/bobzinho.jpeg', alt:'Capa do Livro de Colorir Bobzinho', legenda:'Livro de Colorir Bobzinho' },
-    { src:'img/galeria/bobzinho-praia.jpeg', alt:'Página de colorir com Bobzinho na praia', legenda:'Bobzinho na Praia' },
-    { src:'img/galeria/bobzinho-aniversario.jpeg', alt:'Página de colorir com a festa do Bobzinho', legenda:'Festa do Bobzinho' },
-    { src:'img/galeria/bobzinho-arte.jpeg', alt:'Página de colorir com Bobzinho fazendo arte', legenda:'Bobzinho Criativo' }
+    { src:'img/galeria/bobzinho.jpeg', alt:'Capa do Livrinho de Colorir Bobzinho', legenda:'Capa do Livrinho de Colorir Bobzinho' },
+    { src:'img/galeria/bobzinho-praia.jpeg', alt:'Livrinho de colorir com Bobzinho na praia', legenda:'Bobzinho na Praia' },
+    { src:'img/galeria/bobzinho-aniversario.jpeg', alt:'Livrinho de colorir com a festa do Bobzinho', legenda:'Festa do Bobzinho' },
+    { src:'img/galeria/bobzinho-arte.jpeg', alt:'Livrinho de colorir com Bobzinho fazendo arte', legenda:'Bobzinho Criativo' }
   ]
 };
 

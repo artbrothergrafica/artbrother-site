@@ -1,5 +1,13 @@
 # ART Brother Site v5 PWA Final
 
+## Atualização v5.4
+
+- Produto “Livrinho de Colorir Bobzinho” com galeria de 4 fotos no mesmo card
+- Navegação da galeria por setas, miniaturas, teclado e gesto de deslizar
+- Novo produto “Cartões de Visita”
+- Novo produto “Adesivos Personalizados”
+- Links de orçamento pelo WhatsApp específicos para os novos produtos
+
 Versão final do site da ART Brother com recursos de aplicativo instalável (PWA).
 
 Inclui:
