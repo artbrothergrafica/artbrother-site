@@ -1,4 +1,4 @@
-const CACHE_NAME = 'art-brother-v5.4.1-cartoes-visita';
+const CACHE_NAME = 'art-brother-v5.4.2-adesivos-cortados';
 const CORE_ASSETS = [
   './',
   './index.html',
@@ -23,6 +23,7 @@ const CORE_ASSETS = [
   './img/bobzinho-aniversario.jpeg',
   './img/bobzinho-arte.jpeg',
   './img/cartoes-de-visita.png',
+  './img/adesivos-cortados.png',
   './img/cadernetas-pet.jpeg',
   './img/caderno-professora.jpeg',
   './img/cadernos-personalizados.jpeg',
@@ -35,6 +36,7 @@ const CORE_ASSETS = [
   './img/galeria/bobzinho-praia.jpeg',
   './img/galeria/bobzinho-aniversario.jpeg',
   './img/galeria/bobzinho-arte.jpeg',
+  './img/galeria/adesivos-cortados.jpeg',
   './img/galeria/cadernetas-pet.jpeg',
   './img/galeria/caderno-professora.jpeg',
   './img/galeria/cadernos-personalizados.jpeg',
