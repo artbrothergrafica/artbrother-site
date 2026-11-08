@@ -1,8 +1,8 @@
 const CACHE_PREFIX = 'art-brother-';
-const CACHE_NAME = CACHE_PREFIX + 'v6.4.0';
+const CACHE_NAME = CACHE_PREFIX + 'v6.5.0';
 const CORE_ASSETS = [
- './index.html','./404.html','./style.css?v=6.4.0','./script.js?v=6.4.0',
- './logo.png','./site.webmanifest?v=6.4.0',
+ './index.html','./404.html','./style.css?v=6.5.0','./script.js?v=6.5.0',
+ './logo.png','./site.webmanifest?v=6.5.0',
  './favicon/favicon-192x192.png','./favicon/favicon-512x512.png'
 ];
 self.addEventListener('install', event => {
