@@ -144,6 +144,11 @@ let imagemAtual = 0;
 let toqueInicialX = null;
 
 const galeriasProdutos = {
+ 'cartoes-visita': [
+  {src:'img/cartoes-visita-capa-v66.webp',alt:'Anúncio de cartões de visita personalizados Art Brother',legenda:'Cartões de Visita Personalizados'},
+  {src:'img/cartoes-visita-foto-1-v66.webp',alt:'Cartões de visita Art Brother Novembro Azul em detalhe',legenda:'Cartões de Visita — Detalhes da Produção'},
+  {src:'img/cartoes-visita-foto-2-v66.webp',alt:'Conjunto de cartões de visita Art Brother Novembro Azul',legenda:'Cartões de Visita — Frente e Verso'}
+ ],
   'blocos-de-notas': [{src:'img/blocos-de-notas.webp',alt:'Blocos de notas personalizados Art Brother com capa kraft',legenda:'Blocos de Notas Personalizados'}],
   'livros-cadernos-wire-o': [
     {src:'img/livros-cadernos-wire-o-1.webp',alt:'Detalhes dos livros e cadernos personalizados Wire-O',legenda:'Livros e Cadernos Personalizados Wire-O — Detalhes'},

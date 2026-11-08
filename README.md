@@ -1,4 +1,4 @@
-# Art Brother Soluções Gráficas — v6.5.0
+# Art Brother Soluções Gráficas — v6.6.0
 
 Site estático completo para publicação em https://artbrother.com.br/.
 Veja `LEIA-ME-ATUALIZACAO.txt` para instruções de substituição e verificações.
