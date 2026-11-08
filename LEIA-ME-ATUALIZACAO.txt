@@ -1,4 +1,4 @@
-ART BROTHER — SITE COMPLETO v6.0.0
+ART BROTHER — SITE COMPLETO v6.4.0
 Atualizado em 08/11/2026
 
 COMO PUBLICAR
@@ -53,3 +53,22 @@ e preservação de caches de outras aplicações.
 Menu móvel, galeria e seletor de WhatsApp conferidos no navegador em desktop e
 em uma área de 390 x 844 pixels. O envio de mensagens não foi executado.
 Instalação PWA, comportamento em iPhone/Android reais e DNS não foram testados.
+
+ATUALIZAÇÃO v6.4.0 — AGENDA 2027
+Foto enviada adicionada ao cartão Agendas 2027, com ampliação ao clicar.
+Imagem convertida para WebP, preservando as dimensões e a arte.
+Atenção: o telefone (31) 98765-4321 e o Instagram @artbrother impressos
+na imagem diferem dos contatos do site. A imagem foi preservada como enviada.
+Os botões continuam usando os dois WhatsApps de vendas confirmados.
+
+ATUALIZAÇÃO v6.4.0 — LIVROS E CADERNOS WIRE-O
+Duas fotos otimizadas em WebP adicionadas ao novo produto e à galeria Nossos Trabalhos.
+Orçamento preserva o nome do produto nos dois WhatsApps. Agenda 2027 mantida.
+
+ATUALIZAÇÃO v6.4.0 — CAIXAS PERSONALIZADAS PARA FESTA
+Duas novas fotos otimizadas em WebP adicionadas à galeria de Personalizados para Festas e Eventos.
+Galeria agora com 6 imagens; fotos anteriores preservadas.
+
+ATUALIZAÇÃO v6.4.0 — BLOCOS DE NOTAS
+Imagem otimizada em WebP adicionada ao produto Blocos de Notas, com ampliação ao clicar.
+Todas as atualizações anteriores e os dois WhatsApps foram mantidos.

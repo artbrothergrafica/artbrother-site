@@ -144,6 +144,12 @@ let imagemAtual = 0;
 let toqueInicialX = null;
 
 const galeriasProdutos = {
+  'blocos-de-notas': [{src:'img/blocos-de-notas.webp',alt:'Blocos de notas personalizados Art Brother com capa kraft',legenda:'Blocos de Notas Personalizados'}],
+  'livros-cadernos-wire-o': [
+    {src:'img/livros-cadernos-wire-o-1.webp',alt:'Detalhes dos livros e cadernos personalizados Wire-O',legenda:'Livros e Cadernos Personalizados Wire-O — Detalhes'},
+    {src:'img/livros-cadernos-wire-o-2.webp',alt:'Livros e cadernos personalizados expostos na Art Brother',legenda:'Livros e Cadernos Personalizados Wire-O — Produção Art Brother'}
+  ],
+  'agenda-2027': [{ src:'img/agenda-2027.webp', alt:'Agenda 2027 personalizada Art Brother', legenda:'Agendas 2027 Personalizadas' }],
   'livro-colorir': [
     { src:'img/galeria/bobzinho.webp', alt:'Capa do Livrinho de Colorir Bobzinho', legenda:'Capa do Livrinho de Colorir Bobzinho' },
     { src:'img/galeria/bobzinho-praia.webp', alt:'Livrinho de colorir com Bobzinho na praia', legenda:'Bobzinho na Praia' },
@@ -154,7 +160,9 @@ const galeriasProdutos = {
     { src:'img/personalizados-festas-eventos.webp', alt:'Arte de Personalizados para Festas e Eventos', legenda:'Personalizados para Festas e Eventos' },
     { src:'img/galeria/festas-eventos-caixas-milk.webp', alt:'Caixas Milk e personalizados para festa neon', legenda:'Caixas Milk e Personalizados' },
     { src:'img/galeria/festas-eventos-kits-adesivos.webp', alt:'Kit de caixas, adesivos e rótulos personalizados para festa neon', legenda:'Kit Completo com Adesivos e Rótulos' },
-    { src:'img/galeria/festas-eventos-kit-completo.webp', alt:'Kit completo de personalizados para festa neon', legenda:'Kit Completo para Festa' }
+    { src:'img/galeria/festas-eventos-kit-completo.webp', alt:'Kit completo de personalizados para festa neon', legenda:'Kit Completo para Festa' },
+    { src:'img/galeria/caixas-festa-personalizadas-1.webp', alt:'Caixas personalizadas para festa com tema de ursinho e mel', legenda:'Caixas Personalizadas para Festa — Detalhes' },
+    { src:'img/galeria/caixas-festa-personalizadas-2.webp', alt:'Conjunto de caixas personalizadas para festa produzido pela Art Brother', legenda:'Caixas Personalizadas para Festa — Conjunto' }
   ],
   'cadernetas-pet': [
     { src:'img/cadernetas-pet.webp', alt:'Modelos de cadernetas de saúde e vacinação para pets', legenda:'Modelos de Cadernetas Pet' },
