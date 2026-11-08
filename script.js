@@ -78,12 +78,15 @@ const botaoProximo = document.querySelector('.carrossel-controle.proximo');
 const trilhaCarrossel = document.querySelector('.carrossel-trilha');
 let slideAtual = 0;
 let intervaloCarrossel;
+const movimentoReduzido = window.matchMedia('(prefers-reduced-motion: reduce)');
+let carrosselPausado = movimentoReduzido.matches;
+const pausaCarrossel = document.querySelector('.carrossel-pausa');
 let toqueCarrosselX = null;
 
 function mostrarSlide(indice){
   if(!slides.length) return;
   slideAtual = (indice + slides.length) % slides.length;
-  slides.forEach((slide, i) => slide.classList.toggle('ativo', i === slideAtual));
+  slides.forEach((slide, i) => { slide.classList.toggle('ativo', i === slideAtual); slide.setAttribute('aria-hidden', i === slideAtual ? 'false' : 'true'); });
   document.querySelectorAll('.carrossel-pontos button').forEach((ponto, i) => {
     ponto.classList.toggle('ativo', i === slideAtual);
     ponto.setAttribute('aria-pressed', i === slideAtual ? 'true' : 'false');
@@ -92,6 +95,7 @@ function mostrarSlide(indice){
 
 function iniciarCarrossel(){
   clearInterval(intervaloCarrossel);
+  if(carrosselPausado || document.hidden || trilhaCarrossel?.closest('.carrossel-produtos')?.contains(document.activeElement)) return;
   intervaloCarrossel = setInterval(() => mostrarSlide(slideAtual + 1), 4500);
 }
 
@@ -141,33 +145,33 @@ let toqueInicialX = null;
 
 const galeriasProdutos = {
   'livro-colorir': [
-    { src:'img/galeria/bobzinho.jpeg', alt:'Capa do Livrinho de Colorir Bobzinho', legenda:'Capa do Livrinho de Colorir Bobzinho' },
-    { src:'img/galeria/bobzinho-praia.jpeg', alt:'Livrinho de colorir com Bobzinho na praia', legenda:'Bobzinho na Praia' },
-    { src:'img/galeria/bobzinho-aniversario.jpeg', alt:'Livrinho de colorir com a festa do Bobzinho', legenda:'Festa do Bobzinho' },
-    { src:'img/galeria/bobzinho-arte.jpeg', alt:'Livrinho de colorir com Bobzinho fazendo arte', legenda:'Bobzinho Criativo' }
+    { src:'img/galeria/bobzinho.webp', alt:'Capa do Livrinho de Colorir Bobzinho', legenda:'Capa do Livrinho de Colorir Bobzinho' },
+    { src:'img/galeria/bobzinho-praia.webp', alt:'Livrinho de colorir com Bobzinho na praia', legenda:'Bobzinho na Praia' },
+    { src:'img/galeria/bobzinho-aniversario.webp', alt:'Livrinho de colorir com a festa do Bobzinho', legenda:'Festa do Bobzinho' },
+    { src:'img/galeria/bobzinho-arte.webp', alt:'Livrinho de colorir com Bobzinho fazendo arte', legenda:'Bobzinho Criativo' }
   ],
   'festas-eventos': [
-    { src:'img/personalizados-festas-eventos.png', alt:'Arte de Personalizados para Festas e Eventos', legenda:'Personalizados para Festas e Eventos' },
-    { src:'img/galeria/festas-eventos-caixas-milk.jpeg', alt:'Caixas Milk e personalizados para festa neon', legenda:'Caixas Milk e Personalizados' },
-    { src:'img/galeria/festas-eventos-kits-adesivos.jpeg', alt:'Kit de caixas, adesivos e rótulos personalizados para festa neon', legenda:'Kit Completo com Adesivos e Rótulos' },
-    { src:'img/galeria/festas-eventos-kit-completo.jpeg', alt:'Kit completo de personalizados para festa neon', legenda:'Kit Completo para Festa' }
+    { src:'img/personalizados-festas-eventos.webp', alt:'Arte de Personalizados para Festas e Eventos', legenda:'Personalizados para Festas e Eventos' },
+    { src:'img/galeria/festas-eventos-caixas-milk.webp', alt:'Caixas Milk e personalizados para festa neon', legenda:'Caixas Milk e Personalizados' },
+    { src:'img/galeria/festas-eventos-kits-adesivos.webp', alt:'Kit de caixas, adesivos e rótulos personalizados para festa neon', legenda:'Kit Completo com Adesivos e Rótulos' },
+    { src:'img/galeria/festas-eventos-kit-completo.webp', alt:'Kit completo de personalizados para festa neon', legenda:'Kit Completo para Festa' }
   ],
   'cadernetas-pet': [
-    { src:'img/cadernetas-pet.jpeg', alt:'Modelos de cadernetas de saúde e vacinação para pets', legenda:'Modelos de Cadernetas Pet' },
-    { src:'img/galeria/caderneta-pet-cachorro-macho.jpeg', alt:'Caderneta de vacinação para cachorro macho', legenda:'Caderneta para Cachorro — Macho' },
-    { src:'img/galeria/caderneta-pet-cachorro-femea.jpeg', alt:'Caderneta de vacinação para cachorro fêmea', legenda:'Caderneta para Cachorro — Fêmea' },
-    { src:'img/galeria/caderneta-pet-passaro.jpeg', alt:'Caderneta de saúde e cuidados para pássaro', legenda:'Caderneta para Pássaro' },
-    { src:'img/galeria/caderneta-pet-gato-macho.jpeg', alt:'Caderneta de saúde para gato macho', legenda:'Caderneta para Gato — Macho' },
-    { src:'img/galeria/caderneta-pet-gato-femea.jpeg', alt:'Caderneta de saúde para gato fêmea', legenda:'Caderneta para Gato — Fêmea' }
+    { src:'img/cadernetas-pet.webp', alt:'Modelos de cadernetas de saúde e vacinação para pets', legenda:'Modelos de Cadernetas Pet' },
+    { src:'img/galeria/caderneta-pet-cachorro-macho.webp', alt:'Caderneta de vacinação para cachorro macho', legenda:'Caderneta para Cachorro — Macho' },
+    { src:'img/galeria/caderneta-pet-cachorro-femea.webp', alt:'Caderneta de vacinação para cachorro fêmea', legenda:'Caderneta para Cachorro — Fêmea' },
+    { src:'img/galeria/caderneta-pet-passaro.webp', alt:'Caderneta de saúde e cuidados para pássaro', legenda:'Caderneta para Pássaro' },
+    { src:'img/galeria/caderneta-pet-gato-macho.webp', alt:'Caderneta de saúde para gato macho', legenda:'Caderneta para Gato — Macho' },
+    { src:'img/galeria/caderneta-pet-gato-femea.webp', alt:'Caderneta de saúde para gato fêmea', legenda:'Caderneta para Gato — Fêmea' }
   ],
   'cadernos-personalizados': [
-    { src:'img/galeria/cadernos-personalizados-modelos.jpeg', alt:'Coleção com vários modelos de cadernos personalizados', legenda:'Modelos de Cadernos Personalizados' },
-    { src:'img/galeria/caderno-personalizado-professora.jpeg', alt:'Caderno floral roxo personalizado para professora', legenda:'Caderno Personalizado para Professora' },
-    { src:'img/galeria/cadernos-personalizados-anuncio.jpeg', alt:'Anúncio de cadernos personalizados ART Brother', legenda:'Cadernos Personalizados do Seu Jeito' }
+    { src:'img/galeria/cadernos-personalizados-modelos.webp', alt:'Coleção com vários modelos de cadernos personalizados', legenda:'Modelos de Cadernos Personalizados' },
+    { src:'img/galeria/caderno-personalizado-professora.webp', alt:'Caderno floral roxo personalizado para professora', legenda:'Caderno Personalizado para Professora' },
+    { src:'img/galeria/cadernos-personalizados-anuncio.webp', alt:'Anúncio de cadernos personalizados ART Brother', legenda:'Cadernos Personalizados do Seu Jeito' }
   ],
   'fotografias-polaroids': [
-    { src:'img/galeria/impressao-fotografias.png', alt:'Impressão de fotografias em vários tamanhos e molduras até A3', legenda:'Impressão de Fotografias' },
-    { src:'img/galeria/impressao-polaroids.png', alt:'Impressão de Polaroids em vários tamanhos', legenda:'Impressão de Polaroids' }
+    { src:'img/galeria/impressao-fotografias.webp', alt:'Impressão de fotografias em vários tamanhos e molduras até A3', legenda:'Impressão de Fotografias' },
+    { src:'img/galeria/impressao-polaroids.webp', alt:'Impressão de Polaroids em vários tamanhos', legenda:'Impressão de Polaroids' }
   ]
 };
 
@@ -216,6 +220,7 @@ function abrirGaleria(imagens, focoOrigem){
   if(lightboxMiniaturas) lightboxMiniaturas.hidden = !temVarias;
   lightbox.hidden = false;
   document.body.style.overflow = 'hidden';
+  document.querySelectorAll('body > header, body > main, body > footer, body > a, body > button').forEach(el => el.inert = true);
   lightboxFechar?.focus();
 }
 
@@ -230,7 +235,8 @@ function fecharLightbox(){
   if(!lightbox) return;
   lightbox.hidden = true;
   document.body.style.overflow = '';
-  if(lightboxImagem) lightboxImagem.src = '';
+  document.querySelectorAll('[inert]').forEach(el => el.inert = false);
+  if(lightboxImagem) lightboxImagem.removeAttribute('src');
   imagensAbertas = [];
   ultimoFoco?.focus?.();
 }
@@ -249,6 +255,12 @@ lightbox?.addEventListener('click', evento => {
 });
 window.addEventListener('keydown', evento => {
   if(!lightbox || lightbox.hidden) return;
+  if(evento.key === 'Tab'){
+    const controles = [...lightbox.querySelectorAll('button')].filter(el => !el.hidden && el.getClientRects().length);
+    const primeiro = controles[0], ultimo = controles.at(-1);
+    if(evento.shiftKey && document.activeElement === primeiro){evento.preventDefault();ultimo?.focus();}
+    else if(!evento.shiftKey && document.activeElement === ultimo){evento.preventDefault();primeiro?.focus();}
+  }
   if(evento.key === 'Escape') fecharLightbox();
   if(evento.key === 'ArrowLeft' && imagensAbertas.length > 1) mostrarImagemLightbox(imagemAtual - 1);
   if(evento.key === 'ArrowRight' && imagensAbertas.length > 1) mostrarImagemLightbox(imagemAtual + 1);
@@ -297,7 +309,7 @@ function mostrarAviso(mensagem){
 function compartilharSite(){
   const titulo = 'ART Brother Soluções Gráficas';
   const texto = 'Conheça a ART Brother: impressões, cadernos personalizados, placas Pix, chaveiros, fotos e personalizados em Betim-MG.';
-  const url = window.location.href.split('#')[0];
+  const url = 'https://artbrother.com.br/';
 
   if(navigator.share){
     navigator.share({ title:titulo, text:texto, url }).catch(() => {});
@@ -324,7 +336,7 @@ let eventoInstalacaoPWA = null;
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./service-worker.js').catch(() => {});
+    navigator.serviceWorker.register('./service-worker.js', {updateViaCache:'none'}).catch(error => console.warn('Não foi possível ativar o modo offline.', error));
   });
 }
 
@@ -350,3 +362,32 @@ window.addEventListener('appinstalled', () => {
   if (botaoInstalarApp) botaoInstalarApp.hidden = true;
   mostrarAviso('App da ART Brother instalado com sucesso!');
 });
+
+// Atendimento: escolha entre os dois números, preservando a mensagem do produto.
+const seletorWhatsApp = document.createElement('dialog');
+seletorWhatsApp.className = 'whatsapp-dialog';
+seletorWhatsApp.setAttribute('aria-labelledby','titulo-whatsapp');
+seletorWhatsApp.innerHTML = `<button class="dialog-fechar" type="button" aria-label="Fechar escolha de atendimento">×</button><h2 id="titulo-whatsapp">Fale com nossas vendas</h2><p>Os dois números atendem orçamentos e encomendas. Escolha onde deseja conversar.</p><a class="whatsapp-opcao" data-numero="5531987167190" target="_blank" rel="noopener"><strong>Vendas 1</strong><span>(31) 98716-7190</span></a><a class="whatsapp-opcao" data-numero="5531985093019" target="_blank" rel="noopener"><strong>Vendas 2</strong><span>(31) 98509-3019</span></a>`;
+document.body.appendChild(seletorWhatsApp);
+seletorWhatsApp.querySelector('button').addEventListener('click',()=>seletorWhatsApp.close());
+seletorWhatsApp.addEventListener('click',event=>{if(event.target===seletorWhatsApp){const r=seletorWhatsApp.getBoundingClientRect();if(event.clientX<r.left || event.clientX>r.right || event.clientY<r.top || event.clientY>r.bottom)seletorWhatsApp.close();}});
+document.querySelectorAll('a[href^="https://wa.me/5531987167190"]:not([data-whatsapp-direto])').forEach(link=>{
+ link.addEventListener('click',event=>{
+  if(typeof seletorWhatsApp.showModal!=='function' || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey)return;
+  event.preventDefault();
+  const mensagem=new URL(link.href).searchParams.get('text') || 'Olá! Gostaria de um orçamento.';
+  seletorWhatsApp.querySelectorAll('[data-numero]').forEach(opcao=>{opcao.href='https://wa.me/'+opcao.dataset.numero+'?text='+encodeURIComponent(mensagem);});
+  seletorWhatsApp.showModal();
+ });
+});
+function atualizarPausa(){if(!pausaCarrossel)return;pausaCarrossel.textContent=carrosselPausado?'Reproduzir carrossel':'Pausar carrossel';pausaCarrossel.setAttribute('aria-pressed',String(carrosselPausado));}
+pausaCarrossel?.addEventListener('click',()=>{carrosselPausado=!carrosselPausado;atualizarPausa();iniciarCarrossel();});
+const secaoCarrossel=document.querySelector('.carrossel-produtos');
+secaoCarrossel?.addEventListener('mouseenter',()=>clearInterval(intervaloCarrossel));
+secaoCarrossel?.addEventListener('mouseleave',iniciarCarrossel);
+secaoCarrossel?.addEventListener('focusin',()=>clearInterval(intervaloCarrossel));
+secaoCarrossel?.addEventListener('focusout',()=>setTimeout(iniciarCarrossel,0));
+document.addEventListener('visibilitychange',iniciarCarrossel);
+movimentoReduzido.addEventListener('change',()=>{carrosselPausado=movimentoReduzido.matches;atualizarPausa();iniciarCarrossel();});
+atualizarPausa();
+botaoTopo?.addEventListener('click',()=>window.scrollTo({top:0,behavior:movimentoReduzido.matches?'auto':'smooth'}));

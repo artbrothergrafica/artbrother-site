@@ -1,17 +1,16 @@
 {
-  "name": "ART Brother Soluções Gráficas",
-  "short_name": "ART Brother",
+  "name": "Art Brother Soluções Gráficas",
+  "short_name": "Art Brother",
   "description": "Gráfica em Betim-MG: impressões, cadernos personalizados, chaveiros, placas Pix, fotos e personalizados.",
   "id": "/?app=art-brother-v5-1",
-  "start_url": "./index.html",
-  "scope": "./",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "display_override": [
-    "window-controls-overlay",
     "standalone",
     "minimal-ui"
   ],
-  "orientation": "portrait-primary",
+  "orientation": "any",
   "theme_color": "#090909",
   "background_color": "#090909",
   "categories": [
