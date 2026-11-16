@@ -1,8 +1,8 @@
 const CACHE_PREFIX = 'art-brother-';
-const CACHE_NAME = CACHE_PREFIX + 'v6.6.0';
+const CACHE_NAME = CACHE_PREFIX + 'v7.1.0';
 const CORE_ASSETS = [
- './index.html','./404.html','./style.css?v=6.6.0','./script.js?v=6.6.0',
- './logo.png','./site.webmanifest?v=6.6.0',
+ './index.html','./catalogo/index.html','./404.html','./style.css?v=7.1.0','./script.js?v=7.1.0',
+ './logo.png','./img/brotherzinho-vitrine.webp','./site.webmanifest?v=7.1.0',
  './favicon/favicon-192x192.png','./favicon/favicon-512x512.png'
 ];
 self.addEventListener('install', event => {
@@ -11,9 +11,22 @@ self.addEventListener('install', event => {
 self.addEventListener('activate', event => {
  event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith(CACHE_PREFIX)&&key!==CACHE_NAME).map(key=>caches.delete(key)))).then(()=>self.clients.claim()));
 });
-function homePath(url){
- const base=new URL('./',self.registration.scope).pathname;
- return url.pathname===base || url.pathname===base+'index.html';
+function paginaEmCache(url) {
+ const base = new URL('./', self.registration.scope).pathname;
+ if (!url.pathname.startsWith(base)) return null;
+ const path = url.pathname.slice(base.length);
+ if (path === '' || path === 'index.html') return './index.html';
+ if (path === 'catalogo' || path === 'catalogo/' || path === 'catalogo/index.html') return './catalogo/index.html';
+ return null;
+}
+async function buscarComPrazo(request, cache) {
+ const controller = new AbortController();
+ const timeout = setTimeout(() => controller.abort(), 6000);
+ try {
+  return await fetch(request, {cache, signal:controller.signal});
+ } finally {
+  clearTimeout(timeout);
+ }
 }
 async function remember(key,response){
  if(response.ok && response.type!=='opaque'){
@@ -22,21 +35,21 @@ async function remember(key,response){
  }
  return response;
 }
-async function navigation(request){
+async function navigation(request, cacheKey){
  const cache=await caches.open(CACHE_NAME);
  try{
-  const response=await fetch(request,{cache:'no-store',signal:AbortSignal.timeout(6000)});
-  if(response.ok){await remember('./index.html',response);return response;}
-  if(response.status>=500){const previous=await cache.match('./index.html');if(previous)return previous;}
+  const response=await buscarComPrazo(request,'no-store');
+  if(response.ok){await remember(cacheKey,response);return response;}
+  if(response.status>=500){const previous=await cache.match(cacheKey);if(previous)return previous;}
   return response;
  }catch{
-  return await cache.match('./index.html') || new Response('Sem conexão. Acesse novamente quando estiver online.',{status:503,headers:{'Content-Type':'text/plain; charset=utf-8'}});
+  return await cache.match(cacheKey) || new Response('Sem conexão. Acesse novamente quando estiver online.',{status:503,headers:{'Content-Type':'text/plain; charset=utf-8'}});
  }
 }
 async function asset(request){
  const cache=await caches.open(CACHE_NAME);
  try{
-  const response=await fetch(request,{cache:'no-cache',signal:AbortSignal.timeout(6000)});
+  const response=await buscarComPrazo(request,'no-cache');
   if(response.ok)return await remember(request,response);
   return await cache.match(request) || response;
  }catch{
@@ -46,8 +59,10 @@ async function asset(request){
 self.addEventListener('fetch',event=>{
  const request=event.request,url=new URL(request.url);
  if(request.method!=='GET'||url.origin!==self.location.origin)return;
+ if(url.pathname.endsWith('.pdf'))return;
  if(request.mode==='navigate'){
-  if(homePath(url)){event.respondWith(navigation(request));return;}
+  const cacheKey = paginaEmCache(url);
+  if(cacheKey){event.respondWith(navigation(request,cacheKey));return;}
   event.respondWith(fetch(request).catch(async()=>{
    const cache=await caches.open(CACHE_NAME),fallback=await cache.match('./404.html');
    return fallback?new Response(await fallback.text(),{status:404,headers:{'Content-Type':'text/html; charset=utf-8'}}):Response.error();

@@ -237,15 +237,6 @@ a:focus-visible,button:focus-visible {
 .botao-ver-galeria:hover {
   background:var(--yellow)
 }
-.produto-texto {
-  display:grid;
-  place-items:center;
-  min-height:180px;
-  background:linear-gradient(135deg,#fff4cb,#f9d6e7);
-  font-size:36px;
-  font-weight:900;
-  color:#222
-}
 .carrossel {
   max-width:1160px;
   margin:auto;
@@ -919,3 +910,256 @@ footer {
 
 }
 
+
+/* Vitrine Art Brother */
+:root {
+  --plum:#1b102b;
+  --violet:#542297;
+  --paper:#fbfafc;
+  --line:#e9e3ee;
+}
+body {font-family:Inter,Arial,Helvetica,sans-serif;background:var(--paper)}
+.topo {
+  min-height:72px;
+  padding:10px max(24px,calc((100vw - 1240px)/2));
+  background:#120c1c;
+}
+.marca {display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#fff}
+.marca img {width:45px;height:45px;border-radius:10px}
+.marca span {font-weight:800;line-height:1.15;font-size:17px;white-space:nowrap}
+.marca small {display:block;margin-top:3px;color:#d5c7e4;font-size:10px;font-weight:600}
+.menu a {color:#eee4fa}
+.menu a:hover {color:#ffd447}
+.abertura {color:#fff;background:#1c052d}
+.abertura-conteudo {
+  max-width:1288px;
+  margin:auto;
+  padding:20px 24px;
+  display:grid;
+  grid-template-columns:minmax(0,1.13fr) minmax(0,1fr);
+  align-items:center;
+  min-height:470px;
+}
+.abertura-texto {padding:30px 0}
+.marca-linha {
+  display:block;
+  color:#f7d94d;
+  font-weight:750;
+  font-size:14px;
+  margin-bottom:16px;
+}
+.abertura h1 {
+  margin:0;
+  max-width:690px;
+  font-size:clamp(42px,5.6vw,78px);
+  line-height:1.02;
+  letter-spacing:-.055em;
+  text-wrap:balance;
+}
+.abertura p {
+  margin:22px 0 25px;
+  max-width:460px;
+  color:#e1d4ed;
+  font-size:clamp(16px,2vw,19px);
+}
+.abertura-acoes {display:flex;gap:12px;flex-wrap:wrap}
+.acao {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+  min-height:48px;
+  padding:11px 17px;
+  font-weight:800;
+  border:1px solid transparent;
+  border-radius:9px;
+  text-decoration:none;
+  text-align:center;
+}
+.acao-clara {background:#ffd950;color:#1a1023}
+.acao-clara:hover {background:#ffe57f}
+.acao-borda {border-color:#a791b5;color:#fff}
+.acao-borda:hover {background:#ffffff18}
+.abertura-mascote {display:grid;place-items:center;min-width:0}
+.abertura-mascote img {
+  width:min(100%,510px);
+  height:auto;
+  -webkit-mask-image:radial-gradient(ellipse at center,#000 53%,transparent 75%);
+  mask-image:radial-gradient(ellipse at center,#000 53%,transparent 75%);
+}
+.vitrine,.portfolio,.passos {max-width:1288px;margin:auto;padding:70px 24px}
+.vitrine-titulo h2,.portfolio h2,.catalogo-faixa h2,.passos h2 {
+  margin:0;
+  font-size:clamp(30px,4vw,49px);
+  line-height:1.12;
+  letter-spacing:-.04em;
+}
+.vitrine-indice {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  padding:18px 0 20px;
+  border-bottom:1px solid var(--line);
+}
+.vitrine-indice a {
+  display:inline-flex;
+  align-items:center;
+  min-height:44px;
+  padding:6px 12px;
+  border:1px solid #e4d9f0;
+  border-radius:7px;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:700;
+  color:#4a217c;
+  background:#f5effa;
+}
+.vitrine-indice a:hover {background:#eae0f4}
+.categoria {padding-top:38px}
+.categoria+.categoria {margin-top:14px}
+.categoria-titulo {margin-bottom:16px}
+.categoria-titulo h3 {margin:0;font-size:clamp(24px,3vw,34px);line-height:1.15;letter-spacing:-.03em}
+.categoria-titulo p,.portfolio-titulo p {margin:6px 0 0;color:var(--muted)}
+.vitrine-grade,.portfolio-grade {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.produto {
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+  background:#fff;
+}
+.produto:target {outline:3px solid var(--violet);outline-offset:4px}
+.produto-capa {position:relative;display:grid;place-items:center;background:#f2f2f6;aspect-ratio:4/3}
+.produto-capa img {width:100%;aspect-ratio:4/3;object-fit:contain;mix-blend-mode:multiply}
+.produto-capa button {
+  position:relative;
+  width:100%;
+  padding:0;
+  border:0;
+  background:transparent;
+}
+.produto-capa button:focus-visible {outline-offset:-4px}
+.capa-botao span {
+  position:absolute;
+  right:9px;
+  bottom:9px;
+  display:grid;
+  place-items:center;
+  width:38px;
+  height:38px;
+  border:1px solid var(--line);
+  border-radius:50%;
+  background:#fff;
+  color:#341e51;
+  font-size:20px;
+}
+.tipo-imagem {
+  position:absolute;
+  bottom:7px;
+  left:7px;
+  padding:3px 7px;
+  border-radius:5px;
+  background:#fff;
+  color:#494151;
+  font-size:11px;
+  line-height:1.35;
+  pointer-events:none;
+}
+.produto-texto {display:flex;flex:1;flex-direction:column;padding:14px}
+.produto h4 {margin:0;font-size:17px;line-height:1.23;letter-spacing:-.015em}
+.produto p {margin:7px 0 12px;color:#53505b;font-size:14px;line-height:1.46}
+.pedir-produto {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:5px;
+  margin-top:auto;
+  min-height:44px;
+  padding:6px 9px;
+  border-radius:7px;
+  background:#f3edf9;
+  color:#442176;
+  font-size:13px;
+  font-weight:750;
+  line-height:1.2;
+  text-decoration:none;
+}
+.pedir-produto:hover {background:#e9ddf3}
+.catalogo-faixa {background:#29143e;color:#fff}
+.catalogo-conteudo {
+  display:grid;
+  grid-template-columns:minmax(160px,240px) minmax(0,1fr);
+  gap:clamp(25px,6vw,85px);
+  align-items:center;
+  max-width:980px;
+  padding:38px 24px;
+  margin:auto;
+}
+.catalogo-capa img {width:100%;height:auto;border-radius:8px;box-shadow:0 10px 35px #1109208c}
+.catalogo-faixa p {margin:12px 0 20px;color:#e8dcf2}
+.portfolio-titulo {margin-bottom:22px}
+.trabalho {margin:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.trabalho button {display:block;width:100%;padding:0;background:#f2f1f5;border:0}
+.trabalho button:focus-visible {outline-offset:-4px}
+.trabalho img {width:100%;aspect-ratio:4/3;object-fit:cover}
+.trabalho figcaption {padding:10px 12px;font-size:14px;font-weight:700}
+.passos {padding-top:0}
+.passos ol {
+  margin:20px 0 0;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+  list-style:none;
+}
+.passos li {padding:16px;border-top:3px solid #b772e5;border-radius:8px;background:#f2ecf8}
+.passos li strong,.passos li span {display:block}
+.passos li span {margin-top:4px;color:#51475d}
+footer p {margin:0 0 6px}
+.contato .insta {overflow-wrap:anywhere}
+.orcamento-fixo {font-size:13px;padding:10px 12px;min-height:44px}
+
+@media(max-width:980px) {
+  .vitrine-grade,.portfolio-grade {grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:720px) {
+  .abertura-conteudo {grid-template-columns:1fr;padding:18px 18px 0;min-height:0}
+  .abertura-texto {padding:13px 0 0}
+  .abertura h1 {font-size:clamp(38px,9vw,62px);text-wrap:initial}
+  .marca-linha {margin-bottom:12px}
+  .abertura p {margin:14px 0 17px}
+  .abertura-mascote img {width:min(100%,350px);margin-top:-5px}
+  .vitrine,.portfolio,.passos {padding:42px 16px}
+  .passos {padding-top:0}
+  .vitrine-grade,.portfolio-grade {grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .catalogo-conteudo {padding:32px 16px;gap:16px;grid-template-columns:minmax(100px,.46fr) minmax(0,1fr)}
+  .catalogo-faixa h2 {font-size:clamp(20px,4.5vw,32px)}
+  .catalogo-faixa p {font-size:14px;margin:8px 0 12px}
+  .catalogo-faixa .acao {font-size:13px;padding:6px 8px;gap:5px}
+  .passos ol {grid-template-columns:1fr}
+  .produto-texto {padding:10px}
+  .produto h4 {font-size:15px}
+  .produto p {font-size:13px}
+}
+@media(max-width:365px) {
+  .topo {padding-inline:12px}
+  .vitrine,.portfolio,.passos {padding-inline:12px}
+  .produto-texto {padding:8px}
+  .pedir-produto {padding-inline:5px}
+}
+
+/* Página do catálogo */
+.pagina-catalogo {min-height:100vh;display:flex;flex-direction:column}
+.pagina-catalogo main {flex:1}
+.pagina-catalogo .catalogo-conteudo {padding-block:clamp(30px,7vw,75px)}
+.pagina-catalogo .catalogo-faixa h1 {margin:0;font-size:clamp(29px,5vw,54px);line-height:1.1;letter-spacing:-.04em}
+.pagina-catalogo footer {padding-bottom:30px}
+.catalogo-voltar {color:#f5e9fc;font-size:14px;font-weight:700;text-align:right}
+.catalogo-categorias h2 {margin:0;font-size:clamp(23px,3.5vw,38px);line-height:1.2}
+@media (max-width:560px) {
+  .pagina-catalogo .catalogo-conteudo {grid-template-columns:1fr;gap:22px}
+  .pagina-catalogo .catalogo-capa {order:2;width:min(48vw,205px)}
+  .pagina-catalogo .catalogo-voltar {font-size:12px}
+}

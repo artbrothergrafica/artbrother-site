@@ -70,65 +70,7 @@ function controlarBotaoTopo(){
 window.addEventListener('scroll', controlarBotaoTopo, { passive:true });
 window.addEventListener('load', controlarBotaoTopo);
 
-// ===== Versão 2.0: carrossel, lightbox e profundidade do banner =====
-const slides = Array.from(document.querySelectorAll('.slide'));
-const pontosContainer = document.querySelector('.carrossel-pontos');
-const botaoAnterior = document.querySelector('.carrossel-controle.anterior');
-const botaoProximo = document.querySelector('.carrossel-controle.proximo');
-const trilhaCarrossel = document.querySelector('.carrossel-trilha');
-let slideAtual = 0;
-let intervaloCarrossel;
 const movimentoReduzido = window.matchMedia('(prefers-reduced-motion: reduce)');
-let carrosselPausado = movimentoReduzido.matches;
-const pausaCarrossel = document.querySelector('.carrossel-pausa');
-let toqueCarrosselX = null;
-
-function mostrarSlide(indice){
-  if(!slides.length) return;
-  slideAtual = (indice + slides.length) % slides.length;
-  slides.forEach((slide, i) => { slide.classList.toggle('ativo', i === slideAtual); slide.setAttribute('aria-hidden', i === slideAtual ? 'false' : 'true'); });
-  document.querySelectorAll('.carrossel-pontos button').forEach((ponto, i) => {
-    ponto.classList.toggle('ativo', i === slideAtual);
-    ponto.setAttribute('aria-pressed', i === slideAtual ? 'true' : 'false');
-  });
-}
-
-function iniciarCarrossel(){
-  clearInterval(intervaloCarrossel);
-  if(carrosselPausado || document.hidden || trilhaCarrossel?.closest('.carrossel-produtos')?.contains(document.activeElement)) return;
-  intervaloCarrossel = setInterval(() => mostrarSlide(slideAtual + 1), 4500);
-}
-
-if(slides.length && pontosContainer){
-  slides.forEach((_, i) => {
-    const ponto = document.createElement('button');
-    ponto.type = 'button';
-    ponto.setAttribute('aria-label', `Mostrar produto ${i + 1}`);
-    ponto.addEventListener('click', () => {
-      mostrarSlide(i);
-      iniciarCarrossel();
-    });
-    pontosContainer.appendChild(ponto);
-  });
-  botaoAnterior?.addEventListener('click', () => { mostrarSlide(slideAtual - 1); iniciarCarrossel(); });
-  botaoProximo?.addEventListener('click', () => { mostrarSlide(slideAtual + 1); iniciarCarrossel(); });
-  mostrarSlide(0);
-  iniciarCarrossel();
-
-  trilhaCarrossel?.addEventListener('touchstart', evento => {
-    toqueCarrosselX = evento.changedTouches[0]?.clientX ?? null;
-  }, { passive:true });
-
-  trilhaCarrossel?.addEventListener('touchend', evento => {
-    if(toqueCarrosselX === null) return;
-    const deslocamento = (evento.changedTouches[0]?.clientX ?? toqueCarrosselX) - toqueCarrosselX;
-    if(Math.abs(deslocamento) > 45){
-      mostrarSlide(slideAtual + (deslocamento < 0 ? 1 : -1));
-      iniciarCarrossel();
-    }
-    toqueCarrosselX = null;
-  }, { passive:true });
-}
 
 const lightbox = document.querySelector('.lightbox');
 const lightboxImagem = lightbox?.querySelector('img');
@@ -145,16 +87,17 @@ let toqueInicialX = null;
 
 const galeriasProdutos = {
  'cartoes-visita': [
-  {src:'img/cartoes-visita-capa-v66.webp',alt:'Anúncio de cartões de visita personalizados Art Brother',legenda:'Cartões de Visita Personalizados'},
+  {src:'img/produtos/cartoes.webp',alt:'Exemplos de cartões de visita',legenda:'Cartões de visita · imagem ilustrativa'},
   {src:'img/cartoes-visita-foto-1-v66.webp',alt:'Cartões de visita Art Brother Novembro Azul em detalhe',legenda:'Cartões de Visita — Detalhes da Produção'},
   {src:'img/cartoes-visita-foto-2-v66.webp',alt:'Conjunto de cartões de visita Art Brother Novembro Azul',legenda:'Cartões de Visita — Frente e Verso'}
  ],
-  'blocos-de-notas': [{src:'img/blocos-de-notas.webp',alt:'Blocos de notas personalizados Art Brother com capa kraft',legenda:'Blocos de Notas Personalizados'}],
+  'blocos-de-notas': [{src:'img/produtos/blocos.webp',alt:'Bloco de ordem de serviço e bloco com capa kraft',legenda:'Blocos de notas · imagem ilustrativa'}],
   'livros-cadernos-wire-o': [
-    {src:'img/livros-cadernos-wire-o-1.webp',alt:'Detalhes dos livros e cadernos personalizados Wire-O',legenda:'Livros e Cadernos Personalizados Wire-O — Detalhes'},
+    {src:'img/produtos/wire-o.webp',alt:'Livros impressos com encadernação Wire-O',legenda:'Livros impressos com acabamento Wire-O'},
+    {src:'img/livros-cadernos-wire-o-1.webp',alt:'Livros e cadernos na bancada da Art Brother',legenda:'Livros e cadernos Wire-O na bancada da gráfica'},
     {src:'img/livros-cadernos-wire-o-2.webp',alt:'Livros e cadernos personalizados expostos na Art Brother',legenda:'Livros e Cadernos Personalizados Wire-O — Produção Art Brother'}
   ],
-  'agenda-2027': [{ src:'img/agenda-2027.webp', alt:'Agenda 2027 personalizada Art Brother', legenda:'Agendas 2027 Personalizadas' }],
+  'agenda-2027': [{ src:'img/produtos/agenda.webp', alt:'Agenda 2027 com capa personalizada', legenda:'Agenda 2027 · imagem ilustrativa' }],
   'livro-colorir': [
     { src:'img/galeria/bobzinho.webp', alt:'Capa do Livrinho de Colorir Bobzinho', legenda:'Capa do Livrinho de Colorir Bobzinho' },
     { src:'img/galeria/bobzinho-praia.webp', alt:'Livrinho de colorir com Bobzinho na praia', legenda:'Bobzinho na Praia' },
@@ -162,7 +105,7 @@ const galeriasProdutos = {
     { src:'img/galeria/bobzinho-arte.webp', alt:'Livrinho de colorir com Bobzinho fazendo arte', legenda:'Bobzinho Criativo' }
   ],
   'festas-eventos': [
-    { src:'img/personalizados-festas-eventos.webp', alt:'Arte de Personalizados para Festas e Eventos', legenda:'Personalizados para Festas e Eventos' },
+    { src:'img/produtos/caixas.webp', alt:'Caixas de festa e personalizados em tons pastel', legenda:'Caixas personalizadas para festas' },
     { src:'img/galeria/festas-eventos-caixas-milk.webp', alt:'Caixas Milk e personalizados para festa neon', legenda:'Caixas Milk e Personalizados' },
     { src:'img/galeria/festas-eventos-kits-adesivos.webp', alt:'Kit de caixas, adesivos e rótulos personalizados para festa neon', legenda:'Kit Completo com Adesivos e Rótulos' },
     { src:'img/galeria/festas-eventos-kit-completo.webp', alt:'Kit completo de personalizados para festa neon', legenda:'Kit Completo para Festa' },
@@ -177,15 +120,20 @@ const galeriasProdutos = {
     { src:'img/galeria/caderneta-pet-gato-macho.webp', alt:'Caderneta de saúde para gato macho', legenda:'Caderneta para Gato — Macho' },
     { src:'img/galeria/caderneta-pet-gato-femea.webp', alt:'Caderneta de saúde para gato fêmea', legenda:'Caderneta para Gato — Fêmea' }
   ],
+  'fotografias': [
+    {src:'img/produtos/fotografias.webp',alt:'Exemplos de impressões fotográficas',legenda:'Impressão fotográfica · imagem ilustrativa'},
+    {src:'img/galeria/impressao-fotografias.webp',alt:'Arte com exemplos de fotografias e molduras',legenda:'Formatos de impressão e opções de molduras'}
+  ],
+  'polaroids': [
+    {src:'img/produtos/polaroids.webp',alt:'Exemplos de fotos no estilo Polaroid',legenda:'Fotos estilo Polaroid · imagem ilustrativa'},
+    {src:'img/galeria/impressao-polaroids.webp',alt:'Arte com exemplos de fotos no estilo Polaroid',legenda:'Modelos de fotos estilo Polaroid'}
+  ],
   'cadernos-personalizados': [
     { src:'img/galeria/cadernos-personalizados-modelos.webp', alt:'Coleção com vários modelos de cadernos personalizados', legenda:'Modelos de Cadernos Personalizados' },
     { src:'img/galeria/caderno-personalizado-professora.webp', alt:'Caderno floral roxo personalizado para professora', legenda:'Caderno Personalizado para Professora' },
     { src:'img/galeria/cadernos-personalizados-anuncio.webp', alt:'Anúncio de cadernos personalizados ART Brother', legenda:'Cadernos Personalizados do Seu Jeito' }
   ],
-  'fotografias-polaroids': [
-    { src:'img/galeria/impressao-fotografias.webp', alt:'Impressão de fotografias em vários tamanhos e molduras até A3', legenda:'Impressão de Fotografias' },
-    { src:'img/galeria/impressao-polaroids.webp', alt:'Impressão de Polaroids em vários tamanhos', legenda:'Impressão de Polaroids' }
-  ]
+
 };
 
 function mostrarImagemLightbox(indice){
@@ -239,7 +187,7 @@ function abrirGaleria(imagens, focoOrigem){
 
 function abrirLightbox(botao){
   const imagem = botao.querySelector('img');
-  const legenda = botao.querySelector('figcaption')?.textContent || imagem?.alt || 'Imagem ampliada';
+  const legenda = botao.dataset.legenda || botao.closest('figure')?.querySelector('figcaption')?.textContent || imagem?.alt || 'Imagem ampliada';
   if(!imagem) return;
   abrirGaleria([{ src:imagem.src, alt:imagem.alt, legenda }], botao);
 }
@@ -288,19 +236,6 @@ lightbox?.addEventListener('touchend', evento => {
   toqueInicialX = null;
 }, { passive:true });
 
-const bannerProfundidade = document.querySelector('.banner-profundidade');
-if(bannerProfundidade && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-  bannerProfundidade.addEventListener('pointermove', evento => {
-    const rect = bannerProfundidade.getBoundingClientRect();
-    const mx = ((evento.clientX - rect.left) / rect.width - .5).toFixed(3);
-    const my = ((evento.clientY - rect.top) / rect.height - .5).toFixed(3);
-    bannerProfundidade.style.setProperty('--mx', mx);
-    bannerProfundidade.style.setProperty('--my', my);
-  }, { passive:true });
-}
-
-
-// ===== Versão 3.0: compartilhar no WhatsApp e orientar favorito =====
 const botaoCompartilhar = document.querySelector('.botao-compartilhar');
 const botaoFavorito = document.querySelector('.botao-favorito');
 
@@ -393,14 +328,19 @@ document.querySelectorAll('a[href^="https://wa.me/5531987167190"]:not([data-what
   seletorWhatsApp.showModal();
  });
 });
-function atualizarPausa(){if(!pausaCarrossel)return;pausaCarrossel.textContent=carrosselPausado?'Reproduzir carrossel':'Pausar carrossel';pausaCarrossel.setAttribute('aria-pressed',String(carrosselPausado));}
-pausaCarrossel?.addEventListener('click',()=>{carrosselPausado=!carrosselPausado;atualizarPausa();iniciarCarrossel();});
-const secaoCarrossel=document.querySelector('.carrossel-produtos');
-secaoCarrossel?.addEventListener('mouseenter',()=>clearInterval(intervaloCarrossel));
-secaoCarrossel?.addEventListener('mouseleave',iniciarCarrossel);
-secaoCarrossel?.addEventListener('focusin',()=>clearInterval(intervaloCarrossel));
-secaoCarrossel?.addEventListener('focusout',()=>setTimeout(iniciarCarrossel,0));
-document.addEventListener('visibilitychange',iniciarCarrossel);
-movimentoReduzido.addEventListener('change',()=>{carrosselPausado=movimentoReduzido.matches;atualizarPausa();iniciarCarrossel();});
-atualizarPausa();
 botaoTopo?.addEventListener('click',()=>window.scrollTo({top:0,behavior:movimentoReduzido.matches?'auto':'smooth'}));
+
+
+const atalhoOrcamento = document.querySelector('.orcamento-fixo');
+const areasOrcamento = [document.querySelector('.abertura-acoes'), document.querySelector('#contato .contato-botoes')];
+if (atalhoOrcamento && 'IntersectionObserver' in window) {
+  const visiveis = new Set();
+  const observadorOrcamento = new IntersectionObserver(entradas => {
+    entradas.forEach(({target, isIntersecting}) => {
+      if (isIntersecting) visiveis.add(target);
+      else visiveis.delete(target);
+    });
+    atalhoOrcamento.hidden = visiveis.size > 0;
+  }, {threshold: 0.15});
+  areasOrcamento.filter(Boolean).forEach(area => observadorOrcamento.observe(area));
+}

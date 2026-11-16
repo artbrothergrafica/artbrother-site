@@ -1,17 +1,7 @@
-# Art Brother Soluções Gráficas — v6.6.0
+# Art Brother Soluções Gráficas
 
-Site estático completo para publicação em https://artbrother.com.br/.
-Veja `LEIA-ME-ATUALIZACAO.txt` para instruções de substituição e verificações.
+Site estático para GitHub Pages. Para abrir uma cópia local, extraia o ZIP e abra `index.html`.
 
-- Página principal: `index.html`
-- Estilos consolidados: `style.css`
-- Menu, galerias, carrossel e escolha de WhatsApp: `script.js`
-- Cache offline: `service-worker.js`
-- Aplicativo instalável: `site.webmanifest`
-- Imagens: `img/`; ícones: `favicon/`
-- Página de erro: `404.html`
+A vitrine e os orçamentos ficam na página inicial. O catálogo pode ser aberto ou baixado em `catalogo/index.html`. Consulte `LEIA-ME-ATUALIZACAO.txt` para publicar no repositório existente.
 
-WhatsApps: Vendas 1 (31) 98716-7190; Vendas 2 (31) 98509-3019.
-
-Para futuras atualizações, altere a versão do CSS/JS no HTML e em CORE_ASSETS,
-e renove CACHE_NAME no service worker. Mantenha o id do manifesto estável.
+O aplicativo instalável depende de HTTPS. O identificador do aplicativo foi preservado.

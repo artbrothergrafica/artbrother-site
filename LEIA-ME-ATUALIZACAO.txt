@@ -1,78 +1,21 @@
-ART BROTHER — SITE COMPLETO v6.6.0
-Atualizado em 08/11/2026
+ART BROTHER — ATUALIZAÇÃO DO SITE
 
-COMO PUBLICAR
-1. Faça uma cópia de segurança do site atual.
-2. Extraia este ZIP no computador.
-3. Envie todos os arquivos e as pastas img e favicon para a raiz do site.
-   index.html e CNAME devem ficar na raiz, não dentro de uma pasta adicional.
-4. Substitua index.html, style.css, script.js, service-worker.js e os demais arquivos juntos.
-   As imagens agora usam WebP; não envie apenas parte do pacote.
-5. Aguarde a publicação e abra https://artbrother.com.br/.
-6. Recarregue a página. Se aparecer a versão anterior, use Ctrl+Shift+R;
-   no aplicativo instalado, feche e abra novamente com internet.
-7. Confira os dois destinos de atendimento, a galeria e a página em um celular real.
+Para ver os arquivos, extraia o ZIP completo e abra index.html em um navegador.
+O PDF está na pasta catalogo.
 
-WHATSAPPS DE VENDAS
-Vendas 1: (31) 98716-7190
-Vendas 2: (31) 98509-3019
-Botões de orçamento abrem a escolha entre os dois números e preservam a mensagem
-sobre o produto. Na seção Contato, os links abrem diretamente cada número.
-Sem JavaScript, o botão geral abre Vendas 1, e os dois números permanecem no Contato.
+O repositório identificado no pacote original é
+https://github.com/artbrothergrafica/artbrother-site
+O domínio configurado é https://artbrother.com.br/.
 
-MELHORIAS
-- CSS consolidado, menu móvel e cartões responsivos.
-- Conteúdo visível mesmo sem animações ou JavaScript.
-- Galeria com navegação, miniaturas, fechamento por Escape e controle do foco.
-- Carrossel com pausa e respeito à preferência de movimento reduzido.
-- Imagens em WebP; aproximadamente 69% menos bytes que a pasta original.
-- Um único atalho flutuante de orçamento.
-- Agendas 2027 e Blocos de Notas adicionados ao catálogo textual.
-- Aviso de atendimento com portas fechadas.
-- Depoimentos sem origem identificada substituídos por convite para enviar opinião.
-- Caminhos absolutos na página 404 para URLs em subpastas.
-- Cache separado por versão, sem substituir a página inicial por páginas de erro.
-- O aplicativo armazena inicialmente apenas os arquivos essenciais.
-  Fotos ficam disponíveis offline após serem acessadas com internet.
-- Ícones, sitemap, domínio e manifesto incluídos.
+Para publicar, copie os arquivos para a pasta já configurada no GitHub Pages.
+Mantenha index.html e CNAME na raiz dessa pasta, junto com as pastas img,
+favicon e catalogo. Acompanhe a publicação no repositório e confira os dois
+botões de WhatsApp no site depois que a atualização entrar no ar.
 
-OBSERVAÇÕES
-O pacote foi preparado para o domínio informado, na raiz do GitHub Pages ou de
-hospedagem estática equivalente, com HTTPS. O arquivo CNAME mantém artbrother.com.br.
-Não altera DNS e não publica automaticamente.
-Os banners e fotos são os fornecidos neste atendimento; artes podem conter textos
-e números impressos na própria imagem. Os dois WhatsApps estão nos botões do site.
-O endereço e os horários originais foram preservados. As coordenadas geográficas
-não verificadas foram removidas dos dados estruturados.
-O identificador do aplicativo existente foi preservado para evitar outra instalação.
+Esta versão reúne cinco categorias, 33 produtos e serviços, um portfólio de
+trabalhos e um catálogo em PDF. A cópia do PDF usada pelo site apresenta
+a capa ilustrativa da Agenda 2027 no lugar da arte com contatos incorretos.
 
-VERIFICAÇÃO
-Sintaxe de JavaScript, arquivos locais, âncoras, IDs, manifesto e imagens verificados.
-Testes simulados do cache: offline, erros de rede e de servidor, separação de rotas
-e preservação de caches de outras aplicações.
-Menu móvel, galeria e seletor de WhatsApp conferidos no navegador em desktop e
-em uma área de 390 x 844 pixels. O envio de mensagens não foi executado.
-Instalação PWA, comportamento em iPhone/Android reais e DNS não foram testados.
-
-ATUALIZAÇÃO v6.6.0 — AGENDA 2027
-Foto enviada adicionada ao cartão Agendas 2027, com ampliação ao clicar.
-Imagem convertida para WebP, preservando as dimensões e a arte.
-Atenção: o telefone (31) 98765-4321 e o Instagram @artbrother impressos
-na imagem diferem dos contatos do site. A imagem foi preservada como enviada.
-Os botões continuam usando os dois WhatsApps de vendas confirmados.
-
-ATUALIZAÇÃO v6.6.0 — LIVROS E CADERNOS WIRE-O
-Duas fotos otimizadas em WebP adicionadas ao novo produto e à galeria Nossos Trabalhos.
-Orçamento preserva o nome do produto nos dois WhatsApps. Agenda 2027 mantida.
-
-ATUALIZAÇÃO v6.6.0 — CAIXAS PERSONALIZADAS PARA FESTA
-Duas novas fotos otimizadas em WebP adicionadas à galeria de Personalizados para Festas e Eventos.
-Galeria agora com 6 imagens; fotos anteriores preservadas.
-
-ATUALIZAÇÃO v6.6.0 — BLOCOS DE NOTAS
-Imagem otimizada em WebP adicionada ao produto Blocos de Notas, com ampliação ao clicar.
-Todas as atualizações anteriores e os dois WhatsApps foram mantidos.
-
-CORREÇÃO v6.6.0: banners atualizados de desktop e celular com Agendas 2027, blocos de notas e os dois WhatsApps. Novos nomes de arquivo evitam reaproveitar banners antigos do cache. Todas as fotos e produtos das versões anteriores incluídos.
-
-ATUALIZAÇÃO v6.6.0: anúncio como capa de Cartões de Visita; galeria com o anúncio e duas fotos reais otimizadas. Banners corrigidos v65 preservados.
+WhatsApps de vendas
+(31) 98716-7190
+(31) 98509-3019
