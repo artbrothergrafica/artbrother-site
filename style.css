@@ -544,7 +544,7 @@ footer {
   width:min(100%,1100px);
   min-height:0
 }
-.lightbox-conteudo>img {
+.foto-ampliacao > img {
   width:100%;
   height:100%;
   min-height:0;
@@ -1162,4 +1162,168 @@ footer p {margin:0 0 6px}
   .pagina-catalogo .catalogo-conteudo {grid-template-columns:1fr;gap:22px}
   .pagina-catalogo .catalogo-capa {order:2;width:min(48vw,205px)}
   .pagina-catalogo .catalogo-voltar {font-size:12px}
+}
+
+/* Apresentação fotográfica da vitrine e das galerias */
+.foto-recursos {
+  position:absolute;
+  width:0;
+  height:0;
+  overflow:hidden;
+  pointer-events:none;
+}
+.produto-capa,
+.produto-capa button,
+.trabalho button {
+  background:#f2f3f6;
+}
+.produto-capa button,
+.trabalho button {
+  display:grid;
+  grid-template: minmax(0,1fr) / minmax(0,1fr);
+  place-items:center;
+  aspect-ratio:4/3;
+  overflow:hidden;
+}
+.produto-capa img,
+.trabalho img {
+  width:100%;
+  height:100%;
+  min-width:0;
+  min-height:0;
+  padding:3%;
+  aspect-ratio:auto;
+  object-fit:contain;
+  mix-blend-mode:normal;
+}
+.lightbox-miniaturas img {object-fit:contain}
+:where(.produto-capa, .trabalho, .lightbox-conteudo) img {
+  --foto-luz:1.018;
+  --foto-contraste:1.03;
+  --foto-cor:1.01;
+  --foto-nitidez:url(#nitidez-suave);
+  filter:var(--foto-nitidez) brightness(var(--foto-luz)) contrast(var(--foto-contraste)) saturate(var(--foto-cor));
+}
+:where(.produto-capa, .trabalho, .lightbox-conteudo) img:is(
+  [src*="livros-cadernos-wire-o-"],
+  [src$="/caixas-festa-personalizadas-1.webp"],
+  [src*="festas-eventos-caixas-milk"],
+  [src*="festas-eventos-kits-adesivos"],
+  [src*="festas-eventos-kit-completo"],
+  [src$="/adesivos-cortados.webp"]
+) {
+  --foto-luz:1.065;
+  --foto-contraste:1.027;
+  --foto-cor:1.005;
+}
+:where(.produto-capa, .trabalho, .lightbox-conteudo) img:is(
+  [src$="/placa-pix.webp"],
+  [src$="/blocos.webp"],
+  [src*="caderneta-pet-"],
+  [src*="anuncio.webp"],
+  [src*="impressao-fotografias.webp"],
+  [src*="impressao-polaroids.webp"]
+) {
+  --foto-luz:1.01;
+  --foto-contraste:1.022;
+  --foto-cor:1;
+  --foto-nitidez:brightness(1);
+}
+:where(.produto-capa, .trabalho, .lightbox-conteudo) img:is(
+  [src$="/agenda.webp"],
+  [src*="cartoes-visita-foto-"],
+  [src$="/laminacao.webp"],
+  [src$="/adesivos.webp"],
+  [src$="/cards.webp"]
+) {
+  --foto-luz:1.012;
+  --foto-contraste:1.022;
+  --foto-cor:.992;
+}
+:where(.produto-capa, .trabalho, .lightbox-conteudo) img:is(
+  [src$="/fotografias.webp"],
+  [src$="/polaroids.webp"],
+  [src$="/placa-com-foto.webp"],
+  [src$="/chaveiros-personalizados.webp"]
+) {
+  --foto-cor:1;
+}
+.produto-capa .capa-botao span {z-index:1}
+.produto-capa .tipo-imagem {z-index:2}
+
+.foto-ampliacao {
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  width:100%;
+  height:100%;
+  min-height:0;
+}
+.foto-ampliacao:has(img[data-recorte]) {
+  width:min(100%,820px);
+  background:#f2f3f6;
+  border-radius:10px;
+}
+.lightbox-miniaturas button {
+  display:grid;
+  place-items:center;
+}
+
+@supports (width:1cqw) {
+  .produto-capa button,
+  .trabalho button,
+  .foto-ampliacao,
+  .lightbox-miniaturas button {
+    container-type:size;
+  }
+  .produto-capa img[data-recorte],
+  .trabalho img[data-recorte],
+  .lightbox-conteudo img[data-recorte] {
+    width:min(100cqw,calc(100cqh * var(--foto-razao)));
+    height:auto;
+    padding:0;
+    aspect-ratio:var(--foto-razao);
+    object-fit:fill;
+    clip-path:var(--foto-recorte);
+    transform:translate(var(--foto-deslocamento-x),var(--foto-deslocamento-y)) scale(var(--foto-escala));
+  }
+}
+[data-recorte="colecao-de-cadernos"] {
+  --foto-razao:1.327801;
+  --foto-escala:1.0;
+  --foto-deslocamento-x:0%;
+  --foto-deslocamento-y:0%;
+  --foto-recorte:url(#recorte-colecao-de-cadernos);
+}
+[data-recorte="capa-de-apostila"] {
+  --foto-razao:0.753659;
+  --foto-escala:1.18;
+  --foto-deslocamento-x:4%;
+  --foto-deslocamento-y:-3%;
+  --foto-recorte:url(#recorte-capa-de-apostila);
+}
+[data-recorte="capa-de-livreto"] {
+  --foto-razao:0.753659;
+  --foto-escala:1.17;
+  --foto-deslocamento-x:-3%;
+  --foto-deslocamento-y:0%;
+  --foto-recorte:url(#recorte-capa-de-livreto);
+}
+[data-recorte="impressos-do-panfleto"] {
+  --foto-razao:1.327801;
+  --foto-escala:1.03;
+  --foto-deslocamento-x:3%;
+  --foto-deslocamento-y:0%;
+  --foto-recorte:url(#recorte-impressos-do-panfleto);
+}
+[data-recorte="conjunto-de-pulseiras"] {
+  --foto-razao:1.327801;
+  --foto-escala:0.94;
+  --foto-deslocamento-x:0%;
+  --foto-deslocamento-y:4%;
+  --foto-recorte:url(#recorte-conjunto-de-pulseiras);
+}
+
+.produto-capa img[src$="-fundo-claro.webp"] {
+  padding:0;
 }

@@ -93,6 +93,7 @@ const galeriasProdutos = {
  ],
   'blocos-de-notas': [{src:'img/produtos/blocos.webp',alt:'Bloco de ordem de serviço e bloco com capa kraft',legenda:'Blocos de notas · imagem ilustrativa'}],
   'livros-cadernos-wire-o': [
+    {src:'img/produtos/wire-o-fundo-claro.webp',alt:'Livros impressos com encadernação Wire-O em fundo claro',legenda:'Livros Wire-O · imagem ilustrativa'},
     {src:'img/produtos/wire-o.webp',alt:'Livros impressos com encadernação Wire-O',legenda:'Livros impressos com acabamento Wire-O'},
     {src:'img/livros-cadernos-wire-o-1.webp',alt:'Livros e cadernos na bancada da Art Brother',legenda:'Livros e cadernos Wire-O na bancada da gráfica'},
     {src:'img/livros-cadernos-wire-o-2.webp',alt:'Livros e cadernos personalizados expostos na Art Brother',legenda:'Livros e Cadernos Personalizados Wire-O — Produção Art Brother'}
@@ -105,6 +106,7 @@ const galeriasProdutos = {
     { src:'img/galeria/bobzinho-arte.webp', alt:'Livrinho de colorir com Bobzinho fazendo arte', legenda:'Bobzinho Criativo' }
   ],
   'festas-eventos': [
+    {src:'img/produtos/caixas-fundo-claro.webp',alt:'Caixas para festa em tons lilás sobre fundo claro',legenda:'Caixas personalizadas · imagem ilustrativa'},
     { src:'img/produtos/caixas.webp', alt:'Caixas de festa e personalizados em tons pastel', legenda:'Caixas personalizadas para festas' },
     { src:'img/galeria/festas-eventos-caixas-milk.webp', alt:'Caixas Milk e personalizados para festa neon', legenda:'Caixas Milk e Personalizados' },
     { src:'img/galeria/festas-eventos-kits-adesivos.webp', alt:'Kit de caixas, adesivos e rótulos personalizados para festa neon', legenda:'Kit Completo com Adesivos e Rótulos' },
@@ -136,11 +138,28 @@ const galeriasProdutos = {
 
 };
 
+const recortesDeFoto = {
+  "cadernos.webp": "colecao-de-cadernos",
+  "apostilas.webp": "capa-de-apostila",
+  "livretos.webp": "capa-de-livreto",
+  "panfletos.webp": "impressos-do-panfleto",
+  "pulseiras.webp": "conjunto-de-pulseiras",
+  "cadernos-personalizados-modelos.webp": "colecao-de-cadernos"
+};
+
+function aplicarFoto(img, src) {
+  const nome = new URL(src, document.baseURI).pathname.split('/').pop();
+  const recorte = recortesDeFoto[nome];
+  if (recorte) img.dataset.recorte = recorte;
+  else delete img.dataset.recorte;
+  img.src = src;
+}
+
 function mostrarImagemLightbox(indice){
   if(!imagensAbertas.length || !lightboxImagem || !lightboxLegenda) return;
   imagemAtual = (indice + imagensAbertas.length) % imagensAbertas.length;
   const imagem = imagensAbertas[imagemAtual];
-  lightboxImagem.src = imagem.src;
+  aplicarFoto(lightboxImagem, imagem.src);
   lightboxImagem.alt = imagem.alt;
   lightboxLegenda.textContent = imagem.legenda;
   if(lightboxContador){
@@ -160,7 +179,7 @@ function montarMiniaturas(){
     botao.type = 'button';
     botao.setAttribute('aria-label', `Mostrar foto ${i + 1}: ${imagem.legenda}`);
     const miniatura = document.createElement('img');
-    miniatura.src = imagem.src;
+    aplicarFoto(miniatura, imagem.src);
     miniatura.alt = '';
     botao.appendChild(miniatura);
     botao.addEventListener('click', () => mostrarImagemLightbox(i));

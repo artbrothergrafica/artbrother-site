@@ -18,10 +18,10 @@
   <meta property="og:image" content="https://artbrother.com.br/logo.png">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png?v=7.1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png?v=7.1.0">
-  <link rel="icon" href="favicon/favicon.ico?v=7.1.0">
-  <link rel="manifest" href="site.webmanifest?v=7.1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png?v=7.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png?v=7.2.0">
+  <link rel="icon" href="favicon/favicon.ico?v=7.2.0">
+  <link rel="manifest" href="site.webmanifest?v=7.2.0">
   <link rel="preload" as="image" href="logo.png">
 
   <link rel="canonical" href="https://artbrother.com.br/">
@@ -383,11 +383,40 @@
   }
 }
   </script>
-  <link rel="stylesheet" href="style.css?v=7.1.0">
+  <link rel="stylesheet" href="style.css?v=7.2.0">
   <noscript><style>.menu{display:flex!important;position:static;flex-wrap:wrap;max-height:none}.topo{position:relative;flex-wrap:wrap}.menu-toggle,.carrossel-pausa,.carrossel-controle,.botao-ver-galeria{display:none!important}</style></noscript>
 </head>
 
 <body>
+<svg class="foto-recursos" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="nitidez-suave" color-interpolation-filters="sRGB">
+      <feConvolveMatrix order="3" kernelMatrix="0 -.045 0 -.045 1.18 -.045 0 -.045 0" preserveAlpha="true"/>
+    </filter>
+    <clipPath id="recorte-colecao-de-cadernos" clipPathUnits="objectBoundingBox">
+      <polygon points="0.076042,0.084371 0.312500,0.085754 0.314583,0.474412 0.308333,0.484094 0.081250,0.482711 0.075000,0.475795"/>
+      <polygon points="0.323958,0.094053 0.509375,0.092669 0.510417,0.443983 0.322917,0.448133"/>
+      <polygon points="0.522917,0.094053 0.713542,0.094053 0.715625,0.445367 0.521875,0.446750"/>
+      <polygon points="0.733333,0.091286 0.929167,0.095436 0.931250,0.446750 0.731250,0.448133"/>
+      <polygon points="0.072917,0.499308 0.270833,0.499308 0.272917,0.869986 0.072917,0.871369"/>
+      <polygon points="0.296875,0.497925 0.502083,0.497925 0.503125,0.868603 0.295833,0.871369"/>
+      <polygon points="0.518750,0.497925 0.711458,0.497925 0.713542,0.868603 0.516667,0.868603"/>
+      <polygon points="0.733333,0.495159 0.933333,0.495159 0.934375,0.867220 0.731250,0.869986"/>
+    </clipPath>
+    <clipPath id="recorte-capa-de-apostila" clipPathUnits="objectBoundingBox">
+      <polygon points="0.004854,0.671951 0.331715,0.234146 0.364078,0.231707 0.838188,0.303659 0.847896,0.315854 0.846278,0.339024 0.834951,0.353659 0.721683,0.821951 0.710356,0.845122 0.697411,0.854878 0.033981,0.709756 0.009709,0.695122"/>
+    </clipPath>
+    <clipPath id="recorte-capa-de-livreto" clipPathUnits="objectBoundingBox">
+      <polygon points="0.173139,0.839024 0.266990,0.210976 0.828479,0.110976 0.901294,0.858537 0.904531,0.867073 0.205502,0.858537"/>
+    </clipPath>
+    <clipPath id="recorte-impressos-do-panfleto" clipPathUnits="objectBoundingBox">
+      <polygon points="0.158333,0.154910 0.511458,0.070539 0.521875,0.077455 0.734375,0.679115 0.729167,0.724758 0.305208,0.868603 0.288542,0.850622"/>
+    </clipPath>
+    <clipPath id="recorte-conjunto-de-pulseiras" clipPathUnits="objectBoundingBox">
+      <polygon points="0.158333,0.078838 0.625000,0.060858 0.652083,0.063624 0.678125,0.091286 0.683333,0.153527 0.793750,0.164592 0.817708,0.201936 0.843750,0.232365 0.877083,0.403873 0.961458,0.694329 0.968750,0.730290 0.330208,0.771784 0.300000,0.770401 0.300000,0.719225 0.281250,0.712310 0.281250,0.656985 0.262500,0.654219 0.266667,0.521438 0.116667,0.532503 0.000000,0.605809 0.000000,0.439834 0.119792,0.373444 0.135417,0.291840"/>
+    </clipPath>
+  </defs>
+</svg>
 <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
 <header class="topo">
@@ -448,60 +477,60 @@
       </div>
       <div class="vitrine-grade">
         <article class="produto" id="produto-cadernos">
-          <div class="produto-capa"><button class="abrir-galeria-produto capa-botao" data-galeria="cadernos-personalizados" type="button" aria-label="Ver imagens de Cadernos personalizados"><img src="img/produtos/cadernos.webp" alt="Cadernos personalizados" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button></div>
+          <div class="produto-capa"><button class="abrir-galeria-produto capa-botao" data-galeria="cadernos-personalizados" type="button" aria-label="Ver imagens de Cadernos personalizados"><img src="img/produtos/cadernos.webp" data-recorte="colecao-de-cadernos" alt="Cadernos personalizados" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button></div>
           <div class="produto-texto">
             <h4>Cadernos personalizados</h4>
-            <p>Capas com nome, tema, foto ou marca. Consulte as opções de miolo, encadernação e fechamento.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Cadernos%20personalizados.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Cadernos personalizados">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Capas personalizadas com nome, tema, foto ou marca. Escolha o tipo de miolo, a encadernação e o fechamento conforme o uso.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Cadernos%20personalizados.%0AQuantidade%3A%20%0ATamanho%20e%20tipo%20de%20miolo%3A%20%0ANome%2C%20tema%20ou%20arte%20da%20capa%3A%20%0AEncaderna%C3%A7%C3%A3o%20e%20fechamento%20desejados%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Cadernos personalizados">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article><article class="produto" id="produto-agenda">
           <div class="produto-capa"><button class="abrir-galeria-produto capa-botao" data-galeria="agenda-2027" type="button" aria-label="Ver imagens de Agendas 2027"><img src="img/produtos/agenda.webp" alt="Agendas 2027" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><span class="tipo-imagem">Imagem ilustrativa</span></div>
           <div class="produto-texto">
             <h4>Agendas 2027</h4>
-            <p>Capa personalizada com encadernação Wire-O. Consulte opções de miolo e fechamento com elástico.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Agendas%202027.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Agendas 2027">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Agenda 2027 com capa personalizada, encadernação Wire-O e opção de fechamento com elástico. Consulte os modelos de miolo.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Agendas%202027.%0AQuantidade%3A%20%0ATamanho%20e%20modelo%20de%20miolo%3A%20%0ANome%2C%20tema%20ou%20arte%20da%20capa%3A%20%0ACom%20ou%20sem%20el%C3%A1stico%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Agendas 2027">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article><article class="produto" id="produto-blocos">
           <div class="produto-capa"><button class="abrir-galeria-produto capa-botao" data-galeria="blocos-de-notas" type="button" aria-label="Ver imagens de Blocos de notas"><img src="img/produtos/blocos.webp" alt="Blocos de notas" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><span class="tipo-imagem">Imagem ilustrativa</span></div>
           <div class="produto-texto">
             <h4>Blocos de notas</h4>
-            <p>Com logotipo, marca d’água ou layout próprio. Opção em papel autocopiativo para pedidos e ordens de serviço.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Blocos%20de%20notas.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Blocos de notas">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Blocos com logotipo, marca d’água ou layout próprio. Para pedidos e ordens de serviço, também há opção em papel autocopiativo.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Blocos%20de%20notas.%0AQuantidade%3A%20%0AMedidas%20e%20folhas%20por%20bloco%3A%20%0APapel%20comum%20ou%20autocopiativo%3A%20%0AArte%20ou%20modelo%20do%20formul%C3%A1rio%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Blocos de notas">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article><article class="produto" id="produto-wire-o">
-          <div class="produto-capa"><button class="abrir-galeria-produto capa-botao" data-galeria="livros-cadernos-wire-o" type="button" aria-label="Ver imagens de Livros e cadernos Wire-O"><img src="img/produtos/wire-o.webp" alt="Livros e cadernos Wire-O" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button></div>
+          <div class="produto-capa"><button class="abrir-galeria-produto capa-botao" data-galeria="livros-cadernos-wire-o" type="button" aria-label="Ver imagens de Livros e cadernos Wire-O"><img src="img/produtos/wire-o-fundo-claro.webp" alt="Livros e cadernos Wire-O" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><span class="tipo-imagem">Imagem ilustrativa</span></div>
           <div class="produto-texto">
             <h4>Livros e cadernos Wire-O</h4>
-            <p>Impressão e encadernação para livros autorais, materiais didáticos e cadernos personalizados.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Livros%20e%20cadernos%20Wire-O.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Livros e cadernos Wire-O">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Impressão e encadernação Wire-O para livros autorais, material didático e cadernos. As alças duplas de metal permitem abrir as páginas por inteiro.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Livros%20e%20cadernos%20Wire-O.%0AQuantidade%3A%20%0ATamanho%20e%20n%C3%BAmero%20de%20p%C3%A1ginas%3A%20%0AImpress%C3%A3o%20em%20cores%20ou%20preto%20e%20branco%3A%20%0AS%C3%B3%20frente%20ou%20frente%20e%20verso%3A%20%0AArquivo%20e%20op%C3%A7%C3%B5es%20de%20capa%20desejadas%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Livros e cadernos Wire-O">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article><article class="produto" id="produto-apostilas">
-          <div class="produto-capa"><button class="abrir-lightbox capa-botao" type="button" aria-label="Ampliar imagem de Apostilas e encadernação"><img src="img/produtos/apostilas.webp" alt="Apostilas e encadernação" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button></div>
+          <div class="produto-capa"><button class="abrir-lightbox capa-botao" type="button" aria-label="Ampliar imagem de Apostilas e encadernação"><img src="img/produtos/apostilas.webp" data-recorte="capa-de-apostila" alt="Apostilas e encadernação" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button></div>
           <div class="produto-texto">
             <h4>Apostilas e encadernação</h4>
-            <p>Impressão em cores ou preto e branco, só frente ou frente e verso, para apostilas, manuais e trabalhos.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Apostilas%20e%20encaderna%C3%A7%C3%A3o.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Apostilas e encadernação">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Impressão e encadernação para apostilas, manuais e trabalhos. Escolha impressão colorida ou em preto e branco, só frente ou frente e verso.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Apostilas%20e%20encaderna%C3%A7%C3%A3o.%0AQuantidade%3A%20%0AFormato%20e%20n%C3%BAmero%20de%20p%C3%A1ginas%3A%20%0AColorida%20ou%20preto%20e%20branco%3A%20%0AS%C3%B3%20frente%20ou%20frente%20e%20verso%3A%20%0AArquivo%20e%20encaderna%C3%A7%C3%A3o%20desejada%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Apostilas e encadernação">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article><article class="produto" id="produto-bobzinho">
           <div class="produto-capa"><button class="abrir-galeria-produto capa-botao" data-galeria="livro-colorir" type="button" aria-label="Ver imagens de Livro de colorir Bobzinho"><img src="img/produtos/bobzinho.webp" alt="Livro de colorir Bobzinho" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button></div>
           <div class="produto-texto">
             <h4>Livro de colorir Bobzinho</h4>
-            <p>Bobzinho e sua Turma. São 42 atividades para colorir e 5 canetas por livro.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Livro%20de%20colorir%20Bobzinho.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Livro de colorir Bobzinho">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Bobzinho e sua Turma reúne 42 atividades para colorir. Cada livro acompanha cinco canetas.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Livro%20de%20colorir%20Bobzinho.%0AQuantidade%3A%20%0AData%20para%20entrega%20ou%20retirada%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Livro de colorir Bobzinho">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article><article class="produto" id="produto-luluzinha">
           <div class="produto-capa"><button class="abrir-lightbox capa-botao" type="button" aria-label="Ampliar imagem de Livro de colorir Luluzinha"><img src="img/produtos/luluzinha.webp" alt="Livro de colorir Luluzinha" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button></div>
           <div class="produto-texto">
             <h4>Livro de colorir Luluzinha</h4>
-            <p>Luluzinha e sua Turma. São 42 atividades para colorir e 5 canetas por livro.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Livro%20de%20colorir%20Luluzinha.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Livro de colorir Luluzinha">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Luluzinha e sua Turma reúne 42 atividades para colorir. Cada livro acompanha cinco canetas.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Livro%20de%20colorir%20Luluzinha.%0AQuantidade%3A%20%0AData%20para%20entrega%20ou%20retirada%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Livro de colorir Luluzinha">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article><article class="produto" id="produto-livretos">
-          <div class="produto-capa"><button class="abrir-lightbox capa-botao" type="button" aria-label="Ampliar imagem de Livretos grampeados"><img src="img/produtos/livretos.webp" alt="Livretos grampeados" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button></div>
+          <div class="produto-capa"><button class="abrir-lightbox capa-botao" type="button" aria-label="Ampliar imagem de Livretos grampeados"><img src="img/produtos/livretos.webp" data-recorte="capa-de-livreto" alt="Livretos grampeados" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button></div>
           <div class="produto-texto">
             <h4>Livretos grampeados</h4>
-            <p>Histórias, homenagens e projetos criativos com capa e conteúdo personalizados.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Livretos%20grampeados.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Livretos grampeados">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Livretos com encadernação grampeada, capa e conteúdo personalizados. Para histórias, homenagens e projetos criativos.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Livretos%20grampeados.%0AQuantidade%3A%20%0ATamanho%20fechado%20e%20n%C3%BAmero%20de%20p%C3%A1ginas%3A%20%0AArquivo%20da%20capa%20e%20do%20miolo%3A%20%0AImpress%C3%A3o%20em%20cores%20ou%20preto%20e%20branco%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Livretos grampeados">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article>
       </div>
@@ -516,50 +545,50 @@
           <div class="produto-capa"><button class="abrir-galeria-produto capa-botao" data-galeria="cartoes-visita" type="button" aria-label="Ver imagens de Cartões de visita"><img src="img/produtos/cartoes.webp" alt="Cartões de visita" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><span class="tipo-imagem">Imagem ilustrativa</span></div>
           <div class="produto-texto">
             <h4>Cartões de visita</h4>
-            <p>Personalizados com a identidade da sua marca. Consulte impressão frente e verso e opções de acabamento.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Cart%C3%B5es%20de%20visita.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Cartões de visita">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Cartões de visita com a identidade da sua marca. Consulte impressão frente e verso e opções de acabamento.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Cart%C3%B5es%20de%20visita.%0AQuantidade%3A%20%0AMedidas%3A%20%0AS%C3%B3%20frente%20ou%20frente%20e%20verso%3A%20%0AArte%20e%20acabamento%20desejado%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Cartões de visita">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article><article class="produto" id="produto-panfletos">
-          <div class="produto-capa"><button class="abrir-lightbox capa-botao" type="button" aria-label="Ampliar imagem de Panfletos"><img src="img/produtos/panfletos.webp" alt="Panfletos" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button></div>
+          <div class="produto-capa"><button class="abrir-lightbox capa-botao" type="button" aria-label="Ampliar imagem de Panfletos"><img src="img/produtos/panfletos.webp" data-recorte="impressos-do-panfleto" alt="Panfletos" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button></div>
           <div class="produto-texto">
             <h4>Panfletos</h4>
-            <p>Para divulgar seus serviços, campanhas e eventos. Envie a arte, o formato e a quantidade.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Panfletos.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Panfletos">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Impressos para divulgar serviços, campanhas e eventos. O orçamento varia com o formato, o papel e os lados impressos.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Panfletos.%0AQuantidade%3A%20%0AFormato%20e%20papel%20desejado%3A%20%0AS%C3%B3%20frente%20ou%20frente%20e%20verso%3A%20%0AArte%20ou%20arquivo%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Panfletos">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article><article class="produto" id="produto-flyers">
           <div class="produto-capa"><button class="abrir-lightbox capa-botao" type="button" aria-label="Ampliar imagem de Flyers" data-legenda="Flyers · imagem ilustrativa"><img src="img/produtos/flyers.webp" alt="Flyers" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><span class="tipo-imagem">Imagem ilustrativa</span></div>
           <div class="produto-texto">
             <h4>Flyers</h4>
-            <p>Impressos para promoções e lançamentos. Consulte os formatos disponíveis.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Flyers.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Flyers">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Impressos de divulgação para promoções e lançamentos. Informe as medidas, o papel e o acabamento desejados.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Flyers.%0AQuantidade%3A%20%0AMedidas%20e%20papel%20desejado%3A%20%0AS%C3%B3%20frente%20ou%20frente%20e%20verso%3A%20%0AArte%20ou%20arquivo%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Flyers">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article><article class="produto" id="produto-certificados">
           <div class="produto-capa"><button class="abrir-lightbox capa-botao" type="button" aria-label="Ampliar imagem de Diplomas e certificados" data-legenda="Diplomas e certificados · imagem ilustrativa"><img src="img/produtos/certificados.webp" alt="Diplomas e certificados" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><span class="tipo-imagem">Imagem ilustrativa</span></div>
           <div class="produto-texto">
             <h4>Diplomas e certificados</h4>
-            <p>Impressão a partir da sua arte para cursos, homenagens e eventos.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Diplomas%20e%20certificados.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Diplomas e certificados">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Impressão de diplomas e certificados a partir da sua arte, para cursos, eventos e homenagens. Envie o arquivo e informe o formato e o papel desejado.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Diplomas%20e%20certificados.%0AQuantidade%3A%20%0AFormato%20e%20papel%20desejado%3A%20%0AArquivo%20de%20impress%C3%A3o%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Diplomas e certificados">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article><article class="produto" id="produto-convites">
           <div class="produto-capa"><button class="abrir-lightbox capa-botao" type="button" aria-label="Ampliar imagem de Convites personalizados" data-legenda="Convites personalizados · imagem ilustrativa"><img src="img/produtos/convites.webp" alt="Convites personalizados" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><span class="tipo-imagem">Imagem ilustrativa</span></div>
           <div class="produto-texto">
             <h4>Convites personalizados</h4>
-            <p>Para aniversários e outras celebrações, com arte no tema do evento.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Convites%20personalizados.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Convites personalizados">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Convites personalizados com a arte e o tema da sua celebração. Informe o formato, as medidas e os dados do evento.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Convites%20personalizados.%0AQuantidade%3A%20%0AMedidas%20e%20formato%3A%20%0ATema%2C%20data%20e%20informa%C3%A7%C3%B5es%20do%20evento%3A%20%0AArte%20ou%20refer%C3%AAncia%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Convites personalizados">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article><article class="produto" id="produto-marcadores-biblia">
           <div class="produto-capa"><button class="abrir-lightbox capa-botao" type="button" aria-label="Ampliar imagem de Marcadores de Bíblia" data-legenda="Marcadores de Bíblia · imagem ilustrativa"><img src="img/produtos/marcadores-biblia.webp" alt="Marcadores de Bíblia" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><span class="tipo-imagem">Imagem ilustrativa</span></div>
           <div class="produto-texto">
             <h4>Marcadores de Bíblia</h4>
-            <p>Temas e mensagens para encontros, igrejas e lembranças.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Marcadores%20de%20B%C3%ADblia.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Marcadores de Bíblia">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Marcadores com temas, mensagens ou versículos para encontros, igrejas e lembranças. Envie o texto e as medidas desejadas.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Marcadores%20de%20B%C3%ADblia.%0AQuantidade%3A%20%0AMedidas%3A%20%0AVers%C3%ADculo%2C%20mensagem%20ou%20arte%3A%20%0AAcabamento%20desejado%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Marcadores de Bíblia">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article><article class="produto" id="produto-marca-paginas">
           <div class="produto-capa"><button class="abrir-lightbox capa-botao" type="button" aria-label="Ampliar imagem de Marca-páginas" data-legenda="Marca-páginas · imagem ilustrativa"><img src="img/produtos/marca-paginas.webp" alt="Marca-páginas" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><span class="tipo-imagem">Imagem ilustrativa</span></div>
           <div class="produto-texto">
             <h4>Marca-páginas</h4>
-            <p>Personalizados com nome, tema ou identidade visual.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Marca-p%C3%A1ginas.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Marca-páginas">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Marca-páginas com nome, tema ou identidade visual. Escolha a arte e informe o tamanho e o acabamento desejados.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Marca-p%C3%A1ginas.%0AQuantidade%3A%20%0AMedidas%3A%20%0ATema%2C%20nome%20ou%20arte%3A%20%0AAcabamento%20desejado%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Marca-páginas">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article>
       </div>
@@ -571,53 +600,53 @@
       </div>
       <div class="vitrine-grade">
         <article class="produto" id="produto-caixas">
-          <div class="produto-capa"><button class="abrir-galeria-produto capa-botao" data-galeria="festas-eventos" type="button" aria-label="Ver imagens de Caixas personalizadas para festas"><img src="img/produtos/caixas.webp" alt="Caixas personalizadas para festas" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button></div>
+          <div class="produto-capa"><button class="abrir-galeria-produto capa-botao" data-galeria="festas-eventos" type="button" aria-label="Ver imagens de Caixas personalizadas para festas"><img src="img/produtos/caixas-fundo-claro.webp" alt="Caixas personalizadas para festas" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><span class="tipo-imagem">Imagem ilustrativa</span></div>
           <div class="produto-texto">
             <h4>Caixas personalizadas para festas</h4>
-            <p>Caixas Milk, Pirâmide, Tubolata e Bala. Consulte modelos e kits.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Caixas%20personalizadas%20para%20festas.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Caixas personalizadas para festas">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Personalizados para festas em modelos Milk, Pirâmide, Tubolata e Bala. Escolha o modelo, o tema e o nome que vai na arte. Consulte opções de kits e acabamento.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Caixas%20personalizadas%20para%20festas.%0AQuantidade%3A%20%0AModelo%20e%20tamanho%20da%20caixa%3A%20%0ATema%2C%20nome%20e%20idade%3A%20%0AQuantidade%20por%20modelo%20e%20acabamento%20desejado%3A%20%0AData%20da%20festa%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Caixas personalizadas para festas">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article><article class="produto" id="produto-pulseiras">
-          <div class="produto-capa"><button class="abrir-lightbox capa-botao" type="button" aria-label="Ampliar imagem de Pulseiras personalizadas"><img src="img/produtos/pulseiras.webp" alt="Pulseiras personalizadas" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button></div>
+          <div class="produto-capa"><button class="abrir-lightbox capa-botao" type="button" aria-label="Ampliar imagem de Pulseiras personalizadas"><img src="img/produtos/pulseiras.webp" data-recorte="conjunto-de-pulseiras" alt="Pulseiras personalizadas" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button></div>
           <div class="produto-texto">
             <h4>Pulseiras personalizadas</h4>
-            <p>Identificação para festas e eventos, com nomes e cores personalizados.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Pulseiras%20personalizadas.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Pulseiras personalizadas">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Pulseiras para identificar convidados em festas e eventos. Personalize com o nome do evento, as cores e a arte.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Pulseiras%20personalizadas.%0AQuantidade%3A%20%0AMedidas%20desejadas%3A%20%0ANome%20do%20evento%2C%20cores%20e%20arte%3A%20%0AData%20do%20evento%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Pulseiras personalizadas">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article><article class="produto" id="produto-topos">
           <div class="produto-capa"><button class="abrir-lightbox capa-botao" type="button" aria-label="Ampliar imagem de Topos de bolo" data-legenda="Topos de bolo · imagem ilustrativa"><img src="img/produtos/topos.webp" alt="Topos de bolo" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><span class="tipo-imagem">Imagem ilustrativa</span></div>
           <div class="produto-texto">
             <h4>Topos de bolo</h4>
-            <p>Feitos com o nome, a idade e o tema da comemoração.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Topos%20de%20bolo.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Topos de bolo">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Topos de bolo com arte no tema da festa, nome e idade. Envie a medida do topo ou o tamanho do bolo para orientar o formato.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Topos%20de%20bolo.%0AQuantidade%3A%20%0ATema%2C%20nome%20e%20idade%3A%20%0AMedida%20do%20topo%20ou%20tamanho%20do%20bolo%3A%20%0AData%20da%20festa%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Topos de bolo">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article><article class="produto" id="produto-totens">
           <div class="produto-capa"><button class="abrir-lightbox capa-botao" type="button" aria-label="Ampliar imagem de Totens de isopor" data-legenda="Totens de isopor · imagem ilustrativa"><img src="img/produtos/totens.webp" alt="Totens de isopor" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><span class="tipo-imagem">Imagem ilustrativa</span></div>
           <div class="produto-texto">
             <h4>Totens de isopor</h4>
-            <p>Impressão aplicada no isopor e recortada no formato da arte.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Totens%20de%20isopor.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Totens de isopor">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Impressão aplicada em isopor e recortada no formato da arte. Informe a altura desejada e envie o personagem ou desenho.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Totens%20de%20isopor.%0AQuantidade%3A%20%0AAltura%20ou%20medidas%3A%20%0ATema%2C%20personagem%20ou%20arquivo%3A%20%0AData%20do%20evento%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Totens de isopor">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article><article class="produto" id="produto-paineis">
           <div class="produto-capa"><button class="abrir-lightbox capa-botao" type="button" aria-label="Ampliar imagem de Painéis para festas" data-legenda="Painéis para festas · imagem ilustrativa"><img src="img/produtos/paineis.webp" alt="Painéis para festas" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><span class="tipo-imagem">Imagem ilustrativa</span></div>
           <div class="produto-texto">
             <h4>Painéis para festas</h4>
-            <p>Até A3 ou maior com emendas, em papel fotográfico ou adesivo. Consulte bases de isopor e papelão.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Pain%C3%A9is%20para%20festas.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Painéis para festas">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Painéis em papel fotográfico ou adesivo, até A3 em uma peça. Para medidas maiores, consulte montagem com emendas e base em isopor ou papelão.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Pain%C3%A9is%20para%20festas.%0AQuantidade%3A%20%0AMedidas%20finais%3A%20%0APapel%20fotogr%C3%A1fico%20ou%20adesivo%3A%20%0ABase%20e%20tema%20desejados%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Painéis para festas">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article><article class="produto" id="produto-sacolinhas">
           <div class="produto-capa"><button class="abrir-lightbox capa-botao" type="button" aria-label="Ampliar imagem de Sacolinhas de festa" data-legenda="Sacolinhas de festa · imagem ilustrativa"><img src="img/produtos/sacolinhas.webp" alt="Sacolinhas de festa" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><span class="tipo-imagem">Imagem ilustrativa</span></div>
           <div class="produto-texto">
             <h4>Sacolinhas de festa</h4>
-            <p>Com o tema, o nome e as cores da comemoração.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Sacolinhas%20de%20festa.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Sacolinhas de festa">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Sacolinhas personalizadas com o tema, o nome e as cores da comemoração. Informe o tamanho, o modelo e a data da festa.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Sacolinhas%20de%20festa.%0AQuantidade%3A%20%0AMedidas%20e%20modelo%3A%20%0ATema%2C%20nome%20e%20cores%3A%20%0AData%20da%20festa%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Sacolinhas de festa">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article><article class="produto" id="produto-sacolas">
           <div class="produto-capa"><button class="abrir-lightbox capa-botao" type="button" aria-label="Ampliar imagem de Sacolas para lojas" data-legenda="Sacolas para lojas · imagem ilustrativa"><img src="img/produtos/sacolas.webp" alt="Sacolas para lojas" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><span class="tipo-imagem">Imagem ilustrativa</span></div>
           <div class="produto-texto">
             <h4>Sacolas para lojas</h4>
-            <p>Sacolas com sua marca. Consulte tamanhos e estilos.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Sacolas%20para%20lojas.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Sacolas para lojas">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Sacolas para lojas com sua identidade visual. Escolha o estilo e envie o logotipo, as medidas e a quantidade.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Sacolas%20para%20lojas.%0AQuantidade%3A%20%0AMedidas%20e%20estilo%3A%20%0ALogo%20ou%20arte%3A%20%0ACores%20desejadas%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Sacolas para lojas">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article>
       </div>
@@ -632,36 +661,36 @@
           <div class="produto-capa"><button class="abrir-lightbox capa-botao" type="button" aria-label="Ampliar imagem de Impressão A4, A3 e xerox" data-legenda="Impressão A4, A3 e xerox · imagem ilustrativa"><img src="img/produtos/impressao.webp" alt="Impressão A4, A3 e xerox" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><span class="tipo-imagem">Imagem ilustrativa</span></div>
           <div class="produto-texto">
             <h4>Impressão A4, A3 e xerox</h4>
-            <p>Cópias e impressões em cores ou preto e branco. Opções em papel comum, fotográfico, adesivo e vinil. Consulte as gramaturas por formato.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Impress%C3%A3o%20A4%2C%20A3%20e%20xerox.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Impressão A4, A3 e xerox">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Impressão e cópias em cores ou preto e branco. A4 com papéis de 75, 90, 120 ou 180 g/m², fotográfico, adesivo fotográfico ou vinil. A3 com papéis de 75 ou 240 g/m², fotográfico, fotográfico dupla face ou vinil.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Impress%C3%A3o%20A4%2C%20A3%20e%20xerox.%0AQuantidade%3A%20%0AA4%20ou%20A3%2C%20gramatura%20e%20tipo%20de%20papel%3A%20%0AColorida%20ou%20preto%20e%20branco%3A%20%0AS%C3%B3%20frente%20ou%20frente%20e%20verso%3A%20%0AN%C3%BAmero%20de%20p%C3%A1ginas%20ou%20arquivo%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Impressão A4, A3 e xerox">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article><article class="produto" id="produto-adesivos">
           <div class="produto-capa"><button class="abrir-lightbox capa-botao" type="button" aria-label="Ampliar imagem de Adesivos, tags e rótulos" data-legenda="Adesivos, tags e rótulos · imagem ilustrativa"><img src="img/produtos/adesivos.webp" alt="Adesivos, tags e rótulos" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><span class="tipo-imagem">Imagem ilustrativa</span></div>
           <div class="produto-texto">
             <h4>Adesivos, tags e rótulos</h4>
-            <p>Papel fotográfico adesivo ou vinil, com recorte personalizado. Consulte opções holográficas e à prova d’água.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Adesivos%2C%20tags%20e%20r%C3%B3tulos.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Adesivos, tags e rótulos">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Adesivos, tags e rótulos em vinil ou papel fotográfico adesivo, com recorte no formato da arte. Consulte as opções à prova d’água e os acabamentos.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Adesivos%2C%20tags%20e%20r%C3%B3tulos.%0AQuantidade%3A%20%0AMaterial%20desejado%3A%20%0AMedidas%20e%20formato%20do%20recorte%3A%20%0AArte%20e%20acabamento%20desejado%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Adesivos, tags e rótulos">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article><article class="produto" id="produto-laminacao">
           <div class="produto-capa"><button class="abrir-lightbox capa-botao" type="button" aria-label="Ampliar imagem de Laminação" data-legenda="Laminação · imagem ilustrativa"><img src="img/produtos/laminacao.webp" alt="Laminação" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><span class="tipo-imagem">Imagem ilustrativa</span></div>
           <div class="produto-texto">
             <h4>Laminação</h4>
-            <p>Acabamento brilhante, fosco ou holográfico para seus impressos.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Lamina%C3%A7%C3%A3o.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Laminação">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Laminação com acabamento brilhante, fosco ou holográfico. Informe as medidas, o tipo de impresso e o acabamento que prefere.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Lamina%C3%A7%C3%A3o.%0AQuantidade%3A%20%0AMedidas%20e%20tipo%20de%20impresso%3A%20%0ABrilhante%2C%20fosco%20ou%20hologr%C3%A1fico%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Laminação">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article><article class="produto" id="produto-plastificacao">
           <div class="produto-capa"><button class="abrir-lightbox capa-botao" type="button" aria-label="Ampliar imagem de Plastificação" data-legenda="Plastificação · imagem ilustrativa"><img src="img/produtos/plastificacao.webp" alt="Plastificação" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><span class="tipo-imagem">Imagem ilustrativa</span></div>
           <div class="produto-texto">
             <h4>Plastificação</h4>
-            <p>Para documentos, cartões e outros impressos. Consulte os formatos disponíveis.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Plastifica%C3%A7%C3%A3o.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Plastificação">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Plastificação de documentos, cartões e outros impressos. Consulte o formato compatível com as medidas do material.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Plastifica%C3%A7%C3%A3o.%0AQuantidade%3A%20%0AMedidas%3A%20%0ATipo%20de%20documento%20ou%20impresso%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Plastificação">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article><article class="produto" id="produto-cards">
           <div class="produto-capa"><button class="abrir-lightbox capa-botao" type="button" aria-label="Ampliar imagem de Cards personalizados" data-legenda="Cards personalizados · imagem ilustrativa"><img src="img/produtos/cards.webp" alt="Cards personalizados" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><span class="tipo-imagem">Imagem ilustrativa</span></div>
           <div class="produto-texto">
             <h4>Cards personalizados</h4>
-            <p>Com a arte e o tema da sua escolha, para divulgar, presentear ou colecionar.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Cards%20personalizados.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Cards personalizados">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Cards para divulgar, presentear ou colecionar, com a arte e o tema da sua escolha. Informe tamanho, número de modelos e acabamento.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Cards%20personalizados.%0AQuantidade%3A%20%0AMedidas%20e%20n%C3%BAmero%20de%20modelos%3A%20%0AQuantidade%20por%20modelo%3A%20%0AArte%20e%20acabamento%20desejado%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Cards personalizados">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article>
       </div>
@@ -676,43 +705,43 @@
           <div class="produto-capa"><button class="abrir-galeria-produto capa-botao" type="button" aria-label="Ver imagens de Impressão de fotografias até A3" data-galeria="fotografias"><img src="img/produtos/fotografias.webp" alt="Impressão de fotografias até A3" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><span class="tipo-imagem">Imagem ilustrativa</span></div>
           <div class="produto-texto">
             <h4>Impressão de fotografias até A3</h4>
-            <p>Impressão fotográfica em vários tamanhos. Consulte a disponibilidade de molduras.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Impress%C3%A3o%20de%20fotografias%20at%C3%A9%20A3.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Impressão de fotografias até A3">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Impressão em papel fotográfico em diversos tamanhos, até A3. Para fotos emolduradas, consulte as opções de moldura.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Impress%C3%A3o%20de%20fotografias%20at%C3%A9%20A3.%0AQuantidade%3A%20%0ATamanho%20de%20cada%20foto%3A%20%0ACom%20ou%20sem%20moldura%3A%20%0AArquivos%20das%20fotos%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Impressão de fotografias até A3">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article><article class="produto" id="produto-polaroids">
           <div class="produto-capa"><button class="abrir-galeria-produto capa-botao" type="button" aria-label="Ver imagens de Fotos estilo Polaroid" data-galeria="polaroids"><img src="img/produtos/polaroids.webp" alt="Fotos estilo Polaroid" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><span class="tipo-imagem">Imagem ilustrativa</span></div>
           <div class="produto-texto">
             <h4>Fotos estilo Polaroid</h4>
-            <p>Fotografias impressas com borda branca. Consulte os tamanhos disponíveis.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Fotos%20estilo%20Polaroid.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Fotos estilo Polaroid">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Fotos impressas no estilo Polaroid, com borda branca. Informe as medidas ou o tamanho desejado e envie as fotos.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Fotos%20estilo%20Polaroid.%0AQuantidade%3A%20%0ATamanho%20desejado%3A%20%0AArquivos%20das%20fotos%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Fotos estilo Polaroid">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article><article class="produto" id="produto-chaveiros-personalizados">
           <div class="produto-capa"><button class="abrir-lightbox capa-botao" type="button" aria-label="Ampliar imagem de Chaveiros com foto"><img src="img/chaveiros-personalizados.webp" alt="Chaveiros com foto" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button></div>
           <div class="produto-texto">
             <h4>Chaveiros com foto</h4>
-            <p>Acrílico quadrado de 3,5 × 3,5 cm com foto ou arte personalizada.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Chaveiros%20com%20foto.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Chaveiros com foto">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Chaveiros quadrados em acrílico de 3,5 × 3,5 cm, personalizados com foto, nome, logotipo ou arte.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Chaveiros%20com%20foto.%0AQuantidade%3A%20%0AFoto%2C%20nome%20ou%20arte%3A%20%0AQuantidade%20por%20modelo%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Chaveiros com foto">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article><article class="produto" id="produto-placa-pix">
           <div class="produto-capa"><button class="abrir-lightbox capa-botao" type="button" aria-label="Ampliar imagem de Placas Pix personalizadas"><img src="img/placa-pix.webp" alt="Placas Pix personalizadas" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button></div>
           <div class="produto-texto">
             <h4>Placas Pix personalizadas</h4>
-            <p>Placa de acrílico adesivada com a identidade do negócio e o QR Code Pix fornecido pelo cliente.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Placas%20Pix%20personalizadas.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Placas Pix personalizadas">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Placa de acrílico adesivada com o QR Code Pix da sua empresa e sua identidade visual. Informe o tamanho desejado e envie sua arte ou logotipo.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Placas%20Pix%20personalizadas.%0AQuantidade%3A%20%0ATamanho%20desejado%3A%20%0ALogo%20e%20cores%20da%20marca%3A%20%0AQR%20Code%20ou%20arte%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Placas Pix personalizadas">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article><article class="produto" id="produto-placa-com-foto">
           <div class="produto-capa"><button class="abrir-lightbox capa-botao" type="button" aria-label="Ampliar imagem de Placas com foto"><img src="img/placa-com-foto.webp" alt="Placas com foto" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button></div>
           <div class="produto-texto">
             <h4>Placas com foto</h4>
-            <p>Placa de acrílico adesivada com fotografia, para homenagens e presentes.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Placas%20com%20foto.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Placas com foto">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Placa de acrílico adesivada com sua fotografia. Para homenagens, lembranças e presentes personalizados.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Placas%20com%20foto.%0AQuantidade%3A%20%0AMedidas%20desejadas%3A%20%0AFoto%20e%20texto%20para%20personaliza%C3%A7%C3%A3o%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Placas com foto">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article><article class="produto" id="produto-cadernetas-pet">
           <div class="produto-capa"><button class="abrir-galeria-produto capa-botao" data-galeria="cadernetas-pet" type="button" aria-label="Ver imagens de Cadernetas de vacinação pet"><img src="img/cadernetas-pet.webp" alt="Cadernetas de vacinação pet" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button></div>
           <div class="produto-texto">
             <h4>Cadernetas de vacinação pet</h4>
-            <p>Modelos para cães, gatos e aves, com espaço para vacinas, consultas e outras informações.</p>
-            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Cadernetas%20de%20vacina%C3%A7%C3%A3o%20pet.%0AQuantidade%3A%20%0AMedidas%20e%20detalhes%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Cadernetas de vacinação pet">Pedir orçamento <span aria-hidden="true">→</span></a>
+            <p>Cadernetas para cães, gatos e aves, com espaço para vacinas, consultas e dados do pet. Consulte os modelos e a personalização da capa.</p>
+            <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Cadernetas%20de%20vacina%C3%A7%C3%A3o%20pet.%0AQuantidade%3A%20%0AEsp%C3%A9cie%20e%20modelo%20desejado%3A%20%0ANome%20do%20pet%20e%20personaliza%C3%A7%C3%A3o%20da%20capa%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Cadernetas de vacinação pet">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
         </article>
       </div>
@@ -753,7 +782,7 @@
         <figcaption>Cartões de visita</figcaption>
       </figure>
 <figure class="trabalho">
-        <button class="abrir-lightbox" type="button" aria-label="Ver Pulseiras personalizadas"><img src="img/produtos/pulseiras.webp" alt="Pulseiras personalizadas" loading="lazy" decoding="async"></button>
+        <button class="abrir-lightbox" type="button" aria-label="Ver Pulseiras personalizadas"><img src="img/produtos/pulseiras.webp" data-recorte="conjunto-de-pulseiras" alt="Pulseiras personalizadas" loading="lazy" decoding="async"></button>
         <figcaption>Pulseiras personalizadas</figcaption>
       </figure>
 <figure class="trabalho">
@@ -761,11 +790,11 @@
         <figcaption>Adesivos e etiquetas</figcaption>
       </figure>
 <figure class="trabalho">
-        <button class="abrir-lightbox" type="button" aria-label="Ver Livreto grampeado"><img src="img/produtos/livretos.webp" alt="Livreto grampeado" loading="lazy" decoding="async"></button>
+        <button class="abrir-lightbox" type="button" aria-label="Ver Livreto grampeado"><img src="img/produtos/livretos.webp" data-recorte="capa-de-livreto" alt="Livreto grampeado" loading="lazy" decoding="async"></button>
         <figcaption>Livreto grampeado</figcaption>
       </figure>
 <figure class="trabalho">
-        <button class="abrir-lightbox" type="button" aria-label="Ver Encadernação"><img src="img/produtos/apostilas.webp" alt="Encadernação" loading="lazy" decoding="async"></button>
+        <button class="abrir-lightbox" type="button" aria-label="Ver Encadernação"><img src="img/produtos/apostilas.webp" data-recorte="capa-de-apostila" alt="Encadernação" loading="lazy" decoding="async"></button>
         <figcaption>Encadernação</figcaption>
       </figure>
     </div>
@@ -863,7 +892,7 @@
   <button class="lightbox-fechar" type="button" aria-label="Fechar galeria">×</button>
   <button class="lightbox-navegacao lightbox-anterior" type="button" aria-label="Foto anterior">‹</button>
   <div class="lightbox-conteudo">
-    <img alt="">
+    <div class="foto-ampliacao"><img alt=""></div>
     <p></p>
     <span class="lightbox-contador" aria-live="polite"></span>
     <div class="lightbox-miniaturas" aria-label="Escolher foto"></div>
@@ -871,7 +900,7 @@
   <button class="lightbox-navegacao lightbox-proximo" type="button" aria-label="Próxima foto">›</button>
 </div>
 
-<script src="script.js?v=7.1.0" defer></script>
+<script src="script.js?v=7.2.0" defer></script>
 
 </body>
 </html>
