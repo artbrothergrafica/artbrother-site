@@ -1327,3 +1327,13 @@ footer p {margin:0 0 6px}
 .produto-capa img[src$="-fundo-claro.webp"] {
   padding:0;
 }
+
+/* Banner natalino: manter toda a arte aprovada visível. */
+.abertura-natal .abertura-mascote img {
+  -webkit-mask-image:none;
+  mask-image:none;
+  border-radius:24px;
+}
+@media(max-width:720px) {
+  .abertura-natal .abertura-mascote img {margin:18px 0 20px}
+}
