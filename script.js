@@ -73,7 +73,8 @@ window.addEventListener('load', controlarBotaoTopo);
 const movimentoReduzido = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 const lightbox = document.querySelector('.lightbox');
-const lightboxImagem = lightbox?.querySelector('img');
+const fotoAmpliacao = lightbox?.querySelector('.foto-ampliacao');
+const lightboxImagem = fotoAmpliacao?.querySelector('img');
 const lightboxLegenda = lightbox?.querySelector('p');
 const lightboxFechar = lightbox?.querySelector('.lightbox-fechar');
 const lightboxAnterior = lightbox?.querySelector('.lightbox-anterior');
@@ -83,36 +84,38 @@ const lightboxMiniaturas = lightbox?.querySelector('.lightbox-miniaturas');
 let ultimoFoco = null;
 let imagensAbertas = [];
 let imagemAtual = 0;
-let toqueInicialX = null;
+let toqueInicial = null;
 
 const galeriasProdutos = {
  'cartoes-visita': [
-  {src:'img/produtos/cartoes.webp',alt:'Exemplos de cartões de visita',legenda:'Cartões de visita · imagem ilustrativa'},
+  {src:'img/produtos/cartoes.webp',alt:'Exemplos de cartões de visita',legenda:'Cartões de visita · imagem ilustrativa',referencia:true},
   {src:'img/cartoes-visita-foto-1-v66.webp',alt:'Cartões de visita Art Brother Novembro Azul em detalhe',legenda:'Cartões de Visita — Detalhes da Produção'},
   {src:'img/cartoes-visita-foto-2-v66.webp',alt:'Conjunto de cartões de visita Art Brother Novembro Azul',legenda:'Cartões de Visita — Frente e Verso'}
  ],
   'blocos-de-notas': [{src:'img/produtos/blocos.webp',alt:'Bloco de ordem de serviço e bloco com capa kraft',legenda:'Blocos de notas · imagem ilustrativa'}],
   'livros-cadernos-wire-o': [
-    {src:'img/produtos/wire-o-fundo-claro.webp',alt:'Livros impressos com encadernação Wire-O em fundo claro',legenda:'Livros Wire-O · imagem ilustrativa'},
+    {src:'img/produtos/wire-o-fundo-claro.webp',alt:'Livros impressos com encadernação Wire-O em fundo claro',legenda:'Livros Wire-O · imagem ilustrativa',referencia:true},
     {src:'img/produtos/wire-o.webp',alt:'Livros impressos com encadernação Wire-O',legenda:'Livros impressos com acabamento Wire-O'},
     {src:'img/livros-cadernos-wire-o-1.webp',alt:'Livros e cadernos na bancada da Art Brother',legenda:'Livros e cadernos Wire-O na bancada da gráfica'},
     {src:'img/livros-cadernos-wire-o-2.webp',alt:'Livros e cadernos personalizados expostos na Art Brother',legenda:'Livros e Cadernos Personalizados Wire-O — Produção Art Brother'}
   ],
   'agenda-2027': [{ src:'img/produtos/agenda.webp', alt:'Agenda 2027 com capa personalizada', legenda:'Agenda 2027 · imagem ilustrativa' }],
   'livro-colorir': [
+    { src:'img/produtos/bobzinho.webp', alt:'Arte colorida de Bobzinho e sua turma', legenda:'Arte da capa de Bobzinho e sua turma' },
     { src:'img/galeria/bobzinho.webp', alt:'Capa do Livrinho de Colorir Bobzinho', legenda:'Capa do Livrinho de Colorir Bobzinho' },
     { src:'img/galeria/bobzinho-praia.webp', alt:'Livrinho de colorir com Bobzinho na praia', legenda:'Bobzinho na Praia' },
     { src:'img/galeria/bobzinho-aniversario.webp', alt:'Livrinho de colorir com a festa do Bobzinho', legenda:'Festa do Bobzinho' },
     { src:'img/galeria/bobzinho-arte.webp', alt:'Livrinho de colorir com Bobzinho fazendo arte', legenda:'Bobzinho Criativo' }
   ],
   'festas-eventos': [
-    {src:'img/produtos/caixas-fundo-claro.webp',alt:'Caixas para festa em tons lilás sobre fundo claro',legenda:'Caixas personalizadas · imagem ilustrativa'},
-    { src:'img/produtos/caixas.webp', alt:'Caixas de festa e personalizados em tons pastel', legenda:'Caixas personalizadas para festas' },
-    { src:'img/galeria/festas-eventos-caixas-milk.webp', alt:'Caixas Milk e personalizados para festa neon', legenda:'Caixas Milk e Personalizados' },
-    { src:'img/galeria/festas-eventos-kits-adesivos.webp', alt:'Kit de caixas, adesivos e rótulos personalizados para festa neon', legenda:'Kit Completo com Adesivos e Rótulos' },
-    { src:'img/galeria/festas-eventos-kit-completo.webp', alt:'Kit completo de personalizados para festa neon', legenda:'Kit Completo para Festa' },
-    { src:'img/galeria/caixas-festa-personalizadas-1.webp', alt:'Caixas personalizadas para festa com tema de ursinho e mel', legenda:'Caixas Personalizadas para Festa — Detalhes' },
-    { src:'img/galeria/caixas-festa-personalizadas-2.webp', alt:'Conjunto de caixas personalizadas para festa produzido pela Art Brother', legenda:'Caixas Personalizadas para Festa — Conjunto' }
+    { src:'img/produtos/caixas-fundo-claro.webp', alt:'Caixas para festa em tons lilás sobre fundo claro', legenda:'Caixas personalizadas · imagem ilustrativa', referencia:true },
+    { src:'img/produtos/caixas.webp', alt:'Caixas de festa em tons pastel com laços lilás', legenda:'Caixinhas de festa com laços lilás' },
+    { src:'img/galeria/festas-eventos-caixas-milk.webp', alt:'Caixas Milk e personalizados para festa neon', legenda:'Caixas Milk para festa neon' },
+    { src:'img/galeria/festas-eventos-kits-adesivos.webp', alt:'Kit de caixas, adesivos e rótulos personalizados para festa neon', legenda:'Adesivos e rótulos do kit neon' },
+    { src:'img/galeria/festas-eventos-kit-completo.webp', alt:'Kit completo de personalizados para festa neon', legenda:'Conjunto de personalizados para festa neon' },
+    { src:'img/galeria/caixas-festa-personalizadas-1.webp', alt:'Caixas personalizadas para festa com tema de ursinho e mel', legenda:'Caixinhas de ursinho na bancada da gráfica' },
+    { src:'img/galeria/caixas-festa-personalizadas-2.webp', alt:'Conjunto de caixas personalizadas em tons de amarelo', legenda:'Detalhe do conjunto de caixinhas de ursinho' },
+    { src:'img/produtos/pulseiras.webp', alt:'Pulseiras personalizadas e cartelas para aniversário', legenda:'Pulseiras e cartelas de aniversário' }
   ],
   'cadernetas-pet': [
     { src:'img/cadernetas-pet.webp', alt:'Modelos de cadernetas de saúde e vacinação para pets', legenda:'Modelos de Cadernetas Pet' },
@@ -131,11 +134,34 @@ const galeriasProdutos = {
     {src:'img/galeria/impressao-polaroids.webp',alt:'Arte com exemplos de fotos no estilo Polaroid',legenda:'Modelos de fotos estilo Polaroid'}
   ],
   'cadernos-personalizados': [
-    { src:'img/galeria/cadernos-personalizados-modelos.webp', alt:'Coleção com vários modelos de cadernos personalizados', legenda:'Modelos de Cadernos Personalizados' },
-    { src:'img/galeria/caderno-personalizado-professora.webp', alt:'Caderno floral roxo personalizado para professora', legenda:'Caderno Personalizado para Professora' },
-    { src:'img/galeria/cadernos-personalizados-anuncio.webp', alt:'Anúncio de cadernos personalizados ART Brother', legenda:'Cadernos Personalizados do Seu Jeito' }
+    { src:'img/produtos/cadernos.webp', alt:'Coleção com oito cadernos personalizados', legenda:'Coleção de cadernos com capas personalizadas' },
+    { src:'img/galeria/caderno-personalizado-professora.webp', alt:'Caderno floral lilás personalizado para professora', legenda:'Caderno floral personalizado para professora' },
+    { src:'img/produtos/apostilas.webp', alt:'Caderno de escala personalizado para empresa', legenda:'Caderno de escala para equipe' },
+    { src:'img/galeria/cadernos-personalizados-anuncio.webp', alt:'Arte com exemplo de caderno floral personalizado', legenda:'Caderno floral rosa · arte de divulgação', referencia:true }
   ],
-
+  'apostilas-encadernacao': [
+    { src:'img/produtos/apostilas.webp', alt:'Caderno de escala empresarial com encadernação', legenda:'Caderno de escala encadernado' },
+    { src:'img/galeria/encadernacao-seguranca.webp', alt:'Guia de segurança do trabalho encadernado com espiral', legenda:'Guia de segurança do trabalho com encadernação em espiral' }
+  ],
+  'livretos-panfletos': [
+    { src:'img/produtos/livretos.webp', alt:'Livreto infantil impresso com um baú na capa', legenda:'Livreto infantil grampeado' },
+    { src:'img/produtos/panfletos.webp', alt:'Pilha de panfletos impressos e embalados', legenda:'Panfletos impressos e embalados na gráfica' }
+  ],
+  'adesivos-rotulos': [
+    { src:'img/produtos/adesivos.webp', alt:'Frasco e pote com etiquetas e rótulos personalizados', legenda:'Adesivos, tags e rótulos · imagem ilustrativa', referencia:true },
+    { src:'img/galeria/adesivos-cortados.webp', alt:'Rótulos, adesivos cortados e tags impressos para kit de festa', legenda:'Adesivos cortados e rótulos personalizados' },
+    { src:'img/galeria/festas-eventos-kit-completo.webp', alt:'Detalhe de personalização com etiquetas no kit neon', legenda:'Adesivos aplicados nas peças do kit neon' }
+  ],
+  'placas-personalizadas': [
+    { src:'img/placa-com-foto.webp', alt:'Placa de acrílico com fotografia e base preta', legenda:'Placa de acrílico personalizada com foto' },
+    { src:'img/galeria/galeria03.webp', alt:'Placa personalizada com fotografia sobre a bancada da gráfica', legenda:'Placa com foto na bancada da Art Brother' },
+    { src:'img/placa-pix.webp', alt:'Placa personalizada de balcão com QR Code', legenda:'Placa Pix de balcão' }
+  ],
+  'topos-de-bolo': [
+    { src:'img/produtos/topos.webp', alt:'Conjunto de modelos de topo de bolo em papel', legenda:'Modelos de topos de bolo · imagem ilustrativa' },
+    { src:'img/galeria/topo-de-bolo.webp', alt:'Topo de bolo personalizado com tema musical', legenda:'Topo de bolo com tema musical · imagem tratada' },
+    { src:'img/galeria/galeria07.webp', alt:'Arte com topo de bolo de corações e casal', legenda:'Topo de bolo com corações · referência de modelo' }
+  ]
 };
 
 const recortesDeFoto = {
@@ -143,8 +169,7 @@ const recortesDeFoto = {
   "apostilas.webp": "capa-de-apostila",
   "livretos.webp": "capa-de-livreto",
   "panfletos.webp": "impressos-do-panfleto",
-  "pulseiras.webp": "conjunto-de-pulseiras",
-  "cadernos-personalizados-modelos.webp": "colecao-de-cadernos"
+  "pulseiras.webp": "conjunto-de-pulseiras"
 };
 
 function aplicarFoto(img, src) {
@@ -169,6 +194,7 @@ function mostrarImagemLightbox(indice){
     botao.classList.toggle('ativo', i === imagemAtual);
     botao.setAttribute('aria-current', i === imagemAtual ? 'true' : 'false');
   });
+  lightboxMiniaturas?.querySelector('.ativo')?.scrollIntoView({block:'nearest', inline:'nearest'});
 }
 
 function montarMiniaturas(){
@@ -177,8 +203,10 @@ function montarMiniaturas(){
   imagensAbertas.forEach((imagem, i) => {
     const botao = document.createElement('button');
     botao.type = 'button';
-    botao.setAttribute('aria-label', `Mostrar foto ${i + 1}: ${imagem.legenda}`);
+    botao.setAttribute('aria-label', `Mostrar imagem ${i + 1}. ${imagem.legenda}`);
     const miniatura = document.createElement('img');
+    miniatura.loading = 'lazy';
+    miniatura.decoding = 'async';
     aplicarFoto(miniatura, imagem.src);
     miniatura.alt = '';
     botao.appendChild(miniatura);
@@ -187,20 +215,20 @@ function montarMiniaturas(){
   });
 }
 
-function abrirGaleria(imagens, focoOrigem){
+function abrirGaleria(imagens, focoOrigem, indiceInicial = 0){
   if(!lightbox || !imagens?.length) return;
   ultimoFoco = focoOrigem || document.activeElement;
   imagensAbertas = imagens;
-  imagemAtual = 0;
-  montarMiniaturas();
-  mostrarImagemLightbox(0);
+  toqueInicial = null;
   const temVarias = imagens.length > 1;
   lightboxAnterior?.toggleAttribute('hidden', !temVarias);
   lightboxProximo?.toggleAttribute('hidden', !temVarias);
   if(lightboxMiniaturas) lightboxMiniaturas.hidden = !temVarias;
+  if(temVarias) montarMiniaturas();
   lightbox.hidden = false;
   document.body.style.overflow = 'hidden';
   document.querySelectorAll('body > header, body > main, body > footer, body > a, body > button').forEach(el => el.inert = true);
+  mostrarImagemLightbox(indiceInicial);
   lightboxFechar?.focus();
 }
 
@@ -217,6 +245,7 @@ function fecharLightbox(){
   document.body.style.overflow = '';
   document.querySelectorAll('[inert]').forEach(el => el.inert = false);
   if(lightboxImagem) lightboxImagem.removeAttribute('src');
+  lightboxMiniaturas?.replaceChildren();
   imagensAbertas = [];
   ultimoFoco?.focus?.();
 }
@@ -225,7 +254,15 @@ document.querySelectorAll('.abrir-lightbox').forEach(botao => {
   botao.addEventListener('click', () => abrirLightbox(botao));
 });
 document.querySelectorAll('.abrir-galeria-produto').forEach(botao => {
-  botao.addEventListener('click', () => abrirGaleria(galeriasProdutos[botao.dataset.galeria], botao));
+  const galeria = galeriasProdutos[botao.dataset.galeria];
+  if(!galeria?.length) return;
+  const imagens = botao.hasAttribute('data-trabalhos') ? galeria.filter(imagem => !imagem.referencia) : galeria;
+  const capa = botao.querySelector('img')?.getAttribute('src');
+  const indiceInicial = Math.max(0, imagens.findIndex(imagem => imagem.src === capa));
+  const contagem = botao.querySelector('.trabalho-contagem');
+  if(contagem) contagem.textContent = `Ver ${imagens.length} fotos`;
+  botao.setAttribute('aria-haspopup', 'dialog');
+  botao.addEventListener('click', () => abrirGaleria(imagens, botao, indiceInicial));
 });
 lightboxAnterior?.addEventListener('click', () => mostrarImagemLightbox(imagemAtual - 1));
 lightboxProximo?.addEventListener('click', () => mostrarImagemLightbox(imagemAtual + 1));
@@ -245,14 +282,19 @@ window.addEventListener('keydown', evento => {
   if(evento.key === 'ArrowLeft' && imagensAbertas.length > 1) mostrarImagemLightbox(imagemAtual - 1);
   if(evento.key === 'ArrowRight' && imagensAbertas.length > 1) mostrarImagemLightbox(imagemAtual + 1);
 });
-lightbox?.addEventListener('touchstart', evento => {
-  toqueInicialX = evento.changedTouches[0]?.clientX ?? null;
+fotoAmpliacao?.addEventListener('touchstart', evento => {
+  toqueInicial = evento.changedTouches[0];
 }, { passive:true });
-lightbox?.addEventListener('touchend', evento => {
-  if(toqueInicialX === null || imagensAbertas.length < 2) return;
-  const deslocamento = (evento.changedTouches[0]?.clientX ?? toqueInicialX) - toqueInicialX;
-  if(Math.abs(deslocamento) > 45) mostrarImagemLightbox(imagemAtual + (deslocamento < 0 ? 1 : -1));
-  toqueInicialX = null;
+fotoAmpliacao?.addEventListener('touchend', evento => {
+  const inicio = toqueInicial;
+  toqueInicial = null;
+  const fim = evento.changedTouches[0];
+  if(!inicio || !fim || imagensAbertas.length < 2) return;
+  const horizontal = fim.clientX - inicio.clientX;
+  const vertical = fim.clientY - inicio.clientY;
+  if(Math.abs(horizontal) > 45 && Math.abs(horizontal) > Math.abs(vertical)){
+    mostrarImagemLightbox(imagemAtual + (horizontal < 0 ? 1 : -1));
+  }
 }, { passive:true });
 
 const botaoCompartilhar = document.querySelector('.botao-compartilhar');

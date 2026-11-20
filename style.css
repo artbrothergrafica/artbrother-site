@@ -987,6 +987,11 @@ body {font-family:Inter,Arial,Helvetica,sans-serif;background:var(--paper)}
   -webkit-mask-image:radial-gradient(ellipse at center,#000 53%,transparent 75%);
   mask-image:radial-gradient(ellipse at center,#000 53%,transparent 75%);
 }
+.abertura-natal .abertura-mascote img {
+  -webkit-mask-image:none;
+  mask-image:none;
+  border-radius:24px;
+}
 .vitrine,.portfolio,.passos {max-width:1288px;margin:auto;padding:70px 24px}
 .vitrine-titulo h2,.portfolio h2,.catalogo-faixa h2,.passos h2 {
   margin:0;
@@ -1100,11 +1105,40 @@ body {font-family:Inter,Arial,Helvetica,sans-serif;background:var(--paper)}
 .catalogo-capa img {width:100%;height:auto;border-radius:8px;box-shadow:0 10px 35px #1109208c}
 .catalogo-faixa p {margin:12px 0 20px;color:#e8dcf2}
 .portfolio-titulo {margin-bottom:22px}
-.trabalho {margin:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
-.trabalho button {display:block;width:100%;padding:0;background:#f2f1f5;border:0}
-.trabalho button:focus-visible {outline-offset:-4px}
-.trabalho img {width:100%;aspect-ratio:4/3;object-fit:cover}
-.trabalho figcaption {padding:10px 12px;font-size:14px;font-weight:700}
+.trabalho {
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+  padding:0;
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:#fff;
+  color:inherit;
+  text-align:left;
+}
+.trabalho:hover {border-color:#8752a4}
+.trabalho:focus-visible {outline-offset:3px}
+.trabalho-capa {position:relative;width:100%}
+.trabalho-rotulo {
+  display:flex;
+  flex:1;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:6px;
+  width:100%;
+  padding:10px 12px;
+  font-size:14px;
+  line-height:1.35;
+}
+.trabalho-link {
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
+  color:#5d2d7a;
+  font-size:13px;
+  font-weight:650;
+}
 .passos {padding-top:0}
 .passos ol {
   margin:20px 0 0;
@@ -1131,6 +1165,7 @@ footer p {margin:0 0 6px}
   .marca-linha {margin-bottom:12px}
   .abertura p {margin:14px 0 17px}
   .abertura-mascote img {width:min(100%,350px);margin-top:-5px}
+  .abertura-natal .abertura-mascote img {margin:18px 0 20px}
   .vitrine,.portfolio,.passos {padding:42px 16px}
   .passos {padding-top:0}
   .vitrine-grade,.portfolio-grade {grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
@@ -1174,11 +1209,11 @@ footer p {margin:0 0 6px}
 }
 .produto-capa,
 .produto-capa button,
-.trabalho button {
+.trabalho-capa {
   background:#f2f3f6;
 }
 .produto-capa button,
-.trabalho button {
+.trabalho-capa {
   display:grid;
   grid-template: minmax(0,1fr) / minmax(0,1fr);
   place-items:center;
@@ -1258,6 +1293,7 @@ footer p {margin:0 0 6px}
   width:100%;
   height:100%;
   min-height:0;
+  touch-action:pan-y pinch-zoom;
 }
 .foto-ampliacao:has(img[data-recorte]) {
   width:min(100%,820px);
@@ -1271,7 +1307,7 @@ footer p {margin:0 0 6px}
 
 @supports (width:1cqw) {
   .produto-capa button,
-  .trabalho button,
+  .trabalho-capa,
   .foto-ampliacao,
   .lightbox-miniaturas button {
     container-type:size;
@@ -1324,7 +1360,8 @@ footer p {margin:0 0 6px}
   --foto-recorte:url(#recorte-conjunto-de-pulseiras);
 }
 
-.produto-capa img[src$="-fundo-claro.webp"] {
+.produto-capa img[src$="-fundo-claro.webp"],
+.trabalho img[src$="-fundo-claro.webp"] {
   padding:0;
 }
 

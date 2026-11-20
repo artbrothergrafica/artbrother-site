@@ -1,8 +1,8 @@
 const CACHE_PREFIX = 'art-brother-';
-const CACHE_NAME = CACHE_PREFIX + 'natal2026';
+const CACHE_NAME = CACHE_PREFIX + 'galerias1';
 const CORE_ASSETS = [
  './banner-sazonal.js?v=natal2026','./img/brotherzinho-natal-2026.webp',
- './index.html','./catalogo/index.html','./404.html','./style.css?v=natal2026','./script.js?v=7.2.0',
+ './index.html','./catalogo/index.html','./404.html','./style.css?v=galerias1','./script.js?v=galerias1',
  './logo.png','./img/brotherzinho-vitrine.webp','./site.webmanifest?v=7.2.0',
  './favicon/favicon-192x192.png','./favicon/favicon-512x512.png'
 ];
