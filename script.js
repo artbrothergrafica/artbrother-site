@@ -87,6 +87,11 @@ let imagemAtual = 0;
 let toqueInicial = null;
 
 const galeriasProdutos = {
+  'livros-de-memorias': [
+    {src:'img/produtos/livro-memorias-frente.webp',alt:'Capa frontal azul de livro de memórias personalizado com fotografia',legenda:'Capa personalizada · acabamento Wire-O e elástico'},
+    {src:'img/produtos/livro-memorias-verso.webp',alt:'Contracapa azul do livro de memórias com mensagem e elástico',legenda:'Contracapa personalizada · detalhes do acabamento'},
+    {src:'img/produtos/livro-memorias-anuncio.webp',alt:'Arte de divulgação de livros de memórias personalizados em azul e rosa',legenda:'Exemplos de personalização · arte de divulgação',referencia:true}
+  ],
  'cartoes-visita': [
   {src:'img/produtos/cartoes.webp',alt:'Exemplos de cartões de visita',legenda:'Cartões de visita · imagem ilustrativa',referencia:true},
   {src:'img/cartoes-visita-foto-1-v66.webp',alt:'Cartões de visita Art Brother Novembro Azul em detalhe',legenda:'Cartões de Visita — Detalhes da Produção'},
