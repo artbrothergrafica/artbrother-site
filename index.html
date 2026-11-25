@@ -485,30 +485,6 @@
     </div>
   </section>
 
-  <section id="videos" class="portfolio" aria-labelledby="titulo-videos">
-    <div class="portfolio-titulo">
-      <h2 id="titulo-videos">Galeria de vídeos</h2>
-      <p>Veja nossos produtos em ação! Conheça os detalhes e acabamentos dos trabalhos produzidos aqui na Art Brother.</p>
-    </div>
-    <div class="videos-grade">
-      <!-- Para novos comerciais, adicionar outro article.video-card com vídeo, capa, duração e link do produto. -->
-      <article class="video-card" id="video-livros-de-memorias">
-        <div class="video-card-player">
-          <video controls playsinline preload="none" poster="img/produtos/livro-memorias-frente.webp" aria-label="Comercial: cadernos e livros de memórias personalizados">
-            <source src="livros-de-memorias.mp4" type="video/mp4">
-            Seu navegador não reproduz este vídeo. <a href="livros-de-memorias.mp4">Abrir vídeo</a>.
-          </video>
-          <span class="video-duracao">24 s</span>
-        </div>
-        <div class="video-card-texto">
-          <h3>Cadernos e livros de memórias personalizados</h3>
-          <p>Suas fotos, suas conquistas e suas histórias em cada página.</p>
-          <a href="#produto-livros-de-memorias">Conhecer produto e pedir orçamento <span aria-hidden="true">→</span></a>
-        </div>
-      </article>
-    </div>
-  </section>
-
   <section id="produtos" class="vitrine" aria-labelledby="titulo-produtos">
     <div class="vitrine-titulo">
       <h2 id="titulo-produtos">Produtos e serviços</h2>
@@ -814,6 +790,44 @@
         <p>Veja os modelos, materiais e opções de personalização em um só PDF.</p>
         <a class="acao acao-clara" href="catalogo/index.html">Ver catálogo <span aria-hidden="true">→</span></a>
       </div>
+    </div>
+  </section>
+
+  <section id="videos" class="portfolio" aria-labelledby="titulo-videos">
+    <div class="portfolio-titulo">
+      <h2 id="titulo-videos">Galeria de vídeos</h2>
+      <p>Veja nossos produtos em ação! Conheça os detalhes e acabamentos dos trabalhos produzidos aqui na Art Brother.</p>
+    </div>
+    <div class="videos-grade">
+      <!-- Para novos comerciais, adicionar outro article.video-card com vídeo, capa, duração e link do produto. -->
+      <article class="video-card" id="video-livros-de-memorias">
+        <div class="video-card-player">
+          <video controls playsinline preload="none" poster="img/produtos/livro-memorias-frente.webp" aria-label="Comercial: cadernos e livros de memórias personalizados">
+            <source src="livros-de-memorias.mp4" type="video/mp4">
+            Seu navegador não reproduz este vídeo. <a href="livros-de-memorias.mp4">Abrir vídeo</a>.
+          </video>
+          <span class="video-duracao">24 s</span>
+        </div>
+        <div class="video-card-texto">
+          <h3>Cadernos e livros de memórias personalizados</h3>
+          <p>Suas fotos, suas conquistas e suas histórias em cada página.</p>
+          <a href="#produto-livros-de-memorias">Conhecer produto e pedir orçamento <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="video-card" id="video-cards-personalizados" hidden>
+        <div class="video-card-player">
+          <video controls playsinline preload="metadata" poster="img/produtos/cards.webp" aria-label="Comercial: cards e baralhos personalizados" onloadedmetadata="this.closest('article').hidden=false">
+            <source src="cards-personalizados.mp4" type="video/mp4">
+            Seu navegador não reproduz este vídeo. <a href="cards-personalizados.mp4">Abrir vídeo</a>.
+          </video>
+          <span class="video-duracao">32 s</span>
+        </div>
+        <div class="video-card-texto">
+          <h3>Cards e baralhos personalizados</h3>
+          <p>Impressão em papel fotográfico dupla face, laminação e acabamento personalizado. Conheça os detalhes do nosso trabalho.</p>
+          <a href="#produto-cards">Conhecer produto e pedir orçamento <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
     </div>
   </section>
 
