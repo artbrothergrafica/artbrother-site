@@ -393,6 +393,22 @@
   </script>
   <link rel="stylesheet" href="style.css?v=galerias1">
   <noscript><style>.menu{display:flex!important;position:static;flex-wrap:wrap;max-height:none}.topo{position:relative;flex-wrap:wrap}.menu-toggle,.carrossel-pausa,.carrossel-controle,.botao-ver-galeria{display:none!important}</style></noscript>
+<style id="estilo-galeria-videos">
+  #videos{scroll-margin-top:100px;padding-top:36px;padding-bottom:26px}
+  #videos .portfolio-titulo{margin-bottom:20px}
+  .videos-grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:18px;align-items:start}
+  .video-card{min-width:0;max-width:340px;overflow:hidden;border:1px solid #e9e3ee;background:#fff;border-radius:18px;box-shadow:0 6px 22px rgba(27,16,43,.08);scroll-margin-top:100px;color:#14151a}
+  .video-card:target{outline:3px solid #542297;outline-offset:4px}
+  .video-card-player{position:relative;background:#120c1c}
+  .video-card video{display:block;width:100%;aspect-ratio:9/16;max-height:510px;object-fit:contain;background:#120c1c}
+  .video-duracao{position:absolute;top:12px;right:12px;padding:4px 9px;background:rgba(18,12,28,.85);color:#fff;font-size:.8rem;border-radius:20px;pointer-events:none}
+  .video-card-texto{padding:16px;display:grid;gap:8px}
+  .video-card-texto h3{font-size:1.06rem;line-height:1.35;margin:0;color:#1b102b}
+  .video-card-texto p{font-size:.9rem;line-height:1.5;margin:0;color:#555c68}
+  .video-card-texto a,.video-atalho{font-weight:700;text-decoration:underline;text-underline-offset:3px;color:#542297}
+  .video-atalho{display:inline-block;font-size:.9rem;margin:4px 0}
+  @media(max-width:600px){#videos{padding-top:26px;padding-bottom:16px}.videos-grade{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.videos-grade:has(.video-card:only-child){grid-template-columns:minmax(0,300px)}.video-card-texto{padding:12px}.video-card-texto h3{font-size:.95rem}.video-card-texto p{font-size:.84rem}}
+</style>
 </head>
 
 <body>
@@ -442,6 +458,7 @@
     <a href="#produtos">Produtos e serviços</a>
     <a href="catalogo/index.html">Catálogo</a>
     <a href="#galeria">Trabalhos</a>
+    <a href="#videos">Vídeos</a>
     <a href="#localizacao">Localização</a>
     <a href="#contato">Contato</a>
   </nav>
@@ -458,12 +475,37 @@
         <p>Impressão, papelaria e personalizados para sua marca, sua festa ou sua próxima ideia.</p>
         <div class="abertura-acoes">
           <a class="acao acao-clara" href="#produtos">Ver produtos <span aria-hidden="true">↓</span></a>
+          <a class="acao acao-borda" href="#videos">Ver vídeos <span aria-hidden="true">▶</span></a>
           <a class="acao acao-borda" href="https://wa.me/5531987167190?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Art%20Brother.%20Gostaria%20de%20pedir%20um%20or%C3%A7amento." target="_blank" rel="noopener">Pedir orçamento <span aria-hidden="true">→</span></a>
         </div>
       </div>
       <div class="abertura-mascote">
         <img src="img/brotherzinho-vitrine.webp" alt="Brotherzinho, mascote da Art Brother" fetchpriority="high" width="760" height="760" decoding="async">
       </div>
+    </div>
+  </section>
+
+  <section id="videos" class="portfolio" aria-labelledby="titulo-videos">
+    <div class="portfolio-titulo">
+      <h2 id="titulo-videos">Galeria de vídeos</h2>
+      <p>Veja nossos produtos em ação! Conheça os detalhes e acabamentos dos trabalhos produzidos aqui na Art Brother.</p>
+    </div>
+    <div class="videos-grade">
+      <!-- Para novos comerciais, adicionar outro article.video-card com vídeo, capa, duração e link do produto. -->
+      <article class="video-card" id="video-livros-de-memorias">
+        <div class="video-card-player">
+          <video controls playsinline preload="none" poster="img/produtos/livro-memorias-frente.webp" aria-label="Comercial: cadernos e livros de memórias personalizados">
+            <source src="livros-de-memorias.mp4" type="video/mp4">
+            Seu navegador não reproduz este vídeo. <a href="livros-de-memorias.mp4">Abrir vídeo</a>.
+          </video>
+          <span class="video-duracao">24 s</span>
+        </div>
+        <div class="video-card-texto">
+          <h3>Cadernos e livros de memórias personalizados</h3>
+          <p>Suas fotos, suas conquistas e suas histórias em cada página.</p>
+          <a href="#produto-livros-de-memorias">Conhecer produto e pedir orçamento <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -495,10 +537,7 @@
           <div class="produto-capa"><button class="abrir-galeria-produto capa-botao" data-galeria="livros-de-memorias" type="button" aria-label="Ver imagens de Cadernos e livros de memórias personalizados"><img src="img/produtos/livro-memorias-frente.webp" alt="Livro de memórias personalizado azul com foto e encadernação Wire-O, sobre fundo branco" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button></div>
           <div class="produto-texto">
             <h4>Cadernos e livros de memórias personalizados</h4>
-            <details data-video-produto="livros-de-memorias.mp4" hidden style="margin:12px 0;border:1px solid currentColor;border-radius:12px;padding:10px 12px;">
-              <summary style="cursor:pointer;font-weight:600;">▶ Assistir ao vídeo do produto (24 s)</summary>
-              <video controls playsinline preload="none" poster="img/produtos/livro-memorias-frente.webp" aria-label="Comercial dos livros de memórias personalizados" style="display:block;width:100%;max-height:560px;aspect-ratio:9/16;object-fit:contain;background:#120c1c;border-radius:8px;margin-top:10px;"></video>
-            </details>
+            <a class="video-atalho" href="#video-livros-de-memorias">▶ Assistir ao vídeo do produto</a>
             <p>Transforme suas lembranças em um livro único com suas fotos, nome e tema. Ideal para formaturas, viagens, projetos e momentos especiais. Consulte os tamanhos, tipos de miolo e acabamentos.</p>
             <a class="pedir-produto" href="https://wa.me/5531987167190?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Cadernos%20e%20livros%20de%20mem%C3%B3rias%20personalizados.%0AQuantidade%3A%20%0ATamanho%20e%20n%C3%BAmero%20de%20p%C3%A1ginas%3A%20%0ATema%2C%20nome%20e%20fotos%3A%20%0AEncaderna%C3%A7%C3%A3o%20e%20acabamento%20desejados%3A%20%0APrazo%20desejado%3A%20" target="_blank" rel="noopener" aria-label="Pedir orçamento de Cadernos e livros de memórias personalizados">Pedir orçamento <span aria-hidden="true">→</span></a>
           </div>
@@ -967,19 +1006,6 @@
 
 <script src="banner-sazonal.js?v=natal2026"></script>
 
-<script>
-  document.querySelectorAll('[data-video-produto]').forEach(function (item) {
-    var url = item.getAttribute('data-video-produto');
-    var video = item.querySelector('video');
-    fetch(url, {method:'HEAD', cache:'no-cache'}).then(function (response) {
-      if (response.ok && /^video\\//i.test(response.headers.get('content-type') || '')) item.hidden = false;
-    }).catch(function () {});
-    item.addEventListener('toggle', function () {
-      if (item.open && !video.getAttribute('src')) video.src = url;
-      if (!item.open) video.pause();
-    });
-    video.addEventListener('error', function () { item.hidden = true; });
-  });
-</script>
+
 </body>
 </html>
