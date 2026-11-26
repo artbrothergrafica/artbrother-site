@@ -801,6 +801,39 @@
     </div>
     <div class="videos-grade">
       <!-- Para novos comerciais, adicionar outro article.video-card com vídeo, capa, duração e link do produto. -->
+      <template id="modelo-video-agendas-2027">
+        <article class="video-card" id="video-agendas-2027">
+          <div class="video-card-player">
+            <video controls playsinline preload="metadata" aria-label="Comercial: agendas personalizadas 2027">
+              <source src="agendas-2027.mp4" type="video/mp4">
+              Seu navegador não reproduz este vídeo. <a href="agendas-2027.mp4">Abrir vídeo</a>.
+            </video>
+            <span class="video-duracao">36 s</span>
+          </div>
+          <div class="video-card-texto">
+            <h3>Agendas personalizadas 2027</h3>
+            <p>Personalize com seu nome ou sua marca. Conheça nossas capas, encadernação Wire-O e acabamento com elástico.</p>
+            <a href="#produto-agenda">Conhecer produto e pedir orçamento <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+      </template>
+      <script>
+        (function(){
+          const modelo = document.getElementById('modelo-video-agendas-2027');
+          const titulo = document.querySelector('#produto-agenda h4');
+          if (!modelo || !titulo) return;
+          fetch('agendas-2027.mp4', {method:'HEAD',cache:'no-store'}).then(function(res){
+            if (!res.ok || !(res.headers.get('content-type') || '').includes('video/')) return;
+            modelo.replaceWith(modelo.content.cloneNode(true));
+            const link = document.createElement('a');
+            link.className = 'video-atalho';
+            link.href = '#video-agendas-2027';
+            link.textContent = '▶ Assistir ao vídeo do produto';
+            titulo.insertAdjacentElement('afterend', link);
+            if (location.hash === '#video-agendas-2027') document.getElementById('video-agendas-2027').scrollIntoView();
+          }).catch(function(){});
+        })();
+      </script>
       <article class="video-card" id="video-livros-de-memorias">
         <div class="video-card-player">
           <video controls playsinline preload="none" poster="img/produtos/livro-memorias-frente.webp" aria-label="Comercial: cadernos e livros de memórias personalizados">
