@@ -805,8 +805,8 @@
         <article class="video-card" id="video-agendas-2027">
           <div class="video-card-player">
             <video controls playsinline preload="metadata" aria-label="Comercial: agendas personalizadas 2027">
-              <source src="agendas-2027.mp4" type="video/mp4">
-              Seu navegador não reproduz este vídeo. <a href="agendas-2027.mp4">Abrir vídeo</a>.
+              <source src="agendas-2027-1.mp4" type="video/mp4">
+              Seu navegador não reproduz este vídeo. <a href="agendas-2027-1.mp4">Abrir vídeo</a>.
             </video>
             <span class="video-duracao">36 s</span>
           </div>
@@ -822,7 +822,7 @@
           const modelo = document.getElementById('modelo-video-agendas-2027');
           const titulo = document.querySelector('#produto-agenda h4');
           if (!modelo || !titulo) return;
-          fetch('agendas-2027.mp4', {method:'HEAD',cache:'no-store'}).then(function(res){
+          fetch('agendas-2027-1.mp4', {method:'HEAD',cache:'no-store'}).then(function(res){
             if (!res.ok || !(res.headers.get('content-type') || '').includes('video/')) return;
             modelo.replaceWith(modelo.content.cloneNode(true));
             const link = document.createElement('a');
